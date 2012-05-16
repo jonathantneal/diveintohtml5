@@ -9,10 +9,10 @@ body{counter-reset:h1 1}
 </style>
 <link rel=stylesheet media='only screen and (max-device-width: 480px)' href=mobile.css>
 <link rel=prefetch href=index.html>
-<p>You are here: <a href=index.html>Home</a> <span class=u>&#8227;</span> <a href=table-of-contents.html#past>Dive Into <abbr>HTML5</abbr></a> <span class=u>&#8227;</span>
+<p>You are here: <a href=index.html>Home</a> <span class="u triangularBullet"></span> <a href=table-of-contents.html#past>Dive Into <abbr>HTML5</abbr></a> <span class="u triangularBullet"></span>
 <h1><br>How Did We Get Here?</h1>
 <p id=toc>&nbsp;
-<p class=a>&#x2767;
+<p class="a rotatedFloralHeartBullet">
 <h2 id=divingin>Diving In</h2>
 
 <p class="f f-r">Recently, I stumbled across a quote from a Mozilla developer <a href=http://lists.w3.org/Archives/Public/public-html/2010Jan/0107.html>about the tension inherent in creating standards</a>:
@@ -25,7 +25,7 @@ body{counter-reset:h1 1}
 
 <p class=c><img src=i/openclipart.org_johnny_automatic_animals_on_see_saw.png width=526 height=116 alt="animals on a seesaw">
 
-<p class=a>&#x2767;
+<p class="a rotatedFloralHeartBullet">
 
 <h2 id=mime-types>MIME types</h2>
 
@@ -41,7 +41,7 @@ body{counter-reset:h1 1}
 
 <p>Tuck that under your hat. We&rsquo;ll come back to it.
 
-<p class=a>&#x2767;
+<p class="a rotatedFloralHeartBullet">
 
 <h2 id=history-of-the-img-element>A long digression into how standards are made</h2>
 
@@ -197,7 +197,7 @@ PRESENT	 Present this whenever the source document is presented</pre>
 <blockquote cite="http://1997.webhistory.org/www.lists/www-talk.1993q1/0221.html"> 
 <p>HTTP2 allows a document to contain any type which the user has said he can handle, not just registered MIME types. So one can experiment. Yes I think there is a case for postscript with hypertext. I don&rsquo;t know whether display postcript has enough. I know Adobe are trying to establish their own postscript-based &ldquo;PDF&rdquo; which will have links, and be readable by their proprietory brand of viewers. 
 <p>I thought that a generic overlaying language for anchors (Hytime based?) would allow the hypertext and the graphics/video standards to evolve separately, which would help both. 
-<p>Let the <code>IMG</code> tag be <code>INCLUDE</code> and let it refer to an arbitrary document type. Or <code>EMBED</code> if <code>INCLUDE</code> sounds like a cpp include which people will expect to provide SGML source code to be parsed inline &#8212; not what was intended. 
+<p>Let the <code>IMG</code> tag be <code>INCLUDE</code> and let it refer to an arbitrary document type. Or <code>EMBED</code> if <code>INCLUDE</code> sounds like a cpp include which people will expect to provide SGML source code to be parsed inline &mdash; not what was intended. 
 </blockquote> 
  
 <p><a href="http://www.hytime.org/">HyTime</a> was an early, SGML-based hypertext document system. It loomed large in early discussions of HTML, and later XML. 
@@ -207,11 +207,11 @@ PRESENT	 Present this whenever the source document is presented</pre>
 <p>Finally, on March 12, 1993, <a href="http://1997.webhistory.org/www.lists/www-talk.1993q1/0257.html">Marc Andreessen revisited the thread</a>: 
  
 <blockquote cite="http://1997.webhistory.org/www.lists/www-talk.1993q1/0257.html"> 
-<p>Back to the inlined image thread again &#8212; I&rsquo;m getting close to releasing Mosaic v0.10, which will support inlined GIF and XBM images/bitmaps, as mentioned previously. &#8230; 
-<p>We&rsquo;re not prepared to support <code>INCLUDE</code>/<code>EMBED</code> at this point. &#8230; So we&rsquo;re probably going to go with <code>&lt;IMG SRC="url"></code> (not <code>ICON</code>, since not all inlined images can be meaningfully called icons). For the time being, inlined images won&rsquo;t be explicitly content-type&rsquo;d; down the road, we plan to support that (along with the general adaptation of MIME). Actually, the image reading routines we&rsquo;re currently using figure out the image format on the fly, so the filename extension won&rsquo;t even be significant. 
+<p>Back to the inlined image thread again &mdash; I&rsquo;m getting close to releasing Mosaic v0.10, which will support inlined GIF and XBM images/bitmaps, as mentioned previously. &hellip; 
+<p>We&rsquo;re not prepared to support <code>INCLUDE</code>/<code>EMBED</code> at this point. &hellip; So we&rsquo;re probably going to go with <code>&lt;IMG SRC="url"></code> (not <code>ICON</code>, since not all inlined images can be meaningfully called icons). For the time being, inlined images won&rsquo;t be explicitly content-type&rsquo;d; down the road, we plan to support that (along with the general adaptation of MIME). Actually, the image reading routines we&rsquo;re currently using figure out the image format on the fly, so the filename extension won&rsquo;t even be significant. 
 </blockquote> 
  
-<p class=a>&#x2767;
+<p class="a rotatedFloralHeartBullet">
 
 <h2 id=an-unbroken-line>An unbroken line</h2>
 
@@ -221,12 +221,12 @@ PRESENT	 Present this whenever the source document is presented</pre>
 
 <ul> 
 <li>HTTP still exists. HTTP successfully evolved from 0.9 into 1.0 and later 1.1. <a href="http://datatracker.ietf.org/wg/httpbis/charter/">And still it evolves</a>. 
-<li>HTML still exists. That rudimentary data format &mdash; it didn&rsquo;t even support inline images! &mdash; successfully evolved into 2.0, 3.2, 4.0. HTML is an unbroken line. A twisted, knotted, snarled line, to be sure. There were plenty of &ldquo;dead branches&rdquo; in the evolutionary tree, places where standards-minded people got ahead of themselves (and ahead of authors and implementors). But still. Here we are, in 2012, and <a href="http://www.w3.org/People/Berners-Lee/FAQ.html#Examples">web pages from 1990</a> still render in modern browsers. I just loaded one up in the browser of my state-of-the-art Android mobile phone, and I didn&rsquo;t even get prompted to &ldquo;please wait while importing legacy format&#8230;&rdquo; 
+<li>HTML still exists. That rudimentary data format &mdash; it didn&rsquo;t even support inline images! &mdash; successfully evolved into 2.0, 3.2, 4.0. HTML is an unbroken line. A twisted, knotted, snarled line, to be sure. There were plenty of &ldquo;dead branches&rdquo; in the evolutionary tree, places where standards-minded people got ahead of themselves (and ahead of authors and implementors). But still. Here we are, in 2012, and <a href="http://www.w3.org/People/Berners-Lee/FAQ.html#Examples">web pages from 1990</a> still render in modern browsers. I just loaded one up in the browser of my state-of-the-art Android mobile phone, and I didn&rsquo;t even get prompted to &ldquo;please wait while importing legacy format&hellip;&rdquo; 
 <li>HTML has always been a conversation between browser makers, authors, standards wonks, and other people who just showed up and liked to talk about angle brackets. Most of the successful versions of HTML have been &ldquo;retro-specs,&rdquo; catching up to the world while simultaneously trying to nudge it in the right direction. Anyone who tells you that HTML should be kept &ldquo;pure&rdquo; (presumably by ignoring browser makers, or ignoring authors, or both) is simply misinformed. HTML has never been pure, and all attempts to purify it have been spectacular failures, matched only by the attempts to replace it. 
 <li>None of the browsers from 1993 still exist in any recognizable form. Netscape Navigator was <a href="http://en.wikipedia.org/wiki/History_of_Mozilla_Application_Suite#Open_sourcing_of_Communicator">abandoned in 1998</a> and <a href="http://en.wikipedia.org/wiki/History_of_Mozilla_Application_Suite#Rewriting_from_scratch">rewritten from scratch</a> to create the Mozilla Suite, which was then <a href="http://en.wikipedia.org/wiki/History_of_Mozilla_Firefox">forked to create Firefox</a>. Internet Explorer had its humble &ldquo;beginnings&rdquo; in &ldquo;Microsoft Plus! for Windows 95,&rdquo; where it was bundled with some desktop themes and a pinball game. (But of course that browser <a href="http://en.wikipedia.org/wiki/Spyglass_Mosaic">can be traced back further too</a>.) 
 <li>Some of the operating systems from 1993 still exist, but none of them are relevant to the modern web. Most people today who &ldquo;experience&rdquo; the web do so on a PC running Windows 2000 or later, a Mac running Mac OS X, a PC running some flavor of Linux, or a handheld device like an iPhone. In 1993, Windows was at version 3.1 (and competing with OS/2), Macs were running System 7, and Linux was distributed via Usenet. (Want to have some fun? Find a graybeard and whisper &ldquo;Trumpet Winsock&rdquo; or &ldquo;MacPPP.&rdquo;) 
 <li>Some of the same <em>people</em> are still around and still involved in what we now simply call &ldquo;web standards.&rdquo; That&rsquo;s after almost 20 years. And some were involved in predecessors of HTML, going back into the 1980s and before. 
-<li>Speaking of predecessors&#8230; With the eventual popularity of HTML and the web, it is easy to forget the contemporary formats and systems that informed its design. Andrew? Intermedia? HyTime? And HyTime was not some rinky-dink academic research project; <a href="http://xml.coverpages.org/hytime.html">it was an ISO standard</a>. It was approved for military use. It was Big Business. And you can read about it yourself&#8230; <a href="http://www.sgmlsource.com/history/hthist.htm">on this HTML page, in your web browser</a>. 
+<li>Speaking of predecessors&hellip; With the eventual popularity of HTML and the web, it is easy to forget the contemporary formats and systems that informed its design. Andrew? Intermedia? HyTime? And HyTime was not some rinky-dink academic research project; <a href="http://xml.coverpages.org/hytime.html">it was an ISO standard</a>. It was approved for military use. It was Big Business. And you can read about it yourself&hellip; <a href="http://www.sgmlsource.com/history/hthist.htm">on this HTML page, in your web browser</a>. 
 </ul> 
  
 <p>But none of this answers the original question: why do we have an <code>&lt;img></code> element? Why not an <code>&lt;icon></code> element? Or an <code>&lt;include></code> element? Why not a hyperlink with an <code>include</code> attribute, or some combination of <code>rel</code> values? Why an <code>&lt;img></code> element? Quite simply, because Marc Andreessen shipped one, and shipping code wins. 
@@ -235,7 +235,7 @@ PRESENT	 Present this whenever the source document is presented</pre>
  
 <p>The ones that win are the ones that ship. 
 
-<p class=a>&#x2767;
+<p class="a rotatedFloralHeartBullet">
 
 <h2 id=timeline>A timeline of HTML development from 1997 to 2004</h2>
 
@@ -257,7 +257,7 @@ PRESENT	 Present this whenever the source document is presented</pre>
 
 <p>Meanwhile, with the transition to <abbr>XML</abbr> complete, the <abbr>HTML</abbr> Working Group set their sights on creating &ldquo;the next generation of <abbr>HTML</abbr>.&rdquo; In May 2001, they published <a href=http://www.w3.org/TR/2001/REC-xhtml11-20010531/>the first edition of <abbr>XHTML</abbr> 1.1</a>, that added <a href=http://www.w3.org/TR/2001/REC-xhtml11-20010531/changes.html#a_changes>only a few minor features</a> on top of <abbr>XHTML</abbr> 1.0, but also eliminated the &ldquo;Appendix C&rdquo; loophole. Starting with version 1.1, all <abbr>XHTML</abbr> documents were to be served with a <abbr>MIME</abbr> type of <code>application/xhtml+xml</code>.
 
-<p class=a>&#x2767;
+<p class="a rotatedFloralHeartBullet">
 
 <h2 id=xhtml>Everything you know about XHTML is wrong</h2>
 
@@ -275,7 +275,7 @@ PRESENT	 Present this whenever the source document is presented</pre>
 
 <p><abbr>XHTML</abbr> 1.0 included this loophole, but <abbr>XHTML</abbr> 1.1 closed it, and the never-finalized <abbr>XHTML</abbr> 2.0 continued the tradition of requiring draconian error handling. And that&rsquo;s why there are billions of pages that claim to be <abbr>XHTML</abbr> 1.0, and only a handful that claim to be <abbr>XHTML</abbr> 1.1 (or <abbr>XHTML</abbr> 2.0). So are you really using <abbr>XHTML</abbr>? Check your <abbr>MIME</abbr> type. (Actually, if you don&rsquo;t know what <abbr>MIME</abbr> type you&rsquo;re using, I can pretty much guarantee that you&rsquo;re still using <code>text/html</code>.) Unless you&rsquo;re serving your pages with a <abbr>MIME</abbr> type of <code>application/xhtml+xml</code>, your so-called &ldquo;<abbr>XHTML</abbr>&rdquo; is <abbr>XML</abbr> in name only.
 
-<p class=a>&#x2767;
+<p class="a rotatedFloralHeartBullet">
 
 <h2 id=webapps-cdf>A competing vision</h2>
 
@@ -308,7 +308,7 @@ PRESENT	 Present this whenever the source document is presented</pre>
 
 <p>Faced with this decision, the people who had proposed evolving <abbr>HTML</abbr> and <abbr>HTML</abbr> forms had only two choices: give up, or continue their work outside of the W3C. They chose the latter and registered the <a href=http://www.whatwg.org/><code>whatwg.org</code></a> domain, and in June 2004, <a href=http://www.whatwg.org/news/start>the <abbr>WHAT</abbr> Working Group was born</a>.
 
-<p class=a>&#x2767;
+<p class="a rotatedFloralHeartBullet">
 
 <h2 id=whatwg>WHAT Working Group?</h2>
 
@@ -330,7 +330,7 @@ PRESENT	 Present this whenever the source document is presented</pre>
 
 <p>While all that reverse-engineering was going on, the <abbr>WHAT</abbr> working group was quietly working on a few other things, too. One of them was a specification, initially dubbed <a href=http://www.whatwg.org/specs/web-forms/current-work/>Web Forms 2.0</a>, that added new types of controls to <abbr>HTML</abbr> forms. (You&rsquo;ll learn more about web forms in <a href=forms.html>A Form of Madness</a>.) Another was a draft specification called &ldquo;Web Applications 1.0,&rdquo; that included major new features like <a href=canvas.html>a direct-mode drawing canvas</a> and native support for <a href=video.html>audio and video without plugins</a>.
 
-<p class=a>&#x2767;
+<p class="a rotatedFloralHeartBullet">
 
 <h2 id=reinventing-html>Back to the W3C</h2>
 
@@ -346,7 +346,7 @@ PRESENT	 Present this whenever the source document is presented</pre>
 
 <p>One of the first things the newly re-chartered W3C HTML Working Group decided was to rename &ldquo;Web Applications 1.0&rdquo; to &ldquo;HTML5.&rdquo; And here we are, diving into <abbr>HTML5</abbr>.
 
-<p class=a>&#x2767;
+<p class="a rotatedFloralHeartBullet">
 
 <h2 id=postscript>Postscript</h2>
 
@@ -359,7 +359,7 @@ PRESENT	 Present this whenever the source document is presented</pre>
 
 <p>The ones that win are the ones that ship.
 
-<p class=a>&#x2767;
+<p class="a rotatedFloralHeartBullet">
 
 <h2 id=further-reading>Further Reading</h2>
 
@@ -369,7 +369,7 @@ PRESENT	 Present this whenever the source document is presented</pre>
 <li><a href=http://www.atendesigngroup.com/blog/brief-history-of-html>A Brief History of HTML</a>, by Scott Reynen
 </ul>
 
-<p class=a>&#x2767;
+<p class="a rotatedFloralHeartBullet">
 
 <p>This has been &ldquo;How Did We Get Here?&rdquo; The <a href=table-of-contents.html>full table of contents</a> has more if you&rsquo;d like to keep reading.
 

@@ -2,7 +2,7 @@
 
 "Dive Into HTML 5" stylesheet
 
-Copyright (c) 2009, Mark Pilgrim, All rights reserved.
+Copyright (c) 2012, Mark Pilgrim, Jonathan Neal, All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
@@ -398,3 +398,20 @@ tfoot {
 .zebra {
   background: #eee;
 }
+
+/* asterism styles */
+
+.rotatedFloralHeartBullet:before { content: '\2767' }
+
+.triangularBullet:before { content: '\2023' }
+
+.leftwardsWaveArrow:before  { content: ' \219C' }
+.rightwardsWaveArrow:before { content: '\219D' }
+
+.leftwardsSquiggleArrow:before  { content: ' \21DC' }
+.rightwardsSquiggleArrow:before { content: '\21DD ' }
+
+.whiteRightPointingIndex:before { content: '\261E' }
+
+.anticlockwiseTopSemicircleArrow { content: '\21B6' }
+.clockwiseTopSemicircleArrow { content: '\21B7' }

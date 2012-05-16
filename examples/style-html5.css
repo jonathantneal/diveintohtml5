@@ -35,3 +35,4 @@ address+p{margin-top:0}
 img.me{display:block;float:right;border:1px solid black;margin-left:1.75em}
 .phonebook article p,.phonebook article address{margin:0 0 0 120px}
 .review article p{margin:1.75em 0}
+.sectionSign:before{content:'\00A7'}

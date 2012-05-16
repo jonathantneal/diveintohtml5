@@ -19,3 +19,4 @@ h1{letter-spacing:1em;text-align:center;margin:0}
 .post-date{float:right;font-size:small;margin:2px 0 0 0}
 #nav ul{margin:0;padding:0 1em 0 0;text-align:center}
 #nav li{display:inline;padding-left:1em}
+.sectionSign:before{content:'\00A7'}
