@@ -147,12 +147,41 @@ pre, kbd, samp, code, var {
   line-height: 1.75;
   margin: 1.75em 0;
 }
-.f img {
+.f:first-letter {
+  background-size: 100% 100%;
   float: left;
-  margin-right: 5px;
-  margin-bottom: 5px;
-  -ms-interpolation-mode: bicubic;
+  height: 6em;
+  margin: 0 5px 5px 0;
+  overflow: hidden;
+  text-indent: 100%;
+  width: 6em;
 }
+.f-a:first-letter { background: url(i/aoc-a.png) }
+.f-b:first-letter { background: url(i/aoc-b.png) }
+.f-c:first-letter { background: url(i/aoc-c.png) }
+.f-d:first-letter { background: url(i/aoc-d.png) }
+.f-e:first-letter { background: url(i/aoc-e.png) }
+.f-f:first-letter { background: url(i/aoc-f.png) }
+.f-g:first-letter { background: url(i/aoc-g.png) }
+.f-h:first-letter { background: url(i/aoc-h.png) }
+.f-i:first-letter { background: url(i/aoc-i.png) }
+.f-j:first-letter { background: url(i/aoc-j.png) }
+.f-k:first-letter { background: url(i/aoc-k.png) }
+.f-l:first-letter { background: url(i/aoc-l.png) }
+.f-m:first-letter { background: url(i/aoc-m.png) }
+.f-n:first-letter { background: url(i/aoc-n.png) }
+.f-o:first-letter { background: url(i/aoc-o.png) }
+.f-p:first-letter { background: url(i/aoc-p.png) }
+.f-q:first-letter { background: url(i/aoc-q.png) }
+.f-r:first-letter { background: url(i/aoc-r.png) }
+.f-s:first-letter { background: url(i/aoc-s.png) }
+.f-t:first-letter { background: url(i/aoc-t.png) }
+.f-u:first-letter { background: url(i/aoc-u.png) }
+.f-v:first-letter { background: url(i/aoc-v.png) }
+.f-w:first-letter { background: url(i/aoc-w.png) }
+.f-x:first-letter { background: url(i/aoc-x.png) }
+.f-y:first-letter { background: url(i/aoc-y.png) }
+.f-z:first-letter { background: url(i/aoc-z.png) }
 p, ul, ol {
   font-size: large;
   margin: 1.556em 0;
