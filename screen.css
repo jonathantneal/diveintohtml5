@@ -413,5 +413,5 @@ tfoot {
 
 .whiteRightPointingIndex:before { content: '\261E' }
 
-.anticlockwiseTopSemicircleArrow { content: '\21B6' }
-.clockwiseTopSemicircleArrow { content: '\21B7' }
+.anticlockwiseTopSemicircleArrow:before { content: '\21B6' }
+.clockwiseTopSemicircleArrow:before { content: '\21B7' }
