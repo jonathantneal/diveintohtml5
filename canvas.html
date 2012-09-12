@@ -1,13 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
 <meta charset=utf-8>
 <title>Canvas - Dive Into HTML5</title>
+<!--[if lt IE 9]><script src=j/html5.js></script><![endif]-->
 <!--[if lt IE 9]><script src=j/excanvas.min.js></script><![endif]-->
 <link rel=alternate type=application/atom+xml href=https://github.com/diveintomark/diveintohtml5/commits/master.atom>
 <link rel=stylesheet href=screen.css>
 <style>
 body{counter-reset:h1 4}
 </style>
-<link rel=stylesheet media='only screen and (max-device-width: 480px)' href=mobile.css>
+<link rel=stylesheet media="only screen and (max-device-width: 480px)" href=mobile.css>
 <link rel=prefetch href=index.html>
 <p>You are here: <a href=index.html>Home</a> <span class="u triangularBullet"></span> <a href=table-of-contents.html#canvas>Dive Into <abbr>HTML5</abbr></a> <span class="u triangularBullet"></span>
 <h1><br>Let&rsquo;s Call It A<br>Draw(ing Surface)</h1>
@@ -25,13 +26,13 @@ body{counter-reset:h1 4}
 <tbody>
 <tr><td>7.0+<sup>*</sup><td>3.0+<td>3.0+<td>3.0+<td>10.0+<td>1.0+<td>1.0+
 <tfoot>
-<tr><td colspan=7 style="text-align:left">* Internet Explorer 7 and 8 require the third-party <a href=http://code.google.com/p/explorercanvas/>explorercanvas</a> library. Internet Explorer 9 supports <code>&lt;canvas></code> natively.
+<tr><td colspan=7 style=text-align:left>* Internet Explorer 7 and 8 require the third-party <a href=http://code.google.com/p/explorercanvas/>explorercanvas</a> library. Internet Explorer 9 supports <code>&lt;canvas></code> natively.
 </table>
 
 <p class=clear>So what does a canvas look like? Nothing, really. A <code>&lt;canvas></code> element has no content and no border of its own.</p>
 
-<canvas width=300 height=225 class=clear style="float:left"></canvas>
-<p class="legend right" style="margin-top:4em"><span class="arrow leftwardsWaveArrow"></span> Invisible canvas
+<canvas width=300 height=225 class=clear style=float:left></canvas>
+<p class="legend right" style=margin-top:4em><span class="arrow leftwardsWaveArrow"></span> Invisible canvas
 
 <p class=clear>The markup looks like this:
 
@@ -40,7 +41,7 @@ body{counter-reset:h1 4}
 <p>Let&rsquo;s add a dotted border so we can see what we&rsquo;re dealing with.</p>
 
 <canvas width=300 height=225 class=clear style="border:1px dotted;float:left"></canvas>
-<p class="legend right" style="margin-top:4em"><span class="arrow leftwardsWaveArrow"></span> Canvas with border
+<p class="legend right" style=margin-top:4em><span class="arrow leftwardsWaveArrow"></span> Canvas with border
 
 <p class=clear>You can have more than one <code>&lt;canvas></code> element on the same page. Each canvas will show up in the <abbr>DOM</abbr>, and each canvas maintains its own state. If you give each canvas an <code>id</code> attribute, you can access them just like any other element.
 
@@ -62,13 +63,13 @@ body{counter-reset:h1 4}
 <tbody>
 <tr><td>7.0+<sup>*</sup><td>3.0+<td>3.0+<td>3.0+<td>10.0+<td>1.0+<td>1.0+
 <tfoot>
-<tr><td colspan=7 style="text-align:left">* Internet Explorer 7 and 8 require the third-party <a href=http://code.google.com/p/explorercanvas/>explorercanvas</a> library. Internet Explorer 9 supports <code>&lt;canvas></code> shapes natively.
+<tr><td colspan=7 style=text-align:left>* Internet Explorer 7 and 8 require the third-party <a href=http://code.google.com/p/explorercanvas/>explorercanvas</a> library. Internet Explorer 9 supports <code>&lt;canvas></code> shapes natively.
 </table>
 
 <p>Every canvas starts out blank. That&rsquo;s boring! Let&rsquo;s draw something.</p>
 
 <canvas id=b width=300 height=225 style="border:1px dotted;float:left" onclick="draw_b();return false"></canvas>
-<p class="legend right" style="margin-top:4em"><span class="arrow leftwardsSquiggleArrow"></span> <a href="#" onclick="draw_b();return false">Click to draw on this canvas</a></p>
+<p class="legend right" style=margin-top:4em><span class="arrow leftwardsSquiggleArrow"></span> <a href=# onclick="draw_b();return false">Click to draw on this canvas</a></p>
 
 <p class=clear>The <code>onclick</code> handler called this function:
 
@@ -80,7 +81,7 @@ body{counter-reset:h1 4}
 
 <p>The 1<sup>st</sup> line of the function is nothing special; it just finds the <code>&lt;canvas></code> element in the <abbr>DOM</abbr>.
 
-<p class="legend left" style="margin-top:2em">And then there&rsquo;s this <span class="arrow rightwardsSquiggleArrow"></span>&nbsp;</p>
+<p class="legend left" style=margin-top:2em>And then there&rsquo;s this <span class="arrow rightwardsSquiggleArrow"></span>&nbsp;</p>
 <pre><code>function draw_b() {
   var b_canvas = document.getElementById("b");
 <mark>  var b_context = b_canvas.getContext("2d");</mark>
@@ -119,7 +120,7 @@ A: Yes. Setting the width or height of a <code>&lt;canvas></code> element will e
 </div>
 
 <p>Getting back to that code sample in the previous example&hellip;
-<p class="legend left" style="margin-top:2em">Draw a rectangle <span class="arrow rightwardsSquiggleArrow"></span></p>
+<p class="legend left" style=margin-top:2em>Draw a rectangle <span class="arrow rightwardsSquiggleArrow"></span></p>
 <pre><code>var b_canvas = document.getElementById("b");
 var b_context = b_canvas.getContext("2d");
 <mark>b_context.fillRect(50, 25, 150, 100);</mark></code></pre>
@@ -132,7 +133,7 @@ var b_context = b_canvas.getContext("2d");
 
 <p>The canvas is a two-dimensional grid. The coordinate (0, 0) is at the upper-left corner of the canvas. Along the X-axis, values increase towards the right edge of the canvas. Along the Y-axis, values increase towards the bottom edge of the canvas.
 
-<p class="legend top" style="width:500px;text-align:center">Canvas coordinates diagram <span class="arrow clockwiseTopSemicircleArrow"></span><br></p>
+<p class="legend top" style=width:500px;text-align:center>Canvas coordinates diagram <span class="arrow clockwiseTopSemicircleArrow"></span><br></p>
 <canvas id=c width=500 height=375></canvas>
 
 <p>That coordinate diagram was drawn with a <code>&lt;canvas></code> element. It comprises
@@ -172,7 +173,7 @@ var context = c_canvas.getContext("2d");</code></pre>
 <tbody>
 <tr><td>7.0+<sup>*</sup><td>3.0+<td>3.0+<td>3.0+<td>10.0+<td>1.0+<td>1.0+
 <tfoot>
-<tr><td colspan=7 style="text-align:left">* Internet Explorer 7 and 8 require the third-party <a href=http://code.google.com/p/explorercanvas/>explorercanvas</a> library. Internet Explorer 9 supports <code>&lt;canvas></code> paths natively.
+<tr><td colspan=7 style=text-align:left>* Internet Explorer 7 and 8 require the third-party <a href=http://code.google.com/p/explorercanvas/>explorercanvas</a> library. Internet Explorer 9 supports <code>&lt;canvas></code> paths natively.
 </table>
 
 <p style="float:left;margin:1.75em 1.75em 1.75em 0"><img src=i/openclipart.org_media_files_johnny_automatic_7563.png alt="gerbil sitting on a chair with a quill and ink jar" width=167 height=347>
@@ -183,7 +184,7 @@ var context = c_canvas.getContext("2d");</code></pre>
 
 <p>To draw straight lines in pencil, you use the following two methods:
 
-<ol style="list-style-position:inside">
+<ol style=list-style-position:inside>
 <li><code>moveTo(x, y)</code> moves the pencil to the specified starting point.
 <li><code>lineTo(x, y)</code> draws a line to the specified ending point.
 </ol>
@@ -192,17 +193,17 @@ var context = c_canvas.getContext("2d");</code></pre>
 
 <p>Let&rsquo;s begin by drawing the off-white grid.
 
-<pre style="float:left"><code>for (var x = 0.5; x &lt; 500; x += 10) {
+<pre style=float:left><code>for (var x = 0.5; x &lt; 500; x += 10) {
   context.moveTo(x, 0);
   <mark>context.lineTo(x, 375);</mark>
 }</code></pre>
-<p class="legend right" style="margin-top:4em"><span class="arrow leftwardsSquiggleArrow"></span> Draw vertical lines</p>
+<p class="legend right" style=margin-top:4em><span class="arrow leftwardsSquiggleArrow"></span> Draw vertical lines</p>
 
-<pre style="clear:left;float:left"><code>for (var y = 0.5; y &lt; 375; y += 10) {
+<pre style=clear:left;float:left><code>for (var y = 0.5; y &lt; 375; y += 10) {
   context.moveTo(0, y);
   <mark>context.lineTo(500, y);</mark>
 }</code></pre>
-<p class="legend right" style="margin-top:4em"><span class="arrow leftwardsSquiggleArrow"></span> Draw horizontal lines</p>
+<p class="legend right" style=margin-top:4em><span class="arrow leftwardsSquiggleArrow"></span> Draw horizontal lines</p>
 
 <p class=clear>Those were all &ldquo;pencil&rdquo; methods. Nothing has actually been drawn on the canvas yet. We need an &ldquo;ink&rdquo; method to make it permanent.
 
@@ -230,7 +231,7 @@ A: Imagine each pixel as a large square. The whole-number coordinates (0, 1, 2&h
 
 <p>Now let&rsquo;s draw the horizontal arrow. All the lines and curves on a path are drawn in the same color (or gradient &mdash; yes, we&rsquo;ll get to those soon). We want to draw the arrow in a different color ink &mdash; black instead of off-white &mdash; so we need to start a new path.
 
-<p class="legend top" style="margin-left:2em">A new path <span class="arrow clockwiseTopSemicircleArrow"></span><br></p>
+<p class="legend top" style=margin-left:2em>A new path <span class="arrow clockwiseTopSemicircleArrow"></span><br></p>
 <pre><code><mark>context.beginPath();</mark>
 context.moveTo(0, 40);
 context.lineTo(240, 40);
@@ -242,14 +243,14 @@ context.lineTo(495, 45);</code></pre>
 
 <p>The vertical arrow looks much the same. Since the vertical arrow is the same color as the horizontal arrow, we do <strong>not</strong> need to start another new path. The two arrows will be part of the same path.
 
-<pre style="float:left"><code>context.moveTo(60, 0);
+<pre style=float:left><code>context.moveTo(60, 0);
 context.lineTo(60, 153);
 context.moveTo(60, 173);
 context.lineTo(60, 375);
 context.moveTo(65, 370);
 context.lineTo(60, 375);
 context.lineTo(55, 370);</code></pre>
-<p class="legend right" style="margin-top:4em"><span class="arrow leftwardsWaveArrow"></span> Not a new path</p>
+<p class="legend right" style=margin-top:4em><span class="arrow leftwardsWaveArrow"></span> Not a new path</p>
 
 <p class=clear>I said these arrows were going to be black, but the <code>strokeStyle</code> is still off-white. (The <code>fillStyle</code> and <code>strokeStyle</code> don&rsquo;t get reset when you start a new path.) That&rsquo;s OK, because we&rsquo;ve just run a series of &ldquo;pencil&rdquo; methods. But before we draw it for real, in &ldquo;ink,&rdquo; we need to set the <code>strokeStyle</code> to black. Otherwise, these two arrows will be off-white, and we&rsquo;ll hardly be able to see them! The following lines change the color to black and draw the lines on the canvas:
 
@@ -270,8 +271,8 @@ context.stroke();</code></pre>
 <tbody>
 <tr><td>7.0+<sup>*</sup><td>3.0+<sup>&dagger;</sup><td>3.0+<td>3.0+<td>10.0+<td>1.0+<td>1.0+
 <tfoot>
-<tr><td colspan=7 style="text-align:left">* Internet Explorer 7 and 8 require the third-party <a href=http://code.google.com/p/explorercanvas/>explorercanvas</a> library. Internet Explorer 9 supports canvas text natively.
-<tr><td colspan=7 style="text-align:left">&dagger; Mozilla Firefox 3.0 requires a compatibility shim.
+<tr><td colspan=7 style=text-align:left>* Internet Explorer 7 and 8 require the third-party <a href=http://code.google.com/p/explorercanvas/>explorercanvas</a> library. Internet Explorer 9 supports canvas text natively.
+<tr><td colspan=7 style=text-align:left>&dagger; Mozilla Firefox 3.0 requires a compatibility shim.
 </table>
 
 <p>In addition to drawing <a href=#paths>lines on a canvas</a>, you can also draw text on a canvas. Unlike text on the surrounding web page, there is no box model. That means none of the familiar CSS layout techniques are available: no floats, no margins, no padding, no word wrapping. (Maybe you think that&rsquo;s a good thing!) You can set a few font attributes, then you pick a point on the canvas and draw your text there.
@@ -295,17 +296,17 @@ context.stroke();</code></pre>
 
 <p>Let&rsquo;s draw some text! Text drawn inside the canvas inherits the font size and style of the <code>&lt;canvas></code> element itself, but you can override this by setting the <code>font</code> property on the drawing context.
 
-<pre style="float:left"><code><mark>context.font = "bold 12px sans-serif";</mark>
+<pre style=float:left><code><mark>context.font = "bold 12px sans-serif";</mark>
 context.fillText("x", 248, 43);
 context.fillText("y", 58, 165);</code></pre>
 <p class="legend right"><span class="arrow leftwardsWaveArrow"></span> Change the font style</p>
 
 <p class=clear>The <code>fillText()</code> method draws the actual text.</p>
 
-<pre style="float:left"><code>context.font = "bold 12px sans-serif";
+<pre style=float:left><code>context.font = "bold 12px sans-serif";
 <mark>context.fillText("x", 248, 43);</mark>
 context.fillText("y", 58, 165);</code></pre>
-<p class="legend right" style="margin-top:2.6em"><span class="arrow leftwardsSquiggleArrow"></span> Draw the text</p>
+<p class="legend right" style=margin-top:2.6em><span class="arrow leftwardsSquiggleArrow"></span> Draw the text</p>
 
 <div class="pf clear" id=relative-font-size>
 <h4>Ask Professor Markup</h4>
@@ -332,9 +333,9 @@ context.fillText("( 500 , 375 )", <mark>492, 370</mark>);</code></pre>
 
 <canvas id=c4 width=500 height=375></canvas>
 
-<p>Oops! We forgot the dots in the corners. We&rsquo;ll see how to draw circles a little later. For now, I&rsquo;ll cheat a little and <a href=#shapes>draw them as rectangles</a>. 
+<p>Oops! We forgot the dots in the corners. We&rsquo;ll see how to draw circles a little later. For now, I&rsquo;ll cheat a little and <a href=#shapes>draw them as rectangles</a>.
 
-<pre style="float:left"><code>context.fillRect(0, 0, 3, 3);
+<pre style=float:left><code>context.fillRect(0, 0, 3, 3);
 context.fillRect(497, 372, 3, 3);</code></pre>
 <p class="legend right"><span class="arrow leftwardsSquiggleArrow"></span> Draw two &ldquo;dots&rdquo;</p>
 
@@ -354,7 +355,7 @@ context.fillRect(497, 372, 3, 3);</code></pre>
 <tr><th>linear gradients<td>7.0+<sup>*</sup><td>3.0+<td>3.0+<td>3.0+<td>10.0+<td>1.0+<td>1.0+
 <tr><th>radial gradients<td>9.0+<td>3.0+<td>3.0+<td>3.0+<td>10.0+<td>1.0+<td>1.0+
 <tfoot>
-<tr><td colspan=8 style="text-align:left">* Internet Explorer 7 and 8 require the third-party <a href=http://code.google.com/p/explorercanvas/>explorercanvas</a> library. Internet Explorer 9 supports <code>&lt;canvas></code> gradients natively.
+<tr><td colspan=8 style=text-align:left>* Internet Explorer 7 and 8 require the third-party <a href=http://code.google.com/p/explorercanvas/>explorercanvas</a> library. Internet Explorer 9 supports <code>&lt;canvas></code> gradients natively.
 </table>
 
 <p>Earlier in this chapter, you learned how to draw <a href=#shapes>a rectangle filled with a solid color</a>, then <a href=#paths>a line stroked with a solid color</a>. But shapes and lines aren&rsquo;t limited to solid colors. You can do all kinds of magic with gradients. Let&rsquo;s look at an example.</p>
@@ -379,7 +380,7 @@ var context = d_canvas.getContext("2d");</code></pre>
 
 <p>Let&rsquo;s make a linear gradient. Gradients can be any size, but I&rsquo;ll make this gradient be 300 pixels wide, like the canvas.
 
-<p class="legend top" style="margin-left:2.5em">Create a gradient object <span class="arrow clockwiseTopSemicircleArrow"></span><br></p>
+<p class="legend top" style=margin-left:2.5em>Create a gradient object <span class="arrow clockwiseTopSemicircleArrow"></span><br></p>
 <pre><code>var my_gradient = <mark>context.createLinearGradient(0, 0, 300, 0);</mark></code></pre>
 
 <p>Because the <code>y</code> values (the 2<sup>nd</sup> and 4<sup>th</sup> parameters) are both 0, this gradient will shade evenly from left to right.
@@ -403,7 +404,7 @@ context.fillRect(0, 0, 300, 225);</code></pre>
 
 <p>Suppose you want a gradient that shades from top to bottom. When you create the gradient object, keep the <code>x</code> values (1<sup>st</sup> and 3<sup>rd</sup> parameters) constant, and make the <code>y</code> values (2<sup>nd</sup> and 4<sup>th</sup> parameters) range from 0 to the height of the canvas.
 
-<p class="legend top" style="margin-left:6.5em">x values are 0, y values vary <span class="arrow clockwiseTopSemicircleArrow"></span><br></p>
+<p class="legend top" style=margin-left:6.5em>x values are 0, y values vary <span class="arrow clockwiseTopSemicircleArrow"></span><br></p>
 <pre><code>var my_gradient = context.createLinearGradient(<mark>0, 0, 0, 225</mark>);
 my_gradient.addColorStop(0, "black");
 my_gradient.addColorStop(1, "white");
@@ -416,7 +417,7 @@ context.fillRect(0, 0, 300, 225);</code></pre>
 
 <p>You can also create gradients along a diagonal.
 
-<p class="legend top" style="margin-left:8.5em">both x and y values vary <span class="arrow clockwiseTopSemicircleArrow"></span><br></p>
+<p class="legend top" style=margin-left:8.5em>both x and y values vary <span class="arrow clockwiseTopSemicircleArrow"></span><br></p>
 <pre><code>var my_gradient = context.createLinearGradient(<mark>0, 0, 300, 225</mark>);
 my_gradient.addColorStop(0, "black");
 my_gradient.addColorStop(1, "white");
@@ -437,18 +438,18 @@ context.fillRect(0, 0, 300, 225);</code></pre>
 <tbody>
 <tr><td>7.0+<sup>*</sup><td>3.0+<td>3.0+<td>3.0+<td>10.0+<td>1.0+<td>1.0+
 <tfoot>
-<tr><td colspan=7 style="text-align:left">* Internet Explorer 7 and 8 require the third-party <a href=http://code.google.com/p/explorercanvas/>explorercanvas</a> library. Internet Explorer 9 supports <code>&lt;canvas></code> images natively.
+<tr><td colspan=7 style=text-align:left>* Internet Explorer 7 and 8 require the third-party <a href=http://code.google.com/p/explorercanvas/>explorercanvas</a> library. Internet Explorer 9 supports <code>&lt;canvas></code> images natively.
 </table>
 
 <p>Here is a cat:
 
-<p style="float:left"><img src=i/openclipart.org_media_files_johnny_automatic_1360.png alt="sleeping cat" width=177 height=113 id=cat>
-<p class="legend right" style="margin-top:4em"><span class="arrow leftwardsSquiggleArrow"></span> An &lt;img> element</p>
+<p style=float:left><img src=i/openclipart.org_media_files_johnny_automatic_1360.png alt="sleeping cat" width=177 height=113 id=cat>
+<p class="legend right" style=margin-top:4em><span class="arrow leftwardsSquiggleArrow"></span> An &lt;img> element</p>
 
 <p class=clear>Here is the same cat, drawn on a canvas:
 
-<div style="float:right">
-<p class="legend left" style="margin-top:2em">A &lt;canvas> element <span class="arrow rightwardsSquiggleArrow"></span></p>
+<div style=float:right>
+<p class="legend left" style=margin-top:2em>A &lt;canvas> element <span class="arrow rightwardsSquiggleArrow"></span></p>
 <canvas id=e width=177 height=113></canvas>
 </div>
 
@@ -471,7 +472,7 @@ context.fillRect(0, 0, 300, 225);</code></pre>
 <p>To draw an image on a canvas, you need an image. The image can be an existing <code>&lt;img></code> element, or you can create an <code>Image()</code> object with JavaScript. Either way, you need to ensure that the image is fully loaded before you can draw it on the canvas.
 
 <p>If you&rsquo;re using an existing <code>&lt;img></code> element, you can safely draw it on the canvas during the <code>window.onload</code> event.
-<p class="legend top" style="margin-left:6.5em"><span class="arrow anticlockwiseTopSemicircleArrow"></span> using an &lt;img> element<br></p>
+<p class="legend top" style=margin-left:6.5em><span class="arrow anticlockwiseTopSemicircleArrow"></span> using an &lt;img> element<br></p>
 <pre><code>&lt;img <mark>id="cat"</mark> src="images/cat.png" alt="sleeping cat" width="177" height="113">
 &lt;canvas id="e" width="177" height="113">&lt;/canvas>
 &lt;script>
@@ -485,7 +486,7 @@ context.fillRect(0, 0, 300, 225);</code></pre>
 
 <p>If you&rsquo;re creating the image object entirely in JavaScript, you can safely draw the image on the canvas during the <code>Image.onload</code> event.
 
-<p class="legend top" style="margin-left:3.5em">using an Image() object <span class="arrow clockwiseTopSemicircleArrow"></span><br></p>
+<p class="legend top" style=margin-left:3.5em>using an Image() object <span class="arrow clockwiseTopSemicircleArrow"></span><br></p>
 <pre><code>&lt;canvas id="e" width="177" height="113">&lt;/canvas>
 &lt;script>
   var canvas = document.getElementById("e");
@@ -503,7 +504,7 @@ context.fillRect(0, 0, 300, 225);</code></pre>
 
 <p>Here is the script that produces the &ldquo;multicat&rdquo; effect:
 
-<pre style="float:left"><code>cat.onload = function() {
+<pre style=float:left><code>cat.onload = function() {
   for (var x = 0, y = 0;
        x &lt; 500 &amp;&amp; y &lt; 375;
        x += 50, y += 37) {
@@ -511,7 +512,7 @@ context.fillRect(0, 0, 300, 225);</code></pre>
   }
 };
 </code></pre>
-<p class="legend right" style="margin-top:6em"><span class="arrow leftwardsSquiggleArrow"></span> Scale the image</p>
+<p class="legend right" style=margin-top:6em><span class="arrow leftwardsSquiggleArrow"></span> Scale the image</p>
 
 <p class=clear>All this effort raises a legitimate question: why would you want to draw an image on a canvas in the first place? What does the extra complexity of image-on-a-canvas buy you over an <code>&lt;img></code> element and some <abbr>CSS</abbr> rules? Even the &ldquo;multicat&rdquo; effect could be replicated with 10 overlapping <code>&lt;img></code> elements.
 
@@ -525,7 +526,7 @@ context.fillRect(0, 0, 300, 225);</code></pre>
 
 <p><a href=http://code.google.com/p/explorercanvas/>Explorercanvas</a> (<code>excanvas.js</code>) is an open source, Apache-licensed JavaScript library that implements the canvas <abbr>API</abbr> in Internet Explorer. To use it, include the following <code>&lt;script></code> element at the top of your page.
 
-<pre><code>&lt;!DOCTYPE html>
+<pre><code>&lt;!doctype html>
 &lt;html>
 &lt;head>
   &lt;meta charset="utf-8">
@@ -540,7 +541,7 @@ context.fillRect(0, 0, 300, 225);</code></pre>
 &lt;/html>
 </code></pre>
 
-<p>The <code>&lt;!--[if lt IE 9]></code> and <code>&lt;![endif]--></code> bits are <a href="http://msdn.microsoft.com/en-us/library/ms537512(VS.85).aspx">conditional comments</a>. Internet Explorer interprets them like an <code>if</code> statement: &ldquo;if the current browser is a version of Internet Explorer prior to (but not including) version 9, then execute this block.&rdquo; Every other browser will treat the entire block as an <abbr>HTML</abbr> comment. The net result is that Internet Explorer 7 and 8 will download the <code>excanvas.js</code> script and execute it, but other browsers will ignore the script altogether (not download it, not execute it, not anything). This makes your page load faster in browsers that implement the canvas <abbr>API</abbr> natively.
+<p>The <code>&lt;!--[if lt IE 9]></code> and <code>&lt;![endif]--></code> bits are <a href=http://msdn.microsoft.com/en-us/library/ms537512(VS.85).aspx>conditional comments</a>. Internet Explorer interprets them like an <code>if</code> statement: &ldquo;if the current browser is a version of Internet Explorer prior to (but not including) version 9, then execute this block.&rdquo; Every other browser will treat the entire block as an <abbr>HTML</abbr> comment. The net result is that Internet Explorer 7 and 8 will download the <code>excanvas.js</code> script and execute it, but other browsers will ignore the script altogether (not download it, not execute it, not anything). This makes your page load faster in browsers that implement the canvas <abbr>API</abbr> natively.
 
 <p>Once you include the <code>excanvas.js</code> in the <code>&lt;head></code> of your page, you don&rsquo;t need to do anything else to accomodate Internet Explorer. Just include <code>&lt;canvas></code> elements in your markup, or create them dynamically with JavaScript. Follow the instructions in this chapter to get the drawing context of a <code>&lt;canvas></code> element, and you can draw shapes, text, and patterns.
 
@@ -575,7 +576,7 @@ context.fillRect(0, 0, 300, 225);</code></pre>
 
 <canvas id=halmacanvas></canvas>
 
-<p style="margin-top:0;font-style:normal" class="legend">Moves: <span id=halmamovecount>0</span>
+<p style=margin-top:0;font-style:normal class=legend>Moves: <span id=halmamovecount>0</span>
 
 <p>How does it work? I&rsquo;m so glad you asked. I won&rsquo;t show <em>all</em> the code here. (You can see it at <a href=examples/halma.js>diveintohtml5.info/examples/halma.js</a>.) I&rsquo;ll skip over most of the gameplay code itself, but I want to highlight a few parts of the code that deal with actually drawing on the canvas and responding to mouse clicks on the canvas element.
 
@@ -596,7 +597,7 @@ gDrawingContext = gCanvasElement.getContext("2d");</code></pre>
 
     // the rest of this is just gameplay logic
     for (var i = 0; i &lt; gNumPieces; i++) {
-	if ((gPieces[i].row == cell.row) && 
+	if ((gPieces[i].row == cell.row) &&
 	    (gPieces[i].column == cell.column)) {
 	    clickOnPiece(i);
 	    return;
@@ -710,7 +711,7 @@ gDrawingContext.<mark>stroke()</mark>;</code></pre>
 <h4>Did You Know?</h4>
 <div class=moneybags>
 <blockquote><p>In association with Google Press, O&rsquo;Reilly is distributing this book in a variety of formats, including paper, ePub, Mobi, and <abbr>DRM</abbr>-free <abbr>PDF</abbr>. The paid edition is called &ldquo;HTML5: Up &amp; Running,&rdquo; and it is available now. This chapter is included in the paid edition.
-<p>If you liked this chapter and want to show your appreciation, you can <a href="http://www.amazon.com/HTML5-Up-Running-Mark-Pilgrim/dp/0596806027?ie=UTF8&amp;tag=diveintomark-20&amp;creativeASIN=0596806027">buy &ldquo;HTML5: Up &amp; Running&rdquo; with this affiliate link</a> or <a href=http://oreilly.com/catalog/9780596806033>buy an electronic edition directly from O&rsquo;Reilly</a>. You&rsquo;ll get a book, and I&rsquo;ll get a buck. I do not currently accept direct donations.
+<p>If you liked this chapter and want to show your appreciation, you can <a href=http://www.amazon.com/HTML5-Up-Running-Mark-Pilgrim/dp/0596806027?ie=UTF8&amp;tag=diveintomark-20&amp;creativeASIN=0596806027>buy &ldquo;HTML5: Up &amp; Running&rdquo; with this affiliate link</a> or <a href=http://oreilly.com/catalog/9780596806033>buy an electronic edition directly from O&rsquo;Reilly</a>. You&rsquo;ll get a book, and I&rsquo;ll get a buck. I do not currently accept direct donations.
 </blockquote>
 </div>
 </div>

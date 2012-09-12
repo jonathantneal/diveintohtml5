@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <meta charset=utf-8>
 <title>Web Forms - Dive Into HTML5</title>
 <!--[if lt IE 9]><script src=j/html5.js></script><![endif]-->
@@ -7,7 +7,7 @@
 <style>
 body{counter-reset:h1 9}
 </style>
-<link rel=stylesheet media='only screen and (max-device-width: 480px)' href=mobile.css>
+<link rel=stylesheet media="only screen and (max-device-width: 480px)" href=mobile.css>
 <link rel=prefetch href=index.html>
 <p>You are here: <a href=index.html>Home</a> <span class="u triangularBullet"></span> <a href=table-of-contents.html#forms>Dive Into <abbr>HTML5</abbr></a> <span class="u triangularBullet"></span>
 <h1><br>A Form of Madness</h1>
@@ -96,7 +96,7 @@ A: The <code>placeholder</code> attribute can only contain text, not <abbr>HTML<
 <li><a href=detect.html#input-autofocus>Detect whether the browser supports the <code>autofocus</code> attribute</a>, and only run your own autofocus script if the browser doesn&rsquo;t support autofocus natively.
 </ol>
 
-<p class="legend top" style="margin-left:10em"><span class="arrow anticlockwiseTopSemicircleArrow"></span> Autofocus with fallback
+<p class="legend top" style=margin-left:10em><span class="arrow anticlockwiseTopSemicircleArrow"></span> Autofocus with fallback
 <pre><code>&lt;form name="f">
   &lt;input id="q" <mark>autofocus</mark>>
   &lt;script>
@@ -114,9 +114,9 @@ A: The <code>placeholder</code> attribute can only contain text, not <abbr>HTML<
 
 <p>Lots of web pages wait until <code>window.onload</code> fires to set focus. But the <code>window.onload</code> event doesn&rsquo;t fire until <em>after</em> all your images have loaded. If your page has a lot of images, such a naive script could potentially re-focus the field after the user has started interacting with another part of your page. This is why power users hate autofocus scripts.
 
-<p>The example in the previous section placed the auto-focus script immediately after the form field that it references. This is the optimal solution, but it may offend your sensibilities to put a block of JavaScript code in the middle of your page. (Or, more mundanely, your back-end systems may just not be that flexible.) If you can&rsquo;t insert a script in the middle of your page, you should set focus during a custom event like jQuery&rsquo;s <a href="http://docs.jquery.com/Tutorials:Introducing_$(document).ready()"><code>$(document).ready()</code></a> instead of <code>window.onload</code>.
+<p>The example in the previous section placed the auto-focus script immediately after the form field that it references. This is the optimal solution, but it may offend your sensibilities to put a block of JavaScript code in the middle of your page. (Or, more mundanely, your back-end systems may just not be that flexible.) If you can&rsquo;t insert a script in the middle of your page, you should set focus during a custom event like jQuery&rsquo;s <a href=http://docs.jquery.com/Tutorials:Introducing_$(document).ready()><code>$(document).ready()</code></a> instead of <code>window.onload</code>.
 
-<p class="legend top" style="margin-left:10em"><span class="arrow anticlockwiseTopSemicircleArrow"></span> Autofocus with jQuery fallback
+<p class="legend top" style=margin-left:10em><span class="arrow anticlockwiseTopSemicircleArrow"></span> Autofocus with jQuery fallback
 <pre><code>&lt;head>
 &lt;script src=jquery.min.js>&lt;/script>
 &lt;script>
@@ -140,7 +140,7 @@ A: The <code>placeholder</code> attribute can only contain text, not <abbr>HTML<
 
 <p>If you are willing and able to insert a single script statement in your page markup, there is a middle ground that is less offensive than the first option and more optimal than the second. You can use jQuery&rsquo;s custom events to define your own event, say <code>autofocus_ready</code>. Then you can trigger this event manually, immediately after the autofocus form field is available. <i>Thanks to E. M. Sternberg for teaching me about this technique.</i>
 
-<p class="legend top" style="margin-left:10em"><span class="arrow anticlockwiseTopSemicircleArrow"></span> Autofocus with a custom event fallback
+<p class="legend top" style=margin-left:10em><span class="arrow anticlockwiseTopSemicircleArrow"></span> Autofocus with a custom event fallback
 <pre><code>&lt;head>
 &lt;script src=jquery.min.js>&lt;/script>
 &lt;script>
@@ -190,7 +190,7 @@ A: The <code>placeholder</code> attribute can only contain text, not <abbr>HTML<
 <tr class=zebra><th>plain text<td><code>&lt;input type="text"></code><td>the <code>type</code> attribute can be omitted
 </table>
 
-<p>All of these input types still work in <abbr>HTML5</abbr>. If you&rsquo;re &ldquo;upgrading to <abbr>HTML5</abbr>&rdquo; (perhaps by <a href=semantics.html#the-doctype>changing your DOCTYPE</a>), you don&rsquo;t need to make a single change to your web forms. Hooray for backward compatibility!
+<p>All of these input types still work in <abbr>HTML5</abbr>. If you&rsquo;re &ldquo;upgrading to <abbr>HTML5</abbr>&rdquo; (perhaps by <a href=semantics.html#the-doctype>changing your doctype</a>), you don&rsquo;t need to make a single change to your web forms. Hooray for backward compatibility!
 
 <p>However, <abbr>HTML5</abbr> defines 13 new field types, and for reasons that will become clear in a moment, there is no reason <em>not</em> to start using them.
 
@@ -221,7 +221,7 @@ A: The <code>placeholder</code> attribute can only contain text, not <abbr>HTML<
 
 <h2 id=type-url>Web Addresses</h2>
 
-<p>Web addresses &mdash; which standards wonks call <abbr>URLs</abbr>, except for a few <a href="http://www.douglasadams.com/dna/pedants.html">pedants</a> which call them <abbr>URIs</abbr> &mdash; are another type of specialized text. The syntax of a web address is constrained by the relevant Internet standards. If someone asks you to enter a web address into a form, they&rsquo;re expecting something like &ldquo;<code>http://www.google.com/</code>&rdquo;, not &ldquo;125 Farwood Road.&rdquo; Forward slashes are common &mdash; even Google&rsquo;s home page has three of them. Periods are also common, but spaces are forbidden. And every web address has a domain suffix like &ldquo;.com&rdquo; or &ldquo;.org&rdquo;.
+<p>Web addresses &mdash; which standards wonks call <abbr>URLs</abbr>, except for a few <a href=http://www.douglasadams.com/dna/pedants.html>pedants</a> which call them <abbr>URIs</abbr> &mdash; are another type of specialized text. The syntax of a web address is constrained by the relevant Internet standards. If someone asks you to enter a web address into a form, they&rsquo;re expecting something like &ldquo;<code>http://www.google.com/</code>&rdquo;, not &ldquo;125 Farwood Road.&rdquo; Forward slashes are common &mdash; even Google&rsquo;s home page has three of them. Periods are also common, but spaces are forbidden. And every web address has a domain suffix like &ldquo;.com&rdquo; or &ldquo;.org&rdquo;.
 
 <p>Behold... (drum roll please)... <code>&lt;input type="url"></code>. On the iPhone, it looks like this:
 
@@ -239,7 +239,7 @@ A: The <code>placeholder</code> attribute can only contain text, not <abbr>HTML<
 
 <p>My point is, you don&rsquo;t often ask for &ldquo;just a number.&rdquo; It&rsquo;s more likely that you&rsquo;ll ask for a number in a particular range. You may only want certain kinds of numbers within that range &mdash; maybe whole numbers but not fractions or decimals, or something more esoteric like numbers divisible by 10. <abbr>HTML5</abbr> has you covered.
 
-<p class="legend top" style="margin-left:8em"><span class="arrow anticlockwiseTopSemicircleArrow"></span> Pick a number, (almost) any number
+<p class="legend top" style=margin-left:8em><span class="arrow anticlockwiseTopSemicircleArrow"></span> Pick a number, (almost) any number
 <pre><code>&lt;input <mark>type="number"</mark>
        min="0"
        max="10"
@@ -295,7 +295,7 @@ A: The <code>placeholder</code> attribute can only contain text, not <abbr>HTML<
 
 <p>You can now have slider controls in your web forms, too. The markup looks eerily similar to <a href=#type-range>spinbox controls</a>:
 
-<p class="legend top" style="margin-left:8em"><span class="arrow anticlockwiseTopSemicircleArrow"></span> The spitting image
+<p class="legend top" style=margin-left:8em><span class="arrow anticlockwiseTopSemicircleArrow"></span> The spitting image
 <pre><code>&lt;input <mark>type="range"</mark>
        min="0"
        max="10"
@@ -317,7 +317,7 @@ A: The <code>placeholder</code> attribute can only contain text, not <abbr>HTML<
 <table class=bc>
 <caption>Date picker support</caption>
 <thead>
-<tr><th style="text-align:left">Input Type<th>Opera<th>iPhone<th>Other browsers
+<tr><th style=text-align:left>Input Type<th>Opera<th>iPhone<th>Other browsers
 <tbody>
 <tr><th><code>type="date"</code><td>9.0+<td>5.0+<td>&middot;
 <tr><th><code>type="datetime"</code><td>9.0+<td>5.0+<td>&middot;
@@ -357,9 +357,9 @@ A: The <code>placeholder</code> attribute can only contain text, not <abbr>HTML<
 <p><img src=i/input-type-time.png alt="Opera's type=time picker" width=98 height=22>
 </blockquote>
 
-<p>It&rsquo;s likely that other browsers will eventually support these input types. But just like <a href=#type-email><code>type="email"</code></a> and the other input types, these form fields will be rendered as plain text boxes in browsers that don&rsquo;t recognize <code>type="date"</code> and the other variants. If you like, you can simply use <code>&lt;input type="date"></code> and friends, make Opera and iOS users happy, and wait for other browsers to catch up. More realistically, you can use <code>&lt;input type="date"></code>, <a href=detect.html#input-types>detect whether the browser has native support for date pickers</a>, and fall back to a scripted solution of your choice (<a href=http://docs.dojocampus.org/dijit/form/DateTextBox>Dojo</a>, <a href=http://docs.jquery.com/UI/Datepicker>jQuery UI</a>, <a href=http://developer.yahoo.com/yui/calendar/>YUI</a>, <a href=http://closure-library.googlecode.com/svn/docs/class_goog_ui_DatePicker.html>Closure Library</a>, or some other solution).
+<p>It&rsquo;s likely that other browsers will eventually support these input types. But just like <a href=#type-email"><code>type="email</code></a> and the other input types, these form fields will be rendered as plain text boxes in browsers that don&rsquo;t recognize <code>type="date"</code> and the other variants. If you like, you can simply use <code>&lt;input type="date"></code> and friends, make Opera and iOS users happy, and wait for other browsers to catch up. More realistically, you can use <code>&lt;input type="date"></code>, <a href=detect.html#input-types>detect whether the browser has native support for date pickers</a>, and fall back to a scripted solution of your choice (<a href=http://docs.dojocampus.org/dijit/form/DateTextBox>Dojo</a>, <a href=http://docs.jquery.com/UI/Datepicker>jQuery UI</a>, <a href=http://developer.yahoo.com/yui/calendar/>YUI</a>, <a href=http://closure-library.googlecode.com/svn/docs/class_goog_ui_DatePicker.html>Closure Library</a>, or some other solution).
 
-<p class="legend top" style="margin-left:6em"><span class="arrow anticlockwiseTopSemicircleArrow"></span> Date picker with fallback
+<p class="legend top" style=margin-left:6em><span class="arrow anticlockwiseTopSemicircleArrow"></span> Date picker with fallback
 <pre><code>&lt;form>
   &lt;input type="date">
 &lt;/form>
@@ -382,13 +382,13 @@ A: The <code>placeholder</code> attribute can only contain text, not <abbr>HTML<
 
 <p>Search. Not just Google Search or Yahoo Search. (Well, those too.) Think of any search box, on any page, on any site. Amazon has a search box. Newegg has a search box. Most blogs have a search box. How are they marked up? <code>&lt;input type="text"></code>, just like every other text box on the web. Let&rsquo;s fix that.
 
-<pre style="float:left"><code>&lt;form>
+<pre style=float:left><code>&lt;form>
   &lt;input name="q" <mark>type="search"</mark>>
   &lt;input type="submit" value="Find">
 &lt;/form></code></pre>
-<p class="legend right" style="margin-top:2.75em"><span class="arrow leftwardsSquiggleArrow"></span> New-age search box
+<p class="legend right" style=margin-top:2.75em><span class="arrow leftwardsSquiggleArrow"></span> New-age search box
 
-<p class="clear"><a href=examples/input-type-search.html>Test <code>&lt;input type="search"></code> in your own browser</a>. In some browsers, you won&rsquo;t notice any difference from a regular text box. But if you&rsquo;re using Safari on Mac OS X, it will look like this:
+<p class=clear><a href=examples/input-type-search.html>Test <code>&lt;input type="search"></code> in your own browser</a>. In some browsers, you won&rsquo;t notice any difference from a regular text box. But if you&rsquo;re using Safari on Mac OS X, it will look like this:
 
 <p class=c><img src=i/input-type-search-safari.png alt="Safari/Mac rendering input type=search field" width=191 height=121>
 
@@ -442,9 +442,9 @@ A: The <code>placeholder</code> attribute can only contain text, not <abbr>HTML<
 <li>You&rsquo;ll get it wrong
 </ol>
 
-<p>Seriously, you&rsquo;ll get it wrong. Determining whether a random string of characters is a valid email address <a href="http://www.regular-expressions.info/email.html">is unbelievably complicated</a>. The harder you look, <a href="http://www.ex-parrot.com/pdw/Mail-RFC822-Address.html">the more complicated it gets</a>. Did I mention it&rsquo;s <a href="http://haacked.com/archive/2007/08/21/i-knew-how-to-validate-an-email-address-until-i.aspx">really, really complicated</a>? Wouldn&rsquo;t it be easier to offload the entire headache to your browser?
+<p>Seriously, you&rsquo;ll get it wrong. Determining whether a random string of characters is a valid email address <a href=http://www.regular-expressions.info/email.html>is unbelievably complicated</a>. The harder you look, <a href=http://www.ex-parrot.com/pdw/Mail-RFC822-Address.html>the more complicated it gets</a>. Did I mention it&rsquo;s <a href=http://haacked.com/archive/2007/08/21/i-knew-how-to-validate-an-email-address-until-i.aspx>really, really complicated</a>? Wouldn&rsquo;t it be easier to offload the entire headache to your browser?
 
-<p class="legend top" style="width:500px;text-align:center">Most modern browsers validate type=&ldquo;email&rdquo; <span class="arrow clockwiseTopSemicircleArrow"></span><br></p>
+<p class="legend top" style=width:500px;text-align:center>Most modern browsers validate type=&ldquo;email&rdquo; <span class="arrow clockwiseTopSemicircleArrow"></span><br></p>
 <p class=c><img src=i/input-type-email-validation.png alt="error message on invalid type=email field" width=217 height=62>
 
 <p>That screenshot is from Opera 11, although the functionality has been present since Opera 9. <a href=http://blog.mozilla.com/webdev/2011/03/14/html5-form-validation-on-sumo/>Firefox 4 and Chrome 10 provide similar functionality</a>. The only markup involved is <a href=#type-email>setting the <code>type</code> attribute to <code>"email"</code></a>. When the user tries to submit a form with an <code>&lt;input type="email"></code> field, the browser automatically offers <abbr>RFC</abbr>-compliant email validation, even if scripting is disabled.
@@ -482,7 +482,7 @@ A: The <code>placeholder</code> attribute can only contain text, not <abbr>HTML<
   &lt;input type="submit" value="Search">
 &lt;/form></code></pre>
 
-<p class="clear"><a href=examples/input-required.html>Test <code>&lt;input required></code> in your own browser</a>. Browsers may supply additional information to required fields. For example, when hovering over a required field a popup appears in Mozilla Firefox:
+<p class=clear><a href=examples/input-required.html>Test <code>&lt;input required></code> in your own browser</a>. Browsers may supply additional information to required fields. For example, when hovering over a required field a popup appears in Mozilla Firefox:
 
 <p class=c><img src=i/input-required.png alt="a popup appears on a required field in Firefox" width=274 height=123>
 
@@ -526,7 +526,7 @@ A: The <code>placeholder</code> attribute can only contain text, not <abbr>HTML<
 <h4>Did You Know?</h4>
 <div class=moneybags>
 <blockquote><p>In association with Google Press, O&rsquo;Reilly is distributing this book in a variety of formats, including paper, ePub, Mobi, and <abbr>DRM</abbr>-free <abbr>PDF</abbr>. The paid edition is called &ldquo;HTML5: Up &amp; Running,&rdquo; and it is available now. This chapter is included in the paid edition.
-<p>If you liked this chapter and want to show your appreciation, you can <a href="http://www.amazon.com/HTML5-Up-Running-Mark-Pilgrim/dp/0596806027?ie=UTF8&amp;tag=diveintomark-20&amp;creativeASIN=0596806027">buy &ldquo;HTML5: Up &amp; Running&rdquo; with this affiliate link</a> or <a href=http://oreilly.com/catalog/9780596806033>buy an electronic edition directly from O&rsquo;Reilly</a>. You&rsquo;ll get a book, and I&rsquo;ll get a buck. I do not currently accept direct donations.
+<p>If you liked this chapter and want to show your appreciation, you can <a href=http://www.amazon.com/HTML5-Up-Running-Mark-Pilgrim/dp/0596806027?ie=UTF8&amp;tag=diveintomark-20&amp;creativeASIN=0596806027>buy &ldquo;HTML5: Up &amp; Running&rdquo; with this affiliate link</a> or <a href=http://oreilly.com/catalog/9780596806033>buy an electronic edition directly from O&rsquo;Reilly</a>. You&rsquo;ll get a book, and I&rsquo;ll get a buck. I do not currently accept direct donations.
 </blockquote>
 </div>
 </div>

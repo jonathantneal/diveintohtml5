@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <meta charset=utf-8>
 <title>Offline Web Applications - Dive Into HTML5</title>
 <!--[if lt IE 9]><script src=j/html5.js></script><![endif]-->
@@ -7,7 +7,7 @@
 <style>
 body{counter-reset:h1 8}
 </style>
-<link rel=stylesheet media='only screen and (max-device-width: 480px)' href=mobile.css>
+<link rel=stylesheet media="only screen and (max-device-width: 480px)" href=mobile.css>
 <link rel=prefetch href=index.html>
 <p>You are here: <a href=index.html>Home</a> <span class="u triangularBullet"></span> <a href=table-of-contents.html#offline>Dive Into <abbr>HTML5</abbr></a> <span class="u triangularBullet"></span>
 <h1><br>Let&rsquo;s Take This Offline</h1>
@@ -35,7 +35,7 @@ body{counter-reset:h1 8}
 
 <p>An offline web application revolves around a cache manifest file. What&rsquo;s a manifest file? It&rsquo;s a list of all of the resources that your web application might need to access while it&rsquo;s disconnected from the network. In order to bootstrap the process of downloading and caching these resources, you need to point to the manifest file, using a <code>manifest</code> attribute on your <code>&lt;html></code> element.
 
-<pre><code>&lt;!DOCTYPE HTML>
+<pre><code>&lt;!doctype HTML>
 &lt;html <mark>manifest="/cache.manifest"</mark>>
 &lt;body>
 ...
@@ -213,7 +213,7 @@ halma.html
 
 <p>Now, in the <abbr>HTML</abbr> file, we need to add the <code>manifest</code> attribute that points to the cache manifest file.
 
-<pre><code>&lt;!DOCTYPE html>
+<pre><code>&lt;!doctype html>
 &lt;html lang="en" <mark>manifest="halma.manifest"</mark>></code></pre>
 
 <p>And that&rsquo;s it! When an offline-capable browser first loads <a href=examples/offline/halma.html>the offline-enabled <abbr>HTML</abbr> page</a>, it will download the linked cache manifest file and start downloading all the referenced resources and storing them in the offline application cache. From then on, the offline application algorithm takes over whenever you revisit the page. You can play the game offline, and since it remembers its state locally, you can leave and come back as often as you like.
@@ -260,7 +260,7 @@ halma.html
 <h4>Did You Know?</h4>
 <div class=moneybags>
 <blockquote><p>In association with Google Press, O&rsquo;Reilly is distributing this book in a variety of formats, including paper, ePub, Mobi, and <abbr>DRM</abbr>-free <abbr>PDF</abbr>. The paid edition is called &ldquo;HTML5: Up &amp; Running,&rdquo; and it is available now. This chapter is included in the paid edition.
-<p>If you liked this chapter and want to show your appreciation, you can <a href="http://www.amazon.com/HTML5-Up-Running-Mark-Pilgrim/dp/0596806027?ie=UTF8&amp;tag=diveintomark-20&amp;creativeASIN=0596806027">buy &ldquo;HTML5: Up &amp; Running&rdquo; with this affiliate link</a> or <a href=http://oreilly.com/catalog/9780596806033>buy an electronic edition directly from O&rsquo;Reilly</a>. You&rsquo;ll get a book, and I&rsquo;ll get a buck. I do not currently accept direct donations.
+<p>If you liked this chapter and want to show your appreciation, you can <a href=http://www.amazon.com/HTML5-Up-Running-Mark-Pilgrim/dp/0596806027?ie=UTF8&amp;tag=diveintomark-20&amp;creativeASIN=0596806027>buy &ldquo;HTML5: Up &amp; Running&rdquo; with this affiliate link</a> or <a href=http://oreilly.com/catalog/9780596806033>buy an electronic edition directly from O&rsquo;Reilly</a>. You&rsquo;ll get a book, and I&rsquo;ll get a buck. I do not currently accept direct donations.
 </blockquote>
 </div>
 </div>

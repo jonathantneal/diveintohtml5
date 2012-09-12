@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <meta charset=utf-8>
 <title>HTML5 Peeks, Pokes and Pointers</title>
 <style>
@@ -204,7 +204,7 @@ code i{
 <tr>
   <td colspan=4><b>$new</b>=<code>document.createElement</code>
 
-  <td colspan=4><b>$bool</b>=<code>function(any){return!(any=="no"||!any)}</code>
+  <td colspan=4"><b>$bool</b>=<code>function(any){return!(any=="no||!any)}</code>
 
 <tr>
   <td colspan=8><i>Most new features can be detected in JavaScript. To test for HTML5 video support, create a <code>&lt;video></code> element and check for a property in its DOM: <code>if("canPlayType" in $new("video")){...}</code> See <a href=detect.html>Chapter 2: Detecting HTML5 Features</a></i>.
@@ -235,7 +235,7 @@ code i{
 
   <td>
   <td class=dots><b><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/association-of-controls-and-forms.html#constraints>Validation</a></b>
-  <td colspan=2><code>"noValidate" in $new("form")</code>
+  <td colspan=2"><code>"noValidate in $new("form")</code>
 
 <tr>
   <td>
@@ -245,7 +245,7 @@ code i{
 
   <td>
   <td class=dots><b><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/common-input-element-attributes.html#the-pattern-attribute>Regex constraint</a></b>
-  <td colspan=2><code>"pattern" in $new("input")</code>
+  <td colspan=2"><code>"pattern in $new("input")</code>
 
 <tr>
   <td>
@@ -255,7 +255,7 @@ code i{
 
   <td>
   <td class=dots><b><a href=forms.html#placeholder>Placeholder text</a></b>
-  <td colspan=2><code>"placeholder" in $new("input")</code>
+  <td colspan=2"><code>"placeholder in $new("input")</code>
 
 <tr>
   <td>
@@ -265,7 +265,7 @@ code i{
 
   <td>
   <td class=dots><b><a href=forms.html#autofocus>Autofocus</a></b>
-  <td colspan=2><code>"autofocus" in $new("input")</code>
+  <td colspan=2"><code>"autofocus in $new("input")</code>
 
 <tr>
   <td>
@@ -275,7 +275,7 @@ code i{
 
   <td>
   <td class=dots><b><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/common-input-element-attributes.html#the-required-attribute>Required</a></b>
-  <td colspan=2><code>"required" in $new("input")</code>
+  <td colspan=2"><code>"required in $new("input")</code>
 
 <tr>
   <td>
@@ -292,9 +292,9 @@ code i{
   <td>
 
   <td>
-  <td class=dots><code>type="search"</code>
+  <td class=dots"><code>type="search</code>
   <td colspan=2>search box
-  
+
 
 <tr>
   <td colspan=2 class=dots><b>Text annotations</b>
@@ -302,7 +302,7 @@ code i{
   <td>
 
   <td>
-  <td class=dots><span><code>type="number"</code></span>
+  <td class=dots"><span><code>type="number</code></span>
   <td colspan=2>spinbox
 
 <tr>
@@ -310,7 +310,7 @@ code i{
   <td>
 
   <td>
-  <td class=dots><span><code>type="range"</code></span>
+  <td class=dots"><span><code>type="range</code></span>
   <td colspan=2>slider
 
 <tr>
@@ -319,7 +319,7 @@ code i{
   <td>
 
   <td>
-  <td class=dots><span><code>type="color"</code></span>
+  <td class=dots"><span><code>type="color</code></span>
   <td colspan=2>color picker
 
 <tr>
@@ -328,7 +328,7 @@ code i{
   <td>
 
   <td>
-  <td class=dots><span><code>type="tel"</code></span>
+  <td class=dots"><span><code>type="tel</code></span>
   <td colspan=2>telephone number
 
 <tr>
@@ -337,7 +337,7 @@ code i{
   <td>
 
   <td>
-  <td class=dots><span><code>type="url"</code></span>
+  <td class=dots"><span><code>type="url</code></span>
   <td colspan=2>web address
 
 <tr>
@@ -346,7 +346,7 @@ code i{
   <td>
 
   <td>
-  <td class=dots><span><code>type="email"</code></span>
+  <td class=dots"><span><code>type="email</code></span>
   <td colspan=2>email address
 
 <tr>
@@ -354,17 +354,17 @@ code i{
   <td>
 
   <td>
-  <td colspan=3><code>type="date"/"time"/"month"/"week"/"datetime"</code>
+  <td colspan=3"><code>type="date"/"time"/"month"/"week"/"datetime</code>
 
 <tr>
   <td>
-  <td colspan=3><code>&lt;basefont></code>, <code>&lt;big></code>, <code>&lt;center></code>, <code>&lt;font></code>, <code>&lt;s></code>, <code>&lt;strike></code>, 
+  <td colspan=3><code>&lt;basefont></code>, <code>&lt;big></code>, <code>&lt;center></code>, <code>&lt;font></code>, <code>&lt;s></code>, <code>&lt;strike></code>,
 
   <td colspan=4><b><a href=detect.html#input-types>Test for new input types</a></b> <i>All tests follow the same pattern.</i>
 
 <tr>
   <td>
-  <td colspan=3><code>&lt;frame></code>, <code>&lt;frameset></code>, <code>&lt;noframes></code>, <code>&lt;applet></code>, <code>&lt;dir></code>, 
+  <td colspan=3><code>&lt;frame></code>, <code>&lt;frameset></code>, <code>&lt;noframes></code>, <code>&lt;applet></code>, <code>&lt;dir></code>,
 
   <td>
   <td colspan=3><code>function() {</code>
@@ -381,7 +381,7 @@ code i{
   <td rowspan=5 colspan=1>
 
   <td>
-  <td colspan=3><code>&nbsp;&nbsp;i.setAttribute("type", "<b>search</b>");</code>
+  <td colspan=3"><code>&nbsp;&nbsp;i.setAttribute("type, "<b>search</b>");</code>
 
 <tr>
   <td>
@@ -405,41 +405,41 @@ code i{
 
 <tr>
   <td colspan=2 class=dots><span><b><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html#audio>&lt;audio></a> support</b></span>
-  <td colspan=6><code>"canPlayType" in $new("audio")</code>
+  <td colspan=6"><code>"canPlayType in $new("audio")</code>
 
 <tr>
   <td>
   <td class=dots><span><b><a href=http://en.wikipedia.org/wiki/Vorbis>Vorbis</a></b></span>
-  <td colspan=6><code>$bool($new("audio").canPlayType('audio/ogg; codecs="vorbis"'))</code>
+  <td colspan=6"><code>$bool($new("audio).canPlayType('audio/ogg; codecs="vorbis"'))</code>
 
 <tr>
   <td>
   <td class=dots><span><b><a href=http://en.wikipedia.org/wiki/MP3>MP3</a></b></span>
-  <td colspan=6><code>$bool($new("audio").canPlayType('audio/mpeg;'))</code>
+  <td colspan=6"><code>$bool($new("audio).canPlayType('audio/mpeg;'))</code>
 
 <tr>
   <td>
   <td class=dots><span><b><a href=http://en.wikipedia.org/wiki/Advanced_Audio_Coding>AAC</a></b></span>
-  <td colspan=6><code>$bool($new("audio").canPlayType('audio/mp4; codecs="mp4a.40.2"'))</code>
+  <td colspan=6"><code>$bool($new("audio).canPlayType('audio/mp4; codecs="mp4a.40.2"'))</code>
 
 <tr>
   <td colspan=2 class=dots><span><b><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html#video>&lt;video></a> support</b></span>
-  <td colspan=6><code>"canPlayType" in $new("video")</code>
+  <td colspan=6"><code>"canPlayType in $new("video")</code>
 
 <tr>
   <td>
   <td class=dots><span><b><a href=http://en.wikipedia.org/wiki/WebM>WebM</a></b></span>
-  <td colspan=6><code>$bool($new("video").canPlayType('video/webm; codecs="vp8, vorbis"'))</code>
+  <td colspan=6"><code>$bool($new("video).canPlayType('video/webm; codecs="vp8, vorbis"'))</code>
 
 <tr>
   <td>
   <td class=dots><span><b><a href=http://en.wikipedia.org/wiki/Theora>Theora</a></b></span>
-  <td colspan=6><code>$bool($new("video").canPlayType('video/ogg; codecs="theora"'))</code>
+  <td colspan=6"><code>$bool($new("video).canPlayType('video/ogg; codecs="theora"'))</code>
 
 <tr>
   <td>
   <td class=dots><span><b><a href=http://en.wikipedia.org/wiki/H.264/MPEG-4_AVC>H.264</a></b></span>
-  <td colspan=6><code>$bool($new("video").canPlayType('video/mp4; codecs="avc1.42E01E, mp4a.40.2"'))</code>
+  <td colspan=6"><code>$bool($new("video).canPlayType('video/mp4; codecs="avc1.42E01E, mp4a.40.2"'))</code>
 
 <tr>
   <td colspan=2 class=dots><span><b><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html#htmlmediaelement>Properties</a></b></span>
@@ -595,7 +595,7 @@ code i{
   <td>
 
   <td>
-  <td colspan=3><code>Position getCurrentPosition(callback, <i title="optional">err, opt</i>);</code>
+  <td colspan=3><code>Position getCurrentPosition(callback, <i title=optional>err, opt</i>);</code>
 
 <tr>
   <td>
@@ -604,7 +604,7 @@ code i{
   <td>
 
   <td>
-  <td colspan=3><code>long watchPosition(callback, <i title="optional">err, opt</i>);</code>
+  <td colspan=3><code>long watchPosition(callback, <i title=optional>err, opt</i>);</code>
 
 <tr>
   <td>
@@ -631,7 +631,7 @@ code i{
 
   <td>
   <td colspan=3><code>void err(positionError);</code> <i>Called on error</i>
-  
+
 <tr>
   <td>
   <td class=dots><code>checking</code>
@@ -707,7 +707,7 @@ code i{
   <td colspan=2>also decimal degrees
 
 <tr>
-  <td rowspan=8 colspan=3><p class=note>HTTP semantics still apply to resources listed in the cache manifest, so check your <code>Expires</code> and <code>Cache-Control</code> headers. Manifest must be served as <code>text/cache-manifest</code>, so check your <code>Content-Type</code> headers too. If <i>any</i> required resource fails to load, application will not work offline. 
+  <td rowspan=8 colspan=3><p class=note>HTTP semantics still apply to resources listed in the cache manifest, so check your <code>Expires</code> and <code>Cache-Control</code> headers. Manifest must be served as <code>text/cache-manifest</code>, so check your <code>Content-Type</code> headers too. If <i>any</i> required resource fails to load, application will not work offline.
   <td rowspan=8 colspan=1>
 
   <td>
@@ -753,7 +753,7 @@ code i{
 
 <tr>
   <td colspan=2 class=dots><b><a href=detect.html#canvas>Basic support</a></b>
-  <td colspan=6><code>"getContext" in $new("canvas")</code>
+  <td colspan=6"><code>"getContext in $new("canvas")</code>
 
 <tr>
   <td colspan=2 class=dots><b><a href=detect.html#canvas-text>Text support</a></b>
@@ -766,7 +766,7 @@ code i{
 <tr>
   <td>
   <td><code><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-beginpath>beginPath();</a></code>
-  <td><code><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-drawimage>drawImage(image,dx,dy,<i title="optional">dw,dh</i>);</a></code>
+  <td><code><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-drawimage>drawImage(image,dx,dy,<i title=optional>dw,dh</i>);</a></code>
   <td>
 
   <td colspan=4><code><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-quadraticcurveto>quadraticCurveTo(cpx,cpy,x,y);</a></code>
@@ -809,7 +809,7 @@ code i{
   <td><code><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-fillrect>fillRect(x,y,w,h);</a></code>
   <td>
 
-  <td colspan=4><code><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-filltext>fillText(text,x,y,<i title="optional">maxWidth</i>);</a></code>
+  <td colspan=4><code><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-filltext>fillText(text,x,y,<i title=optional>maxWidth</i>);</a></code>
 
 <tr>
   <td>
@@ -817,11 +817,11 @@ code i{
   <td><code><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-strokerect>strokeRect(x,y,w,h);</a></code>
   <td>
 
-  <td colspan=4><code><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-stroketext>strokeText(text,x,y,<i title="optional">maxWidth</i>);</a></code>
+  <td colspan=4><code><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-stroketext>strokeText(text,x,y,<i title=optional>maxWidth</i>);</a></code>
 
 <tr>
   <td>
-  <td><code><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-clip>clip();</a></code>  
+  <td><code><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-clip>clip();</a></code>
   <td><code><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-clearrect>clearRect(x,y,w,h);</a></code>
   <td>
 
@@ -933,8 +933,8 @@ code i{
   <td colspan=8><h2>Bits &amp; Bytes</h2>
 
 <tr>
-  <td colspan=2 class=dots><b><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/syntax.html#the-doctype>Doctype</a></b>
-  <td colspan=6><code>&lt;!DOCTYPE html></code> <i>Triggers <a href=semantics.html#the-doctype>standards-based rendering</a> in all browsers. It&rsquo;s 2011; stop relying on &ldquo;quirks mode&rdquo;!</i>
+  <td colspan=2 class=dots><b><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/syntax.html#the-doctype>doctype</a></b>
+  <td colspan=6><code>&lt;!doctype html></code> <i>Triggers <a href=semantics.html#the-doctype>standards-based rendering</a> in all browsers. It&rsquo;s 2011; stop relying on &ldquo;quirks mode&rdquo;!</i>
 
 <tr>
   <td colspan=2 class=dots><b><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/semantics.html#attr-meta-charset>Text encoding</a></b>
@@ -967,7 +967,7 @@ code i{
   <td>
 
   <td colspan=2 class=dots><b><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/editing.html#contenteditable>contentEditable</a></b>
-  <td colspan=2><code>"isContentEditable" in $new("a")</code>
+  <td colspan=2"><code>"isContentEditable in $new("a")</code>
 
 <tr>
   <td>
@@ -976,7 +976,7 @@ code i{
   <td>
 
   <td colspan=2 class=dots><b><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/dnd.html#dnd>Drag-and-drop</a></b>
-  <td colspan=2><code>"draggable" in $new("span")</code>
+  <td colspan=2"><code>"draggable in $new("span")</code>
 
 <tr>
   <td>
@@ -1003,12 +1003,12 @@ code i{
   <td>
 
   <td colspan=2 class=dots><b><a href=http://blog.whatwg.org/whats-next-in-html-episode-2-sandbox>&lt;iframe sandbox></a></b>
-  <td colspan=2><code>"sandbox" in $new("iframe")</code>
+  <td colspan=2"><code>"sandbox in $new("iframe")</code>
 
 <tr>
   <td>
   <td class=dots><b><a href=http://dev.w3.org/html5/webstorage/>Web Storage</a></b>
-  <td colspan=6><code>"localStorage" in window && window["localStorage"] !== null</code> <i>See <a href=storage.html>Chapter 7: Local Storage</a>.</i>
+  <td colspan=6"><code>"localStorage in window && window["localStorage"] !== null</code> <i>See <a href=storage.html>Chapter 7: Local Storage</a>.</i>
 
 <tr>
   <td>

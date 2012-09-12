@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <meta charset=utf-8>
 <title>Geolocation - Dive Into HTML5</title>
 <!--[if lt IE 9]><script src=j/html5.js></script><![endif]-->
@@ -7,7 +7,7 @@
 <style>
 body{counter-reset:h1 6}
 </style>
-<link rel=stylesheet media='only screen and (max-device-width: 480px)' href=mobile.css>
+<link rel=stylesheet media="only screen and (max-device-width: 480px)" href=mobile.css>
 <link rel=prefetch href=index.html>
 <p>You are here: <a href=index.html>Home</a> <span class="u triangularBullet"></span> <a href=table-of-contents.html#geolocation>Dive Into <abbr>HTML5</abbr></a> <span class="u triangularBullet"></span>
 <h1><br>You Are Here<br>(And So Is Everybody Else)</h1>
@@ -57,14 +57,14 @@ A: Privacy is an obvious concern when you&rsquo;re talking about sharing your ph
 
 <p>That has no detection, no error handling, and no options. Your web application should probably include at least the first two of those. To <a href=detect.html#geolocation>detect support for the geolocation <abbr>API</abbr></a>, you can use <a href=http://www.modernizr.com/>Modernizr</a>:
 
-<pre style="float:left;padding-left:0"><code>function get_location() {
+<pre style=float:left;padding-left:0><code>function get_location() {
   if (<mark>Modernizr.geolocation</mark>) {
     navigator.geolocation.getCurrentPosition(show_map);
   } else {
     // no native support; maybe try Gears?
   }
 }</code></pre>
-<p class="legend right" style="margin-top:2.5em"><span class="arrow leftwardsSquiggleArrow"></span> I CAN HAS GEO?
+<p class="legend right" style=margin-top:2.5em><span class="arrow leftwardsSquiggleArrow"></span> I CAN HAS GEO?
 
 <p class=clear>What you do without geolocation support is up to you. I&rsquo;ll explain the Gears fallback option in a minute, but first I want to talk about what happens <em>during</em> that call to <code>getCurrentPosition()</code>. As <a href=#divingin>I mentioned at the beginning of this chapter</a>, geolocation support is <em>opt-in</em>. That means your browser will never force you to reveal your current physical location to a remote server. The user experience differs from browser to browser. In Mozilla Firefox, calling the <code>getCurrentPosition()</code> function of the geolocation <abbr>API</abbr> will cause the browser to pop up an &ldquo;infobar&rdquo; at the top of the browser window. The infobar looks like this:
 
@@ -113,7 +113,7 @@ A: Privacy is an obvious concern when you&rsquo;re talking about sharing your ph
 <tr><th><code>timestamp</code><td>DOMTimeStamp<td>like a <code>Date()</code> object
 </table>
 
-<p class=ss style="margin-top:1.75em"><img src=i/openclipart.org_johnny_automatic_riding_a_bike.png width=196 height=239 alt="boy riding a bicycle">
+<p class=ss style=margin-top:1.75em><img src=i/openclipart.org_johnny_automatic_riding_a_bike.png width=196 height=239 alt="boy riding a bicycle">
 
 <p>Only three of the properties are guaranteed to be there (<code>coords.latitude</code>, <code>coords.longitude</code>, and <code>coords.accuracy</code>). The rest might come back <code>null</code>, depending on the capabilities of your device and the backend positioning server that it talks to. The <code>heading</code> and <code>speed</code> properties are calculated based on the user&rsquo;s previous position, if possible.
 
@@ -143,7 +143,7 @@ A: Privacy is an obvious concern when you&rsquo;re talking about sharing your ph
 <li><code>TIMEOUT</code> (<code>3</code>) if the network is up but it takes too long to calculate the user&rsquo;s position. How long is &ldquo;too long&rdquo;? I&rsquo;ll show you how to define that in the next section.
 </ul>
 
-<p class="legend top" style="padding-left:8.5em"><span class="arrow anticlockwiseTopSemicircleArrow"></span> Be gracious in defeat
+<p class="legend top" style=padding-left:8.5em><span class="arrow anticlockwiseTopSemicircleArrow"></span> Be gracious in defeat
 <pre><code>function handle_error(err) {
   if (<mark>err.code</mark> == 1) {
     // user said no!
@@ -207,7 +207,7 @@ A: <a href=http://www.w3.org/TR/geolocation-API/#coordinates_interface>The geolo
 
 <p>Prior to version 9 (technically 9.0RC1), Internet Explorer did not support the <a href=#w3c><abbr>W3C</abbr> geolocation <abbr>API</abbr></a> that I&rsquo;ve just described. But don&rsquo;t despair! <a href=http://tools.google.com/gears/>Gears</a> is an open source browser plugin from Google that works on Windows, Mac, Linux, Windows Mobile, and Android. It provides features for older browsers. One of the features that Gears provides is a geolocation <abbr>API</abbr>. It&rsquo;s not quite the same as the <abbr>W3C</abbr> geolocation <abbr>API</abbr>, but it serves the same purpose.
 
-<p>While we&rsquo;re on the subject of legacy platforms, I should point out that many older mobile phone platforms had their own device-specific geolocation <abbr>API</abbr>s. <a href="http://www.tonybunce.com/2008/05/08/Blackberry-Browser-Amp-GPS.aspx">BlackBerry</a>, <a href="http://www.forum.nokia.com/infocenter/index.jsp?topic=/Web_Developers_Library/GUID-4DDE31C7-EC0D-4EEC-BC3A-A0B0351154F8.html">Nokia</a>, <a href="http://developer.palm.com/index.php?option=com_content&amp;view=article&amp;id=1673#GPS-getCurrentPosition">Palm</a>, and <a href=http://bondi.omtp.org/1.0/apis/geolocation.html><abbr title="Open Mobile Terminal Platform">OMTP</abbr> BONDI</a> all provide their own geolocation <abbr>API</abbr>s. Of course, they all work differently from Gears, which in turn works differently from the <abbr>W3C</abbr> geolocation <abbr>API</abbr>. Wheeeeee!
+<p>While we&rsquo;re on the subject of legacy platforms, I should point out that many older mobile phone platforms had their own device-specific geolocation <abbr>API</abbr>s. <a href=http://www.tonybunce.com/2008/05/08/Blackberry-Browser-Amp-GPS.aspx>BlackBerry</a>, <a href=http://www.forum.nokia.com/infocenter/index.jsp?topic=/Web_Developers_Library/GUID-4DDE31C7-EC0D-4EEC-BC3A-A0B0351154F8.html>Nokia</a>, <a href=http://developer.palm.com/index.php?option=com_content&amp;view=article&amp;id=1673#GPS-getCurrentPosition>Palm</a>, and <a href=http://bondi.omtp.org/1.0/apis/geolocation.html><abbr title="Open Mobile Terminal Platform">OMTP</abbr> BONDI</a> all provide their own geolocation <abbr>API</abbr>s. Of course, they all work differently from Gears, which in turn works differently from the <abbr>W3C</abbr> geolocation <abbr>API</abbr>. Wheeeeee!
 
 <p class="a rotatedFloralHeartBullet">
 
@@ -217,7 +217,7 @@ A: <a href=http://www.w3.org/TR/geolocation-API/#coordinates_interface>The geolo
 
 <p>The first script is <a href=http://code.google.com/apis/gears/gears_init.js><code>gears_init.js</code></a>, which initializes Gears if it&rsquo;s installed. The second script is <a href=http://geo-location-javascript.googlecode.com/svn/trunk/js/geo.js><code>geo.js</code></a>.
 
-<pre style="float:left"><code>&lt;!DOCTYPE html>
+<pre style=float:left><code>&lt;!doctype html>
 &lt;html>
 &lt;head>
   &lt;meta charset="utf-8">
@@ -230,7 +230,7 @@ A: <a href=http://www.w3.org/TR/geolocation-API/#coordinates_interface>The geolo
 &lt;/body>
 &lt;/html>
 </code></pre>
-<p class="legend right" style="margin-top:11.2em"><span class="arrow leftwardsSquiggleArrow"></span> Don&rsquo;t let it go to your &lt;head>
+<p class="legend right" style=margin-top:11.2em><span class="arrow leftwardsSquiggleArrow"></span> Don&rsquo;t let it go to your &lt;head>
 
 <p class=clear>Now you&rsquo;re ready to use whichever geolocation <abbr>API</abbr> is installed.
 
@@ -255,7 +255,7 @@ A: <a href=http://www.w3.org/TR/geolocation-API/#coordinates_interface>The geolo
 
 <p>The success callback function takes a single argument, which contains the position information.
 
-<p class="legend top" style="padding-left:6em"><span class="arrow anticlockwiseTopSemicircleArrow"></span> Success callback
+<p class="legend top" style=padding-left:6em><span class="arrow anticlockwiseTopSemicircleArrow"></span> Success callback
 <pre><code>function geo_success(p) {
   alert("Found you at latitude " + p.coords.latitude +
         ", longitude " + p.coords.longitude);
@@ -267,7 +267,7 @@ A: <a href=http://www.w3.org/TR/geolocation-API/#coordinates_interface>The geolo
 
 <p>The failure callback function takes no arguments.
 
-<p class="legend top" style="padding-left:6em"><span class="arrow anticlockwiseTopSemicircleArrow"></span> Failure callback
+<p class="legend top" style=padding-left:6em><span class="arrow anticlockwiseTopSemicircleArrow"></span> Failure callback
 <pre><code>function geo_error() {
   alert("Could not find you!");
 }</code></pre>
@@ -314,8 +314,8 @@ A: <a href=http://www.w3.org/TR/geolocation-API/#coordinates_interface>The geolo
 <li><a href=http://www.w3.org/TR/geolocation-API/><abbr>W3C</abbr> geolocation <abbr>API</abbr></a>
 <li><a href=http://tools.google.com/gears/>Gears</a>
 <li><a href=http://www.tonybunce.com/2008/05/08/Blackberry-Browser-Amp-GPS.aspx>BlackBerry geolocation <abbr>API</abbr></a>
-<li><a href="http://www.forum.nokia.com/infocenter/index.jsp?topic=/Web_Developers_Library/GUID-4DDE31C7-EC0D-4EEC-BC3A-A0B0351154F8.html">Nokia geolocation <abbr>API</abbr></a>
-<li><a href="http://developer.palm.com/index.php?option=com_content&amp;view=article&amp;id=1673#GPS-getCurrentPosition">Palm geolocation <abbr>API</abbr></a>
+<li><a href=http://www.forum.nokia.com/infocenter/index.jsp?topic=/Web_Developers_Library/GUID-4DDE31C7-EC0D-4EEC-BC3A-A0B0351154F8.html>Nokia geolocation <abbr>API</abbr></a>
+<li><a href=http://developer.palm.com/index.php?option=com_content&amp;view=article&amp;id=1673#GPS-getCurrentPosition>Palm geolocation <abbr>API</abbr></a>
 <li><a href=http://bondi.omtp.org/1.0/apis/geolocation.html><abbr title="Open Mobile Terminal Platform">OMTP</abbr> BONDI geolocation <abbr>API</abbr></a>
 <li><a href=http://code.google.com/p/geo-location-javascript/>geo.js</a>, the geolocation <abbr>API</abbr> wrapper script
 <li><a href=http://msdn.microsoft.com/en-us/ie/ff468705.aspx#_HTML5_geolocation>Internet Explorer 9 Guide for Developers: Geolocation</a>
@@ -329,7 +329,7 @@ A: <a href=http://www.w3.org/TR/geolocation-API/#coordinates_interface>The geolo
 <h4>Did You Know?</h4>
 <div class=moneybags>
 <blockquote><p>In association with Google Press, O&rsquo;Reilly is distributing this book in a variety of formats, including paper, ePub, Mobi, and <abbr>DRM</abbr>-free <abbr>PDF</abbr>. The paid edition is called &ldquo;HTML5: Up &amp; Running,&rdquo; and it is available now. This chapter is included in the paid edition.
-<p>If you liked this chapter and want to show your appreciation, you can <a href="http://www.amazon.com/HTML5-Up-Running-Mark-Pilgrim/dp/0596806027?ie=UTF8&amp;tag=diveintomark-20&amp;creativeASIN=0596806027">buy &ldquo;HTML5: Up &amp; Running&rdquo; with this affiliate link</a> or <a href=http://oreilly.com/catalog/9780596806033>buy an electronic edition directly from O&rsquo;Reilly</a>. You&rsquo;ll get a book, and I&rsquo;ll get a buck. I do not currently accept direct donations.
+<p>If you liked this chapter and want to show your appreciation, you can <a href=http://www.amazon.com/HTML5-Up-Running-Mark-Pilgrim/dp/0596806027?ie=UTF8&amp;tag=diveintomark-20&amp;creativeASIN=0596806027>buy &ldquo;HTML5: Up &amp; Running&rdquo; with this affiliate link</a> or <a href=http://oreilly.com/catalog/9780596806033>buy an electronic edition directly from O&rsquo;Reilly</a>. You&rsquo;ll get a book, and I&rsquo;ll get a buck. I do not currently accept direct donations.
 </blockquote>
 </div>
 </div>
@@ -342,7 +342,7 @@ A: <a href=http://www.w3.org/TR/geolocation-API/#coordinates_interface>The geolo
 <script src=j/gears_init.js></script>
 <script src=j/geo.js></script>
 <script src=j/dih5.js></script>
-<script src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
+<script src=http://maps.googleapis.com/maps/api/js?sensor=true></script>
 <script>
 function supports(bool, suffix) {
   var s = "Your browser ";
@@ -359,7 +359,7 @@ function lookup_location() {
 function show_map(loc) {
   $("#geo-wrapper").css({'width':'320px','height':'350px'});
   var map = new google.maps.Map(document.getElementById("geo-wrapper"), {zoom: 14, mapTypeControl:true, zoomControl: true, mapTypeId: google.maps.MapTypeId.ROADMAP});
-  var center = new google.maps.LatLng(loc.coords.latitude,loc.coords.longitude);  
+  var center = new google.maps.LatLng(loc.coords.latitude,loc.coords.longitude);
   map.setCenter(center);
   var marker = new google.maps.Marker({map: map, position: center, draggable: false, title: "You are here (more or less)"});
 }
@@ -368,7 +368,7 @@ function show_map_error() {
 }
 $(function() {
   if (geo_position_js.init()) {
-    $("#live-geolocation").html(supports(true, "geolocation") + ' <a href="#" onclick="lookup_location();return false">Click to look up your location</a>.');
+    $("#live-geolocation").html(supports(true, "geolocation") + ' <a href=# onclick="lookup_location();return false">Click to look up your location</a>.');
   } else {
     $("#live-geolocation").html(supports(false, "geolocation"));
   }

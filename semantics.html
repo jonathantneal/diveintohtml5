@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <meta charset=utf-8>
 <title>Semantics - Dive Into HTML5</title>
 <!--[if lt IE 9]><script src=j/html5.js></script><![endif]-->
@@ -10,7 +10,7 @@ dl.col dt{float:left;clear:left}
 dl.col dd{margin-left:7em}
 dl.col dt,dl.col dd{padding-bottom:1.75em}
 </style>
-<link rel=stylesheet media='only screen and (max-device-width: 480px)' href=mobile.css>
+<link rel=stylesheet media="only screen and (max-device-width: 480px)" href=mobile.css>
 <link rel=prefetch href=index.html>
 <p>You are here: <a href=index.html>Home</a> <span class="u triangularBullet"></span> <a href=table-of-contents.html#semantics>Dive Into <abbr>HTML5</abbr></a> <span class="u triangularBullet"></span>
 <h1><br>What Does It All Mean?</h1>
@@ -20,7 +20,7 @@ dl.col dt,dl.col dd{padding-bottom:1.75em}
 
 <p class="f f-t"><b>T</b>his chapter will take an <abbr>HTML</abbr> page that has absolutely nothing wrong with it, and improve it. Parts of it will become shorter. Parts will become longer. All of it will become more semantic. It&rsquo;ll be awesome.
 
-<p style="clear:both"><a href=examples/blog-original.html>Here is the page in question</a>. Learn it. Live it. Love it. Open it in a new tab and don&rsquo;t come back until you&rsquo;ve hit &ldquo;View Source&rdquo; at least once.
+<p style=clear:both><a href=examples/blog-original.html>Here is the page in question</a>. Learn it. Live it. Love it. Open it in a new tab and don&rsquo;t come back until you&rsquo;ve hit &ldquo;View Source&rdquo; at least once.
 
 <p class="a rotatedFloralHeartBullet">
 
@@ -36,9 +36,9 @@ dl.col dt,dl.col dd{padding-bottom:1.75em}
 
 <p>Microsoft came up with a novel solution. Before rendering a page, IE5/Mac looked at the &ldquo;doctype,&rdquo; which is typically the first line of the <abbr>HTML</abbr> source (even before the <code>&lt;html></code> element). Older pages (that relied on the rendering quirks of older browsers) generally didn&rsquo;t have a doctype at all. IE5/Mac rendered these pages like older browsers did. In order to &ldquo;activate&rdquo; the new standards support, web page authors had to opt in, by supplying the right doctype before the <code>&lt;html></code> element.
 
-<p>This idea spread like wildfire, and soon all major browsers had two modes: &ldquo;quirks mode&rdquo; and &ldquo;standards mode.&rdquo; Of course, this being the web, things quickly got out of hand. When Mozilla tried to ship version 1.1 of their browser, they discovered that there were pages being rendered in &ldquo;standards mode&rdquo; that were actually relying on one specific quirk. Mozilla had just fixed its rendering engine to eliminate this quirk, and thousands of pages broke all at once. Thus was created &mdash; and I am not making this up &mdash; &ldquo;<a href="https://developer.mozilla.org/en/Gecko's_%22Almost_Standards%22_Mode">almost standards mode</a>.&rdquo;
+<p>This idea spread like wildfire, and soon all major browsers had two modes: &ldquo;quirks mode&rdquo; and &ldquo;standards mode.&rdquo; Of course, this being the web, things quickly got out of hand. When Mozilla tried to ship version 1.1 of their browser, they discovered that there were pages being rendered in &ldquo;standards mode&rdquo; that were actually relying on one specific quirk. Mozilla had just fixed its rendering engine to eliminate this quirk, and thousands of pages broke all at once. Thus was created &mdash; and I am not making this up &mdash; &ldquo;<a href=https://developer.mozilla.org/en/Gecko's_%22Almost_Standards%22_Mode>almost standards mode</a>.&rdquo;
 
-<p>In his seminal work, <a href=http://hsivonen.iki.fi/doctype/>Activating Browser Modes with Doctype</a>, Henri Sivonen summarizes the different modes:
+<p>In his seminal work, <a href=http://hsivonen.iki.fi/doctype/>Activating Browser Modes with doctype</a>, Henri Sivonen summarizes the different modes:
 
 <blockquote>
 <dl>
@@ -63,7 +63,7 @@ dl.col dt,dl.col dd{padding-bottom:1.75em}
 
 <p>This is the <abbr>HTML5</abbr> doctype:
 
-<pre><code>&lt;!DOCTYPE html></code></pre>
+<pre><code>&lt;!doctype html></code></pre>
 
 <p>That&rsquo;s it. Just 15 characters. It&rsquo;s so easy, you can type it by hand and not screw it up.
 
@@ -89,9 +89,9 @@ dl.col dt,dl.col dd{padding-bottom:1.75em}
 
 <pre><code>&lt;html lang="en" xml:lang="en"></code></pre>
 
-<p>The two attributes here, <code>lang</code> and <code>xml:lang</code>, both define the language of this <abbr>HTML</abbr> page. (<code>en</code> stands for &ldquo;English.&rdquo; Not writing in English? <a href=http://www.w3.org/International/questions/qa-choosing-language-tags>Find your language code</a>.) Why two attributes for the same thing? Again, this is a vestige of <abbr>XHTML</abbr>. Only the <code>lang</code> attribute has any effect in <abbr>HTML5</abbr>. You can keep the <code>xml:lang</code> attribute if you like, but if you do, you need to ensure that it <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/elements.html#the-lang-and-xml:lang-attributes">contains the same value as the <code>lang</code> attribute</a>.
+<p>The two attributes here, <code>lang</code> and <code>xml:lang</code>, both define the language of this <abbr>HTML</abbr> page. (<code>en</code> stands for &ldquo;English.&rdquo; Not writing in English? <a href=http://www.w3.org/International/questions/qa-choosing-language-tags>Find your language code</a>.) Why two attributes for the same thing? Again, this is a vestige of <abbr>XHTML</abbr>. Only the <code>lang</code> attribute has any effect in <abbr>HTML5</abbr>. You can keep the <code>xml:lang</code> attribute if you like, but if you do, you need to ensure that it <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/elements.html#the-lang-and-xml:lang-attributes>contains the same value as the <code>lang</code> attribute</a>.
 
-<blockquote cite="http://www.whatwg.org/specs/web-apps/current-work/multipage/elements.html#the-lang-and-xml:lang-attributes">
+<blockquote cite=http://www.whatwg.org/specs/web-apps/current-work/multipage/elements.html#the-lang-and-xml:lang-attributes>
 <p>To ease migration to and from XHTML, authors may specify an attribute in no namespace with no prefix and with the literal localname "xml:lang" on <abbr>HTML</abbr> elements in <abbr>HTML</abbr> documents, but such attributes must only be specified if a <code>lang</code> attribute in no namespace is also specified, and both attributes must have the same value when compared in an ASCII case-insensitive manner. The attribute in no namespace with no prefix and with the literal localname "xml:lang" has no effect on language processing.
 </blockquote>
 
@@ -136,7 +136,7 @@ dl.col dt,dl.col dd{padding-bottom:1.75em}
 
 <blockquote><p><code>Content-Type: text/html; charset="utf-8"</code></blockquote>
 
-<p>Briefly, this says that the web server thinks it&rsquo;s sending you an <abbr>HTML</abbr> document, and that it thinks the document uses the <code>UTF-8</code> character encoding. Unfortunately, in the whole magnificent soup of the World Wide Web, few authors actually have control over their HTTP server. Think <a href="http://www.blogger.com/">Blogger</a>: the content is provided by individuals, but the servers are run by Google. So <abbr>HTML</abbr> 4 provided a way to specify the character encoding in the <abbr>HTML</abbr> document itself. You&rsquo;ve probably seen this too:
+<p>Briefly, this says that the web server thinks it&rsquo;s sending you an <abbr>HTML</abbr> document, and that it thinks the document uses the <code>UTF-8</code> character encoding. Unfortunately, in the whole magnificent soup of the World Wide Web, few authors actually have control over their HTTP server. Think <a href=http://www.blogger.com/>Blogger</a>: the content is provided by individuals, but the servers are run by Google. So <abbr>HTML</abbr> 4 provided a way to specify the character encoding in the <abbr>HTML</abbr> document itself. You&rsquo;ve probably seen this too:
 
 <blockquote><p><code>&lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8"></code></blockquote>
 
@@ -146,14 +146,14 @@ dl.col dt,dl.col dd{padding-bottom:1.75em}
 
 <blockquote><p><code>&lt;meta charset="utf-8" /></code></blockquote>
 
-<p>This works in all browsers. How did this shortened syntax come about? Here is <a href="http://lists.w3.org/Archives/Public/public-html/2007Jul/0550.html">the best explanation I could find</a>:
+<p>This works in all browsers. How did this shortened syntax come about? Here is <a href=http://lists.w3.org/Archives/Public/public-html/2007Jul/0550.html>the best explanation I could find</a>:
 
-<blockquote cite="http://lists.w3.org/Archives/Public/public-html/2007Jul/0550.html">
+<blockquote cite=http://lists.w3.org/Archives/Public/public-html/2007Jul/0550.html>
 <p>The rationale for the <code>&lt;meta charset=""></code> attribute combination is that UAs already implement it, because people tend to leave things unquoted, like:
 <p><code>&lt;META HTTP-EQUIV=Content-Type CONTENT=text/html; charset=ISO-8859-1></code>
 </blockquote>
 
-<p>There are even a few <a href="http://simon.html5.org/test/html/parsing/encoding/"><code>&lt;meta charset></code> test cases</a> if you don&rsquo;t believe that browsers already do this.
+<p>There are even a few <a href=http://simon.html5.org/test/html/parsing/encoding/><code>&lt;meta charset></code> test cases</a> if you don&rsquo;t believe that browsers already do this.
 
 <div class=pf>
 <h4>Ask Professor Markup</h4>
@@ -221,7 +221,7 @@ dl.col dt,dl.col dd{padding-bottom:1.75em}
        title="My Weblog feed"
        href="/feed/" /></code></pre>
 
-<p>This link relation is also quite common. <code>&lt;link rel="alternate"></code>, combined with either the <abbr>RSS</abbr> or Atom media type in the <code>type</code> attribute, enables something called &ldquo;feed autodiscovery.&rdquo; It allows syndicated feed readers (like <a href="http://www.google.com/reader/">Google Reader</a>) to discover that a site has a news feed of the latest articles. Some browsers also support feed autodiscovery by displaying a special icon next to the <abbr>URL</abbr>. (Unlike with <code>rel="stylesheet"</code>, the <code>type</code> attribute matters here. Don&rsquo;t drop it!)
+<p>This link relation is also quite common. <code>&lt;link rel="alternate"></code>, combined with either the <abbr>RSS</abbr> or Atom media type in the <code>type</code> attribute, enables something called &ldquo;feed autodiscovery.&rdquo; It allows syndicated feed readers (like <a href=http://www.google.com/reader/>Google Reader</a>) to discover that a site has a news feed of the latest articles. Some browsers also support feed autodiscovery by displaying a special icon next to the <abbr>URL</abbr>. (Unlike with <code>rel="stylesheet"</code>, the <code>type</code> attribute matters here. Don&rsquo;t drop it!)
 
 <p>The <code>rel="alternate"</code> link relation has always been a strange hybrid of use cases, <a href=http://www.w3.org/TR/html401/types.html#type-links>even in <abbr>HTML</abbr> 4</a>. In <abbr>HTML5</abbr>, its definition has been clarified and extended to more accurately describe existing web content. As you just saw, using <code>rel="alternate"</code> in conjunction with <code>type=application/atom+xml</code> indicates an Atom feed for the current page. But you can also use <code>rel="alternate"</code> in conjunction with other <code>type</code> attributes to indicate the same content in another format, like <abbr>PDF</abbr>.
 
@@ -231,14 +231,14 @@ dl.col dt,dl.col dd{padding-bottom:1.75em}
 
 <p><code>rel="author"</code> is used to link to information about the author of the page. This can be a <code>mailto:</code> address, though it doesn&rsquo;t have to be. It could simply link to a contact form or &ldquo;about the author&rdquo; page.
 
-<p class=ss style="width:313px"><img src=i/openclipart.org_johnny_automatic_girl_feeding_birds.png width=313 height=384 alt="girl feeding birds">
+<p class=ss style=width:313px><img src=i/openclipart.org_johnny_automatic_girl_feeding_birds.png width=313 height=384 alt="girl feeding birds">
 
-<p>HTML 4 defined <a href=http://www.w3.org/TR/html401/types.html#type-links><code>rel="start"</code>, <code>rel="prev"</code>, and <code>rel="next"</code></a> to define relations between pages that are part of a series (like chapters of a book, or even posts on a blog). The only one that was ever used correctly was <code>rel="next"</code>. People used <code>rel="previous"</code> instead of <code>rel="prev"</code>; they used <code>rel="begin"</code> and <code>rel="first"</code> instead of <code>rel="start"</code>; they used <code>rel="end"</code> instead of <code>rel="last"</code>.
+<p>HTML 4 defined <a href=http://www.w3.org/TR/html401/types.html#type-links"><code>rel="start</code>, <code>rel="prev"</code>, and <code>rel="next"</code></a> to define relations between pages that are part of a series (like chapters of a book, or even posts on a blog). The only one that was ever used correctly was <code>rel="next"</code>. People used <code>rel="previous"</code> instead of <code>rel="prev"</code>; they used <code>rel="begin"</code> and <code>rel="first"</code> instead of <code>rel="start"</code>; they used <code>rel="end"</code> instead of <code>rel="last"</code>.
 <p>Oh, and &mdash; all by themselves &mdash; they made up <code>rel="up"</code> to point to a &ldquo;parent&rdquo; page. The best way to think of <code>rel="up"</code> is to look at your breadcrumb navigation (or at least imagine it). Your home page is probably the first page in your breadcrumbs, and the current page is at the tail end. <code>rel="up"</code> points to the next-to-last page in the breadcrumbs.
 
 <p><abbr>HTML5</abbr> includes <code>rel="next"</code> and <code>rel="prev"</code>, just like <abbr>HTML</abbr> 4, and supports <code>rel="previous"</code> for backward compatibility. The specification once had <code>rel="first"</code>, <code>rel="last"</code>, and <code>rel="up"</code>, too. However, &ldquo;<a href=http://lists.w3.org/Archives/Public/public-html/2011Feb/att-0481/issue-118-decision.html>based on the lack of interest from implementors and users</a>&rdquo; the HTML Working Group decided to drop these values from the specification.
 
-<p><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/links.html#rel-icon>rel="icon"</a> is the <a href=http://code.google.com/webstats/2005-12/linkrels.html>second most popular link relation</a>, after <code>rel="stylesheet"</code>. It is usually found together with <code>shortcut</code>, like so:
+<p><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/links.html#rel-icon">rel="icon</a> is the <a href=http://code.google.com/webstats/2005-12/linkrels.html>second most popular link relation</a>, after <code>rel="stylesheet"</code>. It is usually found together with <code>shortcut</code>, like so:
 
 <pre><code>&lt;link rel="shortcut icon" href="/favicon.ico"></code></pre>
 
@@ -246,19 +246,19 @@ dl.col dt,dl.col dd{padding-bottom:1.75em}
 
 <p>Also new in <abbr>HTML5</abbr>: the <code>sizes</code> attribute can be used in conjunction with the <code>icon</code> relationship to <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/links.html#rel-icon>indicate the size of the referenced icon</a>.
 
-<p><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/links.html#link-type-license>rel="license"</a> was <a href=http://microformats.org/wiki/rel-license>invented by the microformats community</a>. It &ldquo;indicates that the referenced document provides the copyright license terms under which the current document is provided.&rdquo;
+<p><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/links.html#link-type-license">rel="license</a> was <a href=http://microformats.org/wiki/rel-license>invented by the microformats community</a>. It &ldquo;indicates that the referenced document provides the copyright license terms under which the current document is provided.&rdquo;
 
-<p><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/links.html#link-type-nofollow>rel="nofollow"</a> &ldquo;indicates that the link is not endorsed by the original author or publisher of the page, or that the link to the referenced document was included primarily because of a commercial relationship between people affiliated with the two pages.&rdquo; It was <a href=http://googleblog.blogspot.com/2005/01/preventing-comment-spam.html>invented by Google</a> and <a href=http://microformats.org/wiki/rel-nofollow>standardized within the microformats community</a>. <a href=http://www.wordpress.org>WordPress</a> adds <code>rel="nofollow"</code> to links added by commenters. The thinking was that if &ldquo;nofollow&rdquo; links did not pass on PageRank, spammers would give up trying to post spam comments on weblogs. That didn&rsquo;t happen, but <code>rel="nofollow"</code> persists.
+<p><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/links.html#link-type-nofollow">rel="nofollow</a> &ldquo;indicates that the link is not endorsed by the original author or publisher of the page, or that the link to the referenced document was included primarily because of a commercial relationship between people affiliated with the two pages.&rdquo; It was <a href=http://googleblog.blogspot.com/2005/01/preventing-comment-spam.html>invented by Google</a> and <a href=http://microformats.org/wiki/rel-nofollow>standardized within the microformats community</a>. <a href=http://www.wordpress.org>WordPress</a> adds <code>rel="nofollow"</code> to links added by commenters. The thinking was that if &ldquo;nofollow&rdquo; links did not pass on PageRank, spammers would give up trying to post spam comments on weblogs. That didn&rsquo;t happen, but <code>rel="nofollow"</code> persists.
 
-<p><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/links.html#link-type-noreferrer>rel="noreferrer"</a> &ldquo;indicates that no referrer information is to be leaked when following the link.&rdquo; <a href=http://webkit.org/blog/907/webkit-nightlies-support-html5-noreferrer-link-relation/>WebKit supports rel="noreferrer"</a> so it works on Google Chome and Safari (and hopefully on other WebKit-based browsers). [<a href=http://wearehugh.com/public/2009/04/rel-noreferrer.html>rel="noreferrer" test case</a>]
+<p><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/links.html#link-type-noreferrer">rel="noreferrer</a> &ldquo;indicates that no referrer information is to be leaked when following the link.&rdquo; <a href=http://webkit.org/blog/907/webkit-nightlies-support-html5-noreferrer-link-relation/>WebKit supports rel="noreferrer"</a> so it works on Google Chome and Safari (and hopefully on other WebKit-based browsers). [<a href=http://wearehugh.com/public/2009/04/rel-noreferrer.html">rel="noreferrer test case</a>]
 
 <p class=ss style="float:left;margin:0 1.75em 1.75em 0;width:271px"><img src=i/openclipart.org_johnny_automatic_dog_on_chair.png width=271 height=309 alt="dog on chair">
 
-<p><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/links.html#link-type-prefetch>rel="prefetch"</a> &ldquo;indicates that preemptively fetching and caching the specified resource is likely to be beneficial, as it is highly likely that the user will require this resource.&rdquo; Search engines sometimes add <code>&lt;link rel="prefetch" href="<i>URL of top search result</i>"></code> to the search results page if they feel that the top result is wildly more popular than any other. For example: using Firefox, <a href="http://www.google.com/search?q=cnn">search Google for CNN</a>, view the page source, and search for the keyword <code>prefetch</code>. Mozilla Firefox is the only current browser that supports <code>rel="prefetch"</code>.
+<p><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/links.html#link-type-prefetch">rel="prefetch</a> &ldquo;indicates that preemptively fetching and caching the specified resource is likely to be beneficial, as it is highly likely that the user will require this resource.&rdquo; Search engines sometimes add <code>&lt;link rel="prefetch" href="<i>URL of top search result</i>"></code> to the search results page if they feel that the top result is wildly more popular than any other. For example: using Firefox, <a href=http://www.google.com/search?q=cnn>search Google for CNN</a>, view the page source, and search for the keyword <code>prefetch</code>. Mozilla Firefox is the only current browser that supports <code>rel="prefetch"</code>.
 
-<p><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/links.html#link-type-search>rel="search"</a> &ldquo;indicates that the referenced document provides an interface specifically for searching the document and its related resources.&rdquo; Specifically, if you want <code>rel="search"</code> to do anything useful, it should point to an <a href=http://www.opensearch.org/>OpenSearch</a> document that describes how a browser could construct a URL to search the current site for a given keyword. OpenSearch (and <code>rel="search"</code> links that point to OpenSearch description documents) has been supported in Internet Explorer since version 7, Mozilla Firefox since version 2, and Google Chrome.
+<p><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/links.html#link-type-search">rel="search</a> &ldquo;indicates that the referenced document provides an interface specifically for searching the document and its related resources.&rdquo; Specifically, if you want <code>rel="search"</code> to do anything useful, it should point to an <a href=http://www.opensearch.org/>OpenSearch</a> document that describes how a browser could construct a URL to search the current site for a given keyword. OpenSearch (and <code>rel="search"</code> links that point to OpenSearch description documents) has been supported in Internet Explorer since version 7, Mozilla Firefox since version 2, and Google Chrome.
 
-<p><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/links.html#link-type-tag>rel="tag"</a> &ldquo;indicates that the tag that the referenced document represents applies to the current document.&rdquo; Marking up &ldquo;tags&rdquo; (category keywords) with the <code>rel</code> attribute was <a href=http://www.powazek.com/2005/07/000532.html>invented by Technorati</a> to help them categorize blog posts. Early blogs and tutorials thus referred to them as &ldquo;Technorati tags.&rdquo; (You read that right: a commercial company convinced the entire world to add metadata that made the company&rsquo;s job easier. Nice work if you can get it!) The syntax was later <a href=http://microformats.org/wiki/rel-tag>standardized within the microformats community</a>, where it was simply called <code>rel="tag"</code>. Most blogging systems that allow associating categories, keywords, or tags with individual posts will mark them up with <code>rel="tag"</code> links. Browsers do not do anything special with them; they&rsquo;re really designed for search engines to use as a signal of what the page is about.
+<p><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/links.html#link-type-tag">rel="tag</a> &ldquo;indicates that the tag that the referenced document represents applies to the current document.&rdquo; Marking up &ldquo;tags&rdquo; (category keywords) with the <code>rel</code> attribute was <a href=http://www.powazek.com/2005/07/000532.html>invented by Technorati</a> to help them categorize blog posts. Early blogs and tutorials thus referred to them as &ldquo;Technorati tags.&rdquo; (You read that right: a commercial company convinced the entire world to add metadata that made the company&rsquo;s job easier. Nice work if you can get it!) The syntax was later <a href=http://microformats.org/wiki/rel-tag>standardized within the microformats community</a>, where it was simply called <code>rel="tag"</code>. Most blogging systems that allow associating categories, keywords, or tags with individual posts will mark them up with <code>rel="tag"</code> links. Browsers do not do anything special with them; they&rsquo;re really designed for search engines to use as a signal of what the page is about.
 
 <p class="a rotatedFloralHeartBullet">
 
@@ -293,7 +293,7 @@ dl.col dt,dl.col dd{padding-bottom:1.75em}
 
 <h2 id=unknown-elements>A long digression into how browsers handle unknown elements</h2>
 
-<p>Every browser has a master list of <abbr>HTML</abbr> elements that it supports. For example, Mozilla Firefox&rsquo;s list is stored in <a href="http://mxr.mozilla.org/mozilla-central/source/parser/htmlparser/src/nsElementTable.cpp">nsElementTable.cpp</a>. Elements not in this list are treated as &ldquo;unknown elements.&rdquo;  There are two fundamental problems with unknown elements:
+<p>Every browser has a master list of <abbr>HTML</abbr> elements that it supports. For example, Mozilla Firefox&rsquo;s list is stored in <a href=http://mxr.mozilla.org/mozilla-central/source/parser/htmlparser/src/nsElementTable.cpp>nsElementTable.cpp</a>. Elements not in this list are treated as &ldquo;unknown elements.&rdquo;  There are two fundamental problems with unknown elements:
 
 <ol>
 <li><b>How should the element be styled?</b>  By default, <code>&lt;p></code> has spacing on the top and bottom, <code>&lt;blockquote></code> is indented with a left margin, and <code>&lt;h1></code> is displayed in a larger font. But what default styles should be applied to unknown elements?</li>
@@ -316,7 +316,7 @@ dl.col dt,dl.col dd{padding-bottom:1.75em}
 <p>There are several new elements defined in <abbr>HTML5</abbr> which are block-level elements. That is, they can contain other block-level elements, and <abbr>HTML5</abbr>-compliant browsers will style them as <code>display:block</code> by default. If you want to use these elements in older browsers, you will need to define the display style manually:
 
 <pre><code>article,aside,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section { 
+footer,header,hgroup,menu,nav,section {
     display:block;
 }</code></pre>
 
@@ -403,7 +403,7 @@ p (sibling of h1)
 &lt;/script>
 &lt;![endif]--></code></pre>
 
-<p>The <code>&lt;!--[if lt IE 9]></code> and <code>&lt;![endif]--></code> bits are <a href="http://msdn.microsoft.com/en-us/library/ms537512">conditional comments</a>. Internet Explorer interprets them like an <code>if</code> statement: &ldquo;if the current browser is a version of Internet Explorer less than version 9, then execute this block.&rdquo; Every other browser will treat the entire block as an <abbr>HTML</abbr> comment. The net result is that Internet Explorer (up to and including version 8) will execute this script, but other browsers will ignore the script altogether. This makes your page load faster in browsers that don&rsquo;t need this hack.
+<p>The <code>&lt;!--[if lt IE 9]></code> and <code>&lt;![endif]--></code> bits are <a href=http://msdn.microsoft.com/en-us/library/ms537512>conditional comments</a>. Internet Explorer interprets them like an <code>if</code> statement: &ldquo;if the current browser is a version of Internet Explorer less than version 9, then execute this block.&rdquo; Every other browser will treat the entire block as an <abbr>HTML</abbr> comment. The net result is that Internet Explorer (up to and including version 8) will execute this script, but other browsers will ignore the script altogether. This makes your page load faster in browsers that don&rsquo;t need this hack.
 
 <p>The JavaScript code itself is relatively straightforward. The variable <var>e</var> ends up as an array of strings like <code>"abbr"</code>, <code>"article"</code>, <code>"aside"</code>, and so on. Then we loop through this array and create each of the named elements by calling <code>document.createElement()</code>. But since we ignore the return value, the elements are never inserted into the <abbr>DOM</abbr>. But this is enough to get Internet Explorer to treat these elements the way we want them to be treated, once we actually use them later in the page.
 
@@ -415,7 +415,7 @@ p (sibling of h1)
   &lt;meta charset="utf-8" />
   &lt;title>My Weblog&lt;/title>
   &lt;!--[if lt IE 9]>
-  &lt;script <mark>src="<a href=http://html5shiv.googlecode.com/svn/trunk/html5.js>http://html5shiv.googlecode.com/svn/trunk/html5.js</a>"</mark>>&lt;/script>
+  &lt;script <mark>src="<a href=http://html5shiv.googlecode.com/svn/trunk/html5.js">http://html5shiv.googlecode.com/svn/trunk/html5.js</a></mark>>&lt;/script>
   &lt;![endif]-->
 &lt;/head></code></pre>
 
@@ -425,7 +425,7 @@ p (sibling of h1)
 
 <h2 id=header-element>Headers</h2>
 
-<p class=ss style="width:205"><img src=i/openclipart.org_johnny_automatic_newsboy.png alt="newsboy hawking newspaper" width=205 height=335>
+<p class=ss style=width:205><img src=i/openclipart.org_johnny_automatic_newsboy.png alt="newsboy hawking newspaper" width=205 height=335>
 
 <p>Let&rsquo;s go back to <a href=examples/blog-original.html>our example page</a>. Specifically, let&rsquo;s look at just the headers:
 
@@ -460,7 +460,7 @@ p (sibling of h1)
 
 <p>That&rsquo;s good. It tells anyone who wants to know that this is a header. But what about that tagline? Another common pattern, which up until now had no standard markup. It&rsquo;s a difficult thing to mark up. A tagline is like a subheading, but it&rsquo;s &ldquo;attached&rdquo; to the primary heading. That is, it&rsquo;s a subheading that doesn&rsquo;t create its own section.
 
-<p>Header elements like <code>&lt;h1></code> and <code>&lt;h2></code> give your page structure. Taken together, they create an outline that you can use to visualize (or navigate) your page. Screenreaders use document outlines to help blind users navigate through your page. There are <a href="http://gsnedders.html5.org/outliner/">online tools</a> and <a href=http://chrispederick.com/work/web-developer/>browser extensions</a> that can help you visualize your document&rsquo;s outline.
+<p>Header elements like <code>&lt;h1></code> and <code>&lt;h2></code> give your page structure. Taken together, they create an outline that you can use to visualize (or navigate) your page. Screenreaders use document outlines to help blind users navigate through your page. There are <a href=http://gsnedders.html5.org/outliner/>online tools</a> and <a href=http://chrispederick.com/work/web-developer/>browser extensions</a> that can help you visualize your document&rsquo;s outline.
 
 <p>In <abbr>HTML</abbr> 4, <code>&lt;h1></code>&ndash;<code>&lt;h6></code> elements were the <em>only</em> way to create a document outline. The outline on the example page looks like this:
 
@@ -526,7 +526,7 @@ p (sibling of h1)
    |
    +--I'm going to Prague! (h2)</pre>
 
-<p>You can test your own pages in the <a href="http://gsnedders.html5.org/outliner/"><abbr>HTML5</abbr> Outliner</a> to ensure that you&rsquo;re using the heading elements properly.
+<p>You can test your own pages in the <a href=http://gsnedders.html5.org/outliner/><abbr>HTML5</abbr> Outliner</a> to ensure that you&rsquo;re using the heading elements properly.
 
 <p class="a rotatedFloralHeartBullet">
 
@@ -751,20 +751,20 @@ p (sibling of h1)
   &lt;div class="w3c_footer-nav">
     &lt;h3>Navigation&lt;/h3>
     &lt;ul>
-      &lt;li>&lt;a href="/">Home&lt;/a>&lt;/li> 
-      &lt;li>&lt;a href="/standards/">Standards&lt;/a>&lt;/li> 
-      &lt;li>&lt;a href="/participate/">Participate&lt;/a>&lt;/li> 
-      &lt;li>&lt;a href="/Consortium/membership">Membership&lt;/a>&lt;/li> 
-      &lt;li>&lt;a href="/Consortium/">About W3C&lt;/a>&lt;/li> 
+      &lt;li>&lt;a href="/">Home&lt;/a>&lt;/li>
+      &lt;li>&lt;a href="/standards/">Standards&lt;/a>&lt;/li>
+      &lt;li>&lt;a href="/participate/">Participate&lt;/a>&lt;/li>
+      &lt;li>&lt;a href="/Consortium/membership">Membership&lt;/a>&lt;/li>
+      &lt;li>&lt;a href="/Consortium/">About W3C&lt;/a>&lt;/li>
     &lt;/ul>
   &lt;/div>
   &lt;div class="w3c_footer-nav">
     &lt;h3>Contact W3C&lt;/h3>
     &lt;ul>
-      &lt;li>&lt;a href="/Consortium/contact">Contact&lt;/a>&lt;/li> 
-      &lt;li>&lt;a href="/Help/">Help and FAQ&lt;/a>&lt;/li> 
-      &lt;li>&lt;a href="/Consortium/sup">Donate&lt;/a>&lt;/li> 
-      &lt;li>&lt;a href="/Consortium/siteindex">Site Map&lt;/a>&lt;/li> 
+      &lt;li>&lt;a href="/Consortium/contact">Contact&lt;/a>&lt;/li>
+      &lt;li>&lt;a href="/Help/">Help and FAQ&lt;/a>&lt;/li>
+      &lt;li>&lt;a href="/Consortium/sup">Donate&lt;/a>&lt;/li>
+      &lt;li>&lt;a href="/Consortium/siteindex">Site Map&lt;/a>&lt;/li>
     &lt;/ul>
   &lt;/div>
   &lt;div class="w3c_footer-nav">
@@ -791,20 +791,20 @@ p (sibling of h1)
   <mark>&lt;nav></mark>
     <mark>&lt;h1></mark>Navigation<mark>&lt;/h1></mark>
     &lt;ul>
-      &lt;li>&lt;a href="/">Home&lt;/a>&lt;/li> 
-      &lt;li>&lt;a href="/standards/">Standards&lt;/a>&lt;/li> 
-      &lt;li>&lt;a href="/participate/">Participate&lt;/a>&lt;/li> 
-      &lt;li>&lt;a href="/Consortium/membership">Membership&lt;/a>&lt;/li> 
-      &lt;li>&lt;a href="/Consortium/">About W3C&lt;/a>&lt;/li> 
+      &lt;li>&lt;a href="/">Home&lt;/a>&lt;/li>
+      &lt;li>&lt;a href="/standards/">Standards&lt;/a>&lt;/li>
+      &lt;li>&lt;a href="/participate/">Participate&lt;/a>&lt;/li>
+      &lt;li>&lt;a href="/Consortium/membership">Membership&lt;/a>&lt;/li>
+      &lt;li>&lt;a href="/Consortium/">About W3C&lt;/a>&lt;/li>
     &lt;/ul>
   <mark>&lt;/nav></mark>
   <mark>&lt;nav></mark>
     <mark>&lt;h1></mark>Contact W3C<mark>&lt;/h1></mark>
     &lt;ul>
-      &lt;li>&lt;a href="/Consortium/contact">Contact&lt;/a>&lt;/li> 
-      &lt;li>&lt;a href="/Help/">Help and FAQ&lt;/a>&lt;/li> 
-      &lt;li>&lt;a href="/Consortium/sup">Donate&lt;/a>&lt;/li> 
-      &lt;li>&lt;a href="/Consortium/siteindex">Site Map&lt;/a>&lt;/li> 
+      &lt;li>&lt;a href="/Consortium/contact">Contact&lt;/a>&lt;/li>
+      &lt;li>&lt;a href="/Help/">Help and FAQ&lt;/a>&lt;/li>
+      &lt;li>&lt;a href="/Consortium/sup">Donate&lt;/a>&lt;/li>
+      &lt;li>&lt;a href="/Consortium/siteindex">Site Map&lt;/a>&lt;/li>
     &lt;/ul>
   <mark>&lt;/nav></mark>
   <mark>&lt;section></mark>
@@ -831,8 +831,8 @@ p (sibling of h1)
 <p>On character encoding:
 
 <ul>
-<li><a href="http://www.joelonsoftware.com/articles/Unicode.html">The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!)</a> by Joel Spolsky
-<li><a href="http://www.tbray.org/ongoing/When/200x/2003/04/06/Unicode">On the Goodness of Unicode</a>, <a href="http://www.tbray.org/ongoing/When/200x/2003/04/13/Strings">On Character Strings</a>, and <a href="http://www.tbray.org/ongoing/When/200x/2003/04/26/UTF">Characters vs. Bytes</a> by Tim Bray
+<li><a href=http://www.joelonsoftware.com/articles/Unicode.html>The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!)</a> by Joel Spolsky
+<li><a href=http://www.tbray.org/ongoing/When/200x/2003/04/06/Unicode>On the Goodness of Unicode</a>, <a href=http://www.tbray.org/ongoing/When/200x/2003/04/13/Strings>On Character Strings</a>, and <a href=http://www.tbray.org/ongoing/When/200x/2003/04/26/UTF>Characters vs. Bytes</a> by Tim Bray
 </ul>
 
 <p>On enabling new <abbr>HTML5</abbr> in Internet Explorer:
@@ -847,7 +847,7 @@ p (sibling of h1)
 <p>On standards modes and doctype sniffing:
 
 <ul>
-<li><a href=http://hsivonen.iki.fi/doctype/>Activating Browser Modes with Doctype</a> by Henri Sivonen. This is the only article you should read on the subject. Any article on doctypes that doesn&rsquo;t reference Henri&rsquo;s work is guaranteed to be out of date, incomplete, or wrong.
+<li><a href=http://hsivonen.iki.fi/doctype/>Activating Browser Modes with doctype</a> by Henri Sivonen. This is the only article you should read on the subject. Any article on doctypes that doesn&rsquo;t reference Henri&rsquo;s work is guaranteed to be out of date, incomplete, or wrong.
 </ul>
 
 <p><abbr>HTML5</abbr>-aware validator:
@@ -864,7 +864,7 @@ p (sibling of h1)
 <h4>Did You Know?</h4>
 <div class=moneybags>
 <blockquote><p>In association with Google Press, O&rsquo;Reilly is distributing this book in a variety of formats, including paper, ePub, Mobi, and <abbr>DRM</abbr>-free <abbr>PDF</abbr>. The paid edition is called &ldquo;HTML5: Up &amp; Running,&rdquo; and it is available now. This chapter is included in the paid edition.
-<p>If you liked this chapter and want to show your appreciation, you can <a href="http://www.amazon.com/HTML5-Up-Running-Mark-Pilgrim/dp/0596806027?ie=UTF8&amp;tag=diveintomark-20&amp;creativeASIN=0596806027">buy &ldquo;HTML5: Up &amp; Running&rdquo; with this affiliate link</a> or <a href=http://oreilly.com/catalog/9780596806033>buy an electronic edition directly from O&rsquo;Reilly</a>. You&rsquo;ll get a book, and I&rsquo;ll get a buck. I do not currently accept direct donations.
+<p>If you liked this chapter and want to show your appreciation, you can <a href=http://www.amazon.com/HTML5-Up-Running-Mark-Pilgrim/dp/0596806027?ie=UTF8&amp;tag=diveintomark-20&amp;creativeASIN=0596806027>buy &ldquo;HTML5: Up &amp; Running&rdquo; with this affiliate link</a> or <a href=http://oreilly.com/catalog/9780596806033>buy an electronic edition directly from O&rsquo;Reilly</a>. You&rsquo;ll get a book, and I&rsquo;ll get a buck. I do not currently accept direct donations.
 </blockquote>
 </div>
 </div>

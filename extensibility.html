@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <meta charset=utf-8>
 <title>Microdata - Dive Into HTML5</title>
 <!--[if lt IE 9]><script src=j/html5.js></script><![endif]-->
@@ -20,7 +20,7 @@ pre{padding-left:0}
 table.faketable{border-collapse:collapse}
 .padright{padding-right:18px}
 </style>
-<link rel=stylesheet media='only screen and (max-device-width: 480px)' href=mobile.css>
+<link rel=stylesheet media="only screen and (max-device-width: 480px)" href=mobile.css>
 <link rel=prefetch href=index.html>
 <p>You are here: <a href=index.html>Home</a> <span class="u triangularBullet"></span> <a href=table-of-contents.html#extensibility>Dive Into <abbr>HTML5</abbr></a> <span class="u triangularBullet"></span>
 <h1><br>&ldquo;Distributed,&rdquo;<br>&ldquo;Extensibility,&rdquo;<br>&amp;<br>Other Fancy Words</h1>
@@ -77,7 +77,7 @@ table.faketable{border-collapse:collapse}
 
 <p>Some of these properties are <abbr>URLs</abbr>, others are plain text. Each of them lends itself to a natural form of markup, even before you start thinking about microdata or vocabularies or whatnot. Imagine that you have a profile page or an &ldquo;about&rdquo; page. Your name is probably marked up as a heading, like an <code>&lt;h1></code> element. Your photo is probably an <code>&lt;img></code> element, since you want people to see it. And any <abbr>URL</abbr>s associated your profile are probably already marked up as hyperlinks, because you want people to be able to click them. For the sake of discussion, let&rsquo;s say your entire profile is also wrapped in a <code>&lt;section></code> element to separate it from the rest of the page content. Thus:
 
-<p class="legend top" style="margin-left:6em"><span class="arrow anticlockwiseTopSemicircleArrow"></span> It&rsquo;s all about me
+<p class="legend top" style=margin-left:6em><span class="arrow anticlockwiseTopSemicircleArrow"></span> It&rsquo;s all about me
 <pre><code>&lt;section>
   &lt;h1>Mark Pilgrim&lt;/h1>
   &lt;p>&lt;img src="http://www.example.com/photo.jpg" alt="[me smiling]">&lt;/p>
@@ -123,7 +123,7 @@ table.faketable{border-collapse:collapse}
 
 <p>Of course, if your markup looks a little different, that&rsquo;s not a problem. You can add microdata properties and values to any <abbr>HTML</abbr> markup, even really gnarly 20th-century-era, tables-for-layout, Oh-God-why-did-I-agree-to-maintain-this markup. While I don&rsquo;t recommend this kind of markup, it is still common, and you can still add microdata to it.
 
-<p class="legend top" style="margin-left:6em"><span class="arrow anticlockwiseTopSemicircleArrow"></span> For the love of God, don&rsquo;t do this
+<p class="legend top" style=margin-left:6em><span class="arrow anticlockwiseTopSemicircleArrow"></span> For the love of God, don&rsquo;t do this
 <pre><code>&lt;TABLE>
   &lt;TR>&lt;TD>Name&lt;TD>Mark Pilgrim
   &lt;TR>&lt;TD>Link&lt;TD>
@@ -138,7 +138,7 @@ table.faketable{border-collapse:collapse}
 
 <p>Anyway, you can still convert this into a microdata property, you just need to be a little creative. Using the <code>&lt;a></code> element directly is out of the question. The link target isn&rsquo;t in the <code>href</code> attribute, and there&rsquo;s no way to override the rule that says &ldquo;in an <code>&lt;a></code> element, look for the microdata property value in the <code>href</code> attribute.&rdquo; But you <em>can</em> add a wrapper element around the entire mess, and use that to add the <code>url</code> microdata property.
 
-<p class="legend top" style="margin-left:6em"><span class="arrow anticlockwiseTopSemicircleArrow"></span> This is what you get for subverting HTML
+<p class="legend top" style=margin-left:6em><span class="arrow anticlockwiseTopSemicircleArrow"></span> This is what you get for subverting HTML
 <pre><code>&lt;TABLE itemscope itemtype="http://data-vocabulary.org/Person">
   &lt;TR>&lt;TD>Name&lt;TD>Mark Pilgrim
   &lt;TR>&lt;TD>Link&lt;TD>
@@ -173,7 +173,7 @@ table.faketable{border-collapse:collapse}
 
     &lt;dt>Position&lt;/dt>
     &lt;dd>Developer advocate for Google, Inc.&lt;/dd>
-  
+
     &lt;dt>Mailing address&lt;/dt>
     &lt;dd>
       100 Main Street&lt;br>
@@ -188,7 +188,7 @@ table.faketable{border-collapse:collapse}
     &lt;li>&lt;a href="http://www.reddit.com/user/MarkPilgrim">Reddit.com profile&lt;/a>&lt;/li>
     &lt;li>&lt;a href="http://www.twitter.com/diveintomark">Twitter&lt;/a>&lt;/li>
   &lt;/ul>
-&lt;/section>    
+&lt;/section>
 </code></pre>
 
 <p>The first thing you always need to do is declare the vocabulary you&rsquo;re using, and the scope of the properties you want to add. You do this by adding the <code>itemtype</code> and <code>itemscope</code> attributes on the outermost element that contains the other elements that contain the actual data. In this case, that&rsquo;s a <code>&lt;section></code> element.
@@ -237,8 +237,8 @@ table.faketable{border-collapse:collapse}
 
 <p>Moving on to the next bit of markup, we see an <code>&lt;h1></code> header and the beginnings of a <code>&lt;dl></code> list. Neither the <code>&lt;h1></code> nor the <code>&lt;dl></code> need to be marked up with microdata. Not every piece of <abbr>HTML</abbr> needs to be a microdata property. Microdata is about the properties themselves, not the markup or headers surrounding the properties. This <code>&lt;h1></code> isn&rsquo;t a property; it&rsquo;s just a header. Similarly, the <code>&lt;dt></code> that says &ldquo;Name&rdquo; isn&rsquo;t a property; it&rsquo;s just a label.
 
-<p class="legend top" style="margin-left:8em"><span class="arrow anticlockwiseTopSemicircleArrow"></span> Boring
-<p class="legend left" style="margin-top:2.2em">Boring <span class="arrow rightwardsSquiggleArrow"></span>&nbsp;</p>
+<p class="legend top" style=margin-left:8em><span class="arrow anticlockwiseTopSemicircleArrow"></span> Boring
+<p class="legend left" style=margin-top:2.2em>Boring <span class="arrow rightwardsSquiggleArrow"></span>&nbsp;</p>
 <pre><code>  &lt;h1><mark>Contact Information</mark>&lt;/h1>
   &lt;dl>
     &lt;dt><mark>Name</mark>&lt;/dt>
@@ -246,7 +246,7 @@ table.faketable{border-collapse:collapse}
 
 <p>So where is the real information? It&rsquo;s in the <code>&lt;dd></code> element, so that&rsquo;s where we need to put the <code>itemprop</code> attribute. Which property is it? It&rsquo;s the <code>name</code> property. Where is the property value? It&rsquo;s the text within the <code>&lt;dd></code> element. Does that need to be marked up? the <a href=#property-values><abbr>HTML5</abbr> microdata data model</a> says no, <code>&lt;dd></code> elements have no special processing, so the property value is just the text within the element.
 
-<p class="legend top" style="margin-left:5em"><span class="arrow anticlockwiseTopSemicircleArrow"></span> That&rsquo;s my name, don&rsquo;t wear it out&nbsp;</p>
+<p class="legend top" style=margin-left:5em><span class="arrow anticlockwiseTopSemicircleArrow"></span> That&rsquo;s my name, don&rsquo;t wear it out&nbsp;</p>
 <pre><code>    &lt;dd <mark>itemprop="name"</mark>>Mark Pilgrim&lt;/dd></code></pre>
 
 <p class=follow>[Follow along! Before: <a href=examples/person.html>person.html</a>, after: <a href=examples/person-plus-microdata.html>person-plus-microdata.html</a>]
@@ -368,21 +368,21 @@ Suite 415</mark>
 
 <p>The other major consumer of <abbr>HTML</abbr> is search engines. What could a search engine do with microdata properties about a person? Imagine this: instead of simply displaying the page title and an excerpt of text, the search engine could integrate some of that structured information and display it. Full name, job title, employer, address, maybe even a little thumbnail of a profile photo. Would that catch your attention? It would catch mine.
 
-<p>Google supports microdata as part of their <a href="http://www.google.com/support/webmasters/bin/answer.py?hl=en&amp;answer=99170">Rich Snippets</a> program. When Google&rsquo;s web crawler parses your page and finds microdata properties that conform to the <code>http://data-vocabulary.org/Person</code> vocabulary, it parses out those properties and stores them alongside the rest of the page data. Google even provides <a href=http://www.google.com/webmasters/tools/richsnippets>a handy tool to see how Google &ldquo;sees&rdquo; your microdata properties</a>. Testing it against our <a href=examples/person-plus-microdata.html>sample microdata-enabled &ldquo;about&rdquo; page</a> yields this output:
+<p>Google supports microdata as part of their <a href=http://www.google.com/support/webmasters/bin/answer.py?hl=en&amp;answer=99170>Rich Snippets</a> program. When Google&rsquo;s web crawler parses your page and finds microdata properties that conform to the <code>http://data-vocabulary.org/Person</code> vocabulary, it parses out those properties and stores them alongside the rest of the page data. Google even provides <a href=http://www.google.com/webmasters/tools/richsnippets>a handy tool to see how Google &ldquo;sees&rdquo; your microdata properties</a>. Testing it against our <a href=examples/person-plus-microdata.html>sample microdata-enabled &ldquo;about&rdquo; page</a> yields this output:
 
 <pre><samp>Item
   <b>Type</b>: http://data-vocabulary.org/person
-  photo = http://diveintohtml5.info/examples/2000_05_mark.jpg 
-  name = Mark Pilgrim 
-  title = Developer advocate 
-  affiliation = Google, Inc. 
-  address = Item( 1 ) 
-  url = http://diveintomark.org/ 
-  url = http://www.google.com/profiles/pilgrim 
-  url = http://www.reddit.com/user/MarkPilgrim 
-  url = http://www.twitter.com/diveintomark 
+  photo = http://diveintohtml5.info/examples/2000_05_mark.jpg
+  name = Mark Pilgrim
+  title = Developer advocate
+  affiliation = Google, Inc.
+  address = Item( 1 )
+  url = http://diveintomark.org/
+  url = http://www.google.com/profiles/pilgrim
+  url = http://www.reddit.com/user/MarkPilgrim
+  url = http://www.twitter.com/diveintomark
 
-Item 1 
+Item 1
   <b>Type</b>: http://data-vocabulary.org/address
   street-address = 100 Main Street
   locality = Anytown
@@ -411,7 +411,7 @@ Excerpt from the page will show up here.</span><br>
 <div class=inner>
 <blockquote class=note>
 <p><span class=whiteRightPointingIndex></span>Q: I did everything you said, but my Google search result listing doesn&rsquo;t look any different. What gives?<br>
-A: &ldquo;<a href="http://www.google.com/support/webmasters/bin/answer.py?hl=en&amp;answer=99170">Google does not guarantee</a> that markup on any given page or site will be used in search results.&rdquo; But even if Google decides not to use your microdata annotations, another search engine might. Like the rest of <abbr>HTML5</abbr>, microdata is an open standard that anyone can implement. It&rsquo;s your job to provide as much data as possible. Let the rest of the world decide what to do with it. They might surprise you!
+A: &ldquo;<a href=http://www.google.com/support/webmasters/bin/answer.py?hl=en&amp;answer=99170>Google does not guarantee</a> that markup on any given page or site will be used in search results.&rdquo; But even if Google decides not to use your microdata annotations, another search engine might. Like the rest of <abbr>HTML5</abbr>, microdata is an open standard that anyone can implement. It&rsquo;s your job to provide as much data as possible. Let the rest of the world decide what to do with it. They might surprise you!
 </blockquote>
 </div>
 </div>
@@ -652,7 +652,7 @@ Android, AJAX APIs, Chrome, and Google Web Toolkit.&lt;/p></code></pre>
 <pre><code>    &lt;span <mark>itemprop="name"</mark>>Congress Center&lt;/span>&lt;br></code></pre>
 <p class=follow>[Follow along! Before: <a href=examples/event.html>event.html</a>, after: <a href=examples/event-plus-microdata.html>event-plus-microdata.html</a>]
 
-<p>Due to the microdata scoping rules, this <code>itemprop="name"</code> is defining a property in the Organization vocabulary, not the Event vocabulary. The <code>&lt;p></code> element defined the beginning of the scope of the Organization properties, and that <code>&lt;p></code> element hasn&rsquo;t yet been closed with an <code>&lt;/p></code> tag. Any microdata properties we define here are properties of the most-recently-scoped vocabulary. Nested vocabularies are like a <a href="http://en.wikipedia.org/wiki/Stack_(data_structure)">stack</a>. We haven&rsquo;t yet popped the stack, so we&rsquo;re still talking about properties of the Organization.
+<p>Due to the microdata scoping rules, this <code>itemprop="name"</code> is defining a property in the Organization vocabulary, not the Event vocabulary. The <code>&lt;p></code> element defined the beginning of the scope of the Organization properties, and that <code>&lt;p></code> element hasn&rsquo;t yet been closed with an <code>&lt;/p></code> tag. Any microdata properties we define here are properties of the most-recently-scoped vocabulary. Nested vocabularies are like a <a href=http://en.wikipedia.org/wiki/Stack_(data_structure)>stack</a>. We haven&rsquo;t yet popped the stack, so we&rsquo;re still talking about properties of the Organization.
 
 <p>In fact, we&rsquo;re going to add a third vocabulary onto the stack: an Address for the Organization for the Event.
 
@@ -701,38 +701,38 @@ Android, AJAX APIs, Chrome, and Google Web Toolkit.&lt;/p></code></pre>
 
 <h3 id=event-rich-snippets>The Return of Google Rich Snippets</h3>
 
-<p><a href="http://www.google.com/webmasters/tools/richsnippets?url=http://diveintohtml5.info/examples/event-plus-microdata.html">According to Google&rsquo;s Rich Snippets Testing Tool</a>, this is the information that Google&rsquo;s crawlers will glean from <a href=examples/event-plus-microdata.html>our sample event listing page</a>:
+<p><a href=http://www.google.com/webmasters/tools/richsnippets?url=http://diveintohtml5.info/examples/event-plus-microdata.html>According to Google&rsquo;s Rich Snippets Testing Tool</a>, this is the information that Google&rsquo;s crawlers will glean from <a href=examples/event-plus-microdata.html>our sample event listing page</a>:
 
 <pre><samp>Item
     <b>Type:</b> http://data-vocabulary.org/Event
-    summary = Google Developer Day 2009 
-    eventType = conference 
-    photo = http://diveintohtml5.info/examples/gdd-2009-prague-pilgrim.jpg 
-    description = Google Developer Days are a chance to learn about Google developer products from the engineers who built them. This one-day conference includes seminars and office hours on web technologies like Goo... 
-    startDate = 2009-11-06T08:30+01:00 
-    endDate = 2009-11-06T20:30+01:00 
-    location = Item(__1) 
-    geo = Item(__3) 
-    url = http://code.google.com/intl/cs/events/developerday/2009/home.html 
+    summary = Google Developer Day 2009
+    eventType = conference
+    photo = http://diveintohtml5.info/examples/gdd-2009-prague-pilgrim.jpg
+    description = Google Developer Days are a chance to learn about Google developer products from the engineers who built them. This one-day conference includes seminars and office hours on web technologies like Goo...
+    startDate = 2009-11-06T08:30+01:00
+    endDate = 2009-11-06T20:30+01:00
+    location = Item(__1)
+    geo = Item(__3)
+    url = http://code.google.com/intl/cs/events/developerday/2009/home.html
 
 Item
     Id: __1
     <b>Type:</b> http://data-vocabulary.org/Organization
-    name = Congress Center 
-    address = Item(__2) 
+    name = Congress Center
+    address = Item(__2)
 
 Item
     Id: __2
     <b>Type:</b> http://data-vocabulary.org/Address
-    street-address = 5th května 65 
-    postal-code = 140 21 
-    locality = Praha 4 
-    country-name = Czech Republic 
+    street-address = 5th května 65
+    postal-code = 140 21
+    locality = Praha 4
+    country-name = Czech Republic
 
 Item
     Id: __3
     <b>Type:</b> http://data-vocabulary.org/Geo
-    latitude = 50.047893 
+    latitude = 50.047893
     longitude = 14.4491</samp></pre>
 
 <p>As you can see, all the information we added in microdata is there. Properties that are separate microdata items are given internal <abbr>IDs</abbr> (<code>Item(__1)</code>, <code>Item(__2)</code> and so on). This is not part of the microdata specification. It&rsquo;s just a convention that Google&rsquo;s testing tool uses to linearize the sample output and show you the grouping of nested items and their properties.
@@ -865,32 +865,32 @@ Excerpt from the page will show up here.</span><br>
 
 <p>In English, this says &ldquo;the product I&rsquo;m reviewing has a rating value of 9 on a scale of 0&ndash;10.&rdquo;
 
-<p>Did I mention that review microdata could affect search result listings? Oh yes, it can. Here is the &ldquo;raw data&rdquo; that the <a href="http://www.google.com/webmasters/tools/richsnippets?url=http://diveintohtml5.info/examples/review-plus-microdata.html">Google Rich Snippets tool extracted from my microdata-enhanced review</a>:
+<p>Did I mention that review microdata could affect search result listings? Oh yes, it can. Here is the &ldquo;raw data&rdquo; that the <a href=http://www.google.com/webmasters/tools/richsnippets?url=http://diveintohtml5.info/examples/review-plus-microdata.html>Google Rich Snippets tool extracted from my microdata-enhanced review</a>:
 
 <pre><samp>Item
   <b>Type:</b> http://data-vocabulary.org/Review
-  itemreviewed = Anna&rsquo;s Pizzeria 
-  rating = 4 
-  summary = New York-style pizza right in historic downtown Apex 
+  itemreviewed = Anna&rsquo;s Pizzeria
+  rating = 4
+  summary = New York-style pizza right in historic downtown Apex
   description = Food is top-notch. Atmosphere is just right ...
-  address = Item(__1) 
-  geo = Item(__2) 
-  reviewer = Mark Pilgrim 
-  dtreviewed = 2010-03-31 
+  address = Item(__1)
+  geo = Item(__2)
+  reviewer = Mark Pilgrim
+  dtreviewed = 2010-03-31
 
 Item
   Id: __1
   <b>Type:</b> http://data-vocabulary.org/Organization
-  street-address = 100 North Salem Street 
-  locality = Apex 
-  region = NC 
-  postal-code = 27502 
-  country-name = USA 
+  street-address = 100 North Salem Street
+  locality = Apex
+  region = NC
+  postal-code = 27502
+  country-name = USA
 
 Item
   Id: __2
   <b>Type:</b> http://data-vocabulary.org/Geo
-  latitude = 35.730796 
+  latitude = 35.730796
   longitude = -78.851426</samp></pre>
 
 <p>And here (modulo the whims of Google, the phase of the moon, and so on and so forth) is what my review might look like in a search result listing:
@@ -919,12 +919,12 @@ Excerpt from the page will show up here.</span><br>
 <p>Google Rich Snippets resources:
 
 <ul>
-<li><a href="http://www.google.com/support/webmasters/bin/answer.py?hl=en&amp;answer=99170">About rich snippets and structured data</a>
-<li><a href="http://www.google.com/support/webmasters/bin/answer.py?hl=en&amp;answer=146646">Marking up contact and social networking information</a>
-<li><a href="http://www.google.com/support/webmasters/bin/answer.py?hl=en&amp;answer=146861">Businesses <i class=baa>&amp;</i> organizations</a>
-<li><a href="http://www.google.com/support/webmasters/bin/answer.py?hl=en&amp;answer=164506">Events</a>
-<li><a href="http://www.google.com/support/webmasters/bin/answer.py?hl=en&amp;answer=146645">Reviews</a>
-<li><a href="http://www.google.com/support/webmasters/bin/answer.py?hl=en&amp;answer=172705">Review ratings</a>
+<li><a href=http://www.google.com/support/webmasters/bin/answer.py?hl=en&amp;answer=99170>About rich snippets and structured data</a>
+<li><a href=http://www.google.com/support/webmasters/bin/answer.py?hl=en&amp;answer=146646>Marking up contact and social networking information</a>
+<li><a href=http://www.google.com/support/webmasters/bin/answer.py?hl=en&amp;answer=146861>Businesses <i class=baa>&amp;</i> organizations</a>
+<li><a href=http://www.google.com/support/webmasters/bin/answer.py?hl=en&amp;answer=164506>Events</a>
+<li><a href=http://www.google.com/support/webmasters/bin/answer.py?hl=en&amp;answer=146645>Reviews</a>
+<li><a href=http://www.google.com/support/webmasters/bin/answer.py?hl=en&amp;answer=172705>Review ratings</a>
 <li><a href=http://www.google.com/webmasters/tools/richsnippets>Google Rich Snippets Testing Tool</a>
 <li><a href=http://knol.google.com/k/google-rich-snippets-tips-and-tricks>Google Rich Snippets Tips and Tricks</a>
 </ul>
@@ -937,7 +937,7 @@ Excerpt from the page will show up here.</span><br>
 <h4>Did You Know?</h4>
 <div class=moneybags>
 <blockquote><p>In association with Google Press, O&rsquo;Reilly is distributing this book in a variety of formats, including paper, ePub, Mobi, and <abbr>DRM</abbr>-free <abbr>PDF</abbr>. The paid edition is called &ldquo;HTML5: Up &amp; Running,&rdquo; and it is available now. This chapter is included in the paid edition.
-<p>If you liked this chapter and want to show your appreciation, you can <a href="http://www.amazon.com/HTML5-Up-Running-Mark-Pilgrim/dp/0596806027?ie=UTF8&amp;tag=diveintomark-20&amp;creativeASIN=0596806027">buy &ldquo;HTML5: Up &amp; Running&rdquo; with this affiliate link</a> or <a href=http://oreilly.com/catalog/9780596806033>buy an electronic edition directly from O&rsquo;Reilly</a>. You&rsquo;ll get a book, and I&rsquo;ll get a buck. I do not currently accept direct donations.
+<p>If you liked this chapter and want to show your appreciation, you can <a href=http://www.amazon.com/HTML5-Up-Running-Mark-Pilgrim/dp/0596806027?ie=UTF8&amp;tag=diveintomark-20&amp;creativeASIN=0596806027>buy &ldquo;HTML5: Up &amp; Running&rdquo; with this affiliate link</a> or <a href=http://oreilly.com/catalog/9780596806033>buy an electronic edition directly from O&rsquo;Reilly</a>. You&rsquo;ll get a book, and I&rsquo;ll get a buck. I do not currently accept direct donations.
 </blockquote>
 </div>
 </div>
