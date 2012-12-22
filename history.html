@@ -63,19 +63,19 @@ body{counter-reset:h1 11}
 <p id="gallery-markup">Let&rsquo;s dig into the <a href="examples/history/fer.html">dive into dogs</a> demo and see how it works. This is the relevant markup for a single photo:
 
 <p class="legend top" style="padding-left:6em"><span class="arrow anticlockwiseTopSemicircleArrow"></span> The pledge
-<pre><code>&lt;aside id="gallery">
-  &lt;p class="photonav">
-    &lt;a id="photonext" href="casey.html">Next &amp;gt;&lt;/a>
-    &lt;a id="photoprev" href="adagio.html">&amp;lt; Previous&lt;/a>
-  &lt;/p>
-  &lt;figure id="photo">
+<pre><code>&lt;aside id="gallery"&gt;
+  &lt;p class="photonav"&gt;
+    &lt;a id="photonext" href="casey.html"&gt;Next &amp;gt;&lt;/a&gt;
+    &lt;a id="photoprev" href="adagio.html"&gt;&amp;lt; Previous&lt;/a&gt;
+  &lt;/p&gt;
+  &lt;figure id="photo"&gt;
     &lt;img id="photoimg" src="gallery/1972-fer-500.jpg"
-            alt="Fer" width="500" height="375">
-    &lt;figcaption>Fer, 1972&lt;/figcaption>
-  &lt;/figure>
-&lt;/aside></code></pre>
+            alt="Fer" width="500" height="375"&gt;
+    &lt;figcaption&gt;Fer, 1972&lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/aside&gt;</code></pre>
 
-<p>Nothing unusual there. The photo itself is an <code>&lt;img></code> inside a <code>&lt;figure></code>, the links are just regular <code>&lt;a></code> elements, and the entire thing is wrapped in an <code>&lt;aside></code>. It&rsquo;s important that these are just regular links that actually work. All the code that follows is behind a <a href="detect.html#history">detection script</a>. If the user is using an unsupported browser, none of our fancy history <abbr>API</abbr> code will ever be executed. And of course, there&rsquo;s always some users with scripting disabled altogether.
+<p>Nothing unusual there. The photo itself is an <code>&lt;img&gt;</code> inside a <code>&lt;figure&gt;</code>, the links are just regular <code>&lt;a&gt;</code> elements, and the entire thing is wrapped in an <code>&lt;aside&gt;</code>. It&rsquo;s important that these are just regular links that actually work. All the code that follows is behind a <a href="detect.html#history">detection script</a>. If the user is using an unsupported browser, none of our fancy history <abbr>API</abbr> code will ever be executed. And of course, there&rsquo;s always some users with scripting disabled altogether.
 
 <p>The main driver function gets each of these links and passes it to a function, <code>addClicker()</code>, which does the actual work of setting up the custom <code>click</code> handler.
 
@@ -84,7 +84,7 @@ body{counter-reset:h1 11}
   addClicker(document.getElementById("photoprev"));
 }</code></pre>
 
-<p>This is the <code>addClicker()</code> function. It takes an <code>&lt;a></code> element and adds a <code>click</code> handler. And within this <code>click</code> handler is where it gets interesting.
+<p>This is the <code>addClicker()</code> function. It takes an <code>&lt;a&gt;</code> element and adds a <code>click</code> handler. And within this <code>click</code> handler is where it gets interesting.
 
 <pre style="float:left"><code>function addClicker(link) {
   link.addEventListener("click", function(e) {
@@ -107,19 +107,19 @@ body{counter-reset:h1 11}
 
 <p>Here is a sample of the markup returned by <code><a href="examples/history/gallery/casey.html">http://diveintohtml5.info/examples/history/gallery/casey.html</a></code>. (You can verify this in your browser by visiting that <abbr>URL</abbr> directly.)
 
-<pre><code>&lt;p class="photonav">
-  &lt;a id="photonext" href="brandy.html">Next &amp;gt;&lt;/a>
-  &lt;a id="photoprev" href="fer.html">&amp;lt; Previous&lt;/a>
-&lt;/p>
-&lt;figure id="photo">
+<pre><code>&lt;p class="photonav"&gt;
+  &lt;a id="photonext" href="brandy.html"&gt;Next &amp;gt;&lt;/a&gt;
+  &lt;a id="photoprev" href="fer.html"&gt;&amp;lt; Previous&lt;/a&gt;
+&lt;/p&gt;
+&lt;figure id="photo"&gt;
   &lt;img id="photoimg" src="gallery/1984-casey-500.jpg"
-          alt="Casey" width="500" height="375">
-  &lt;figcaption>Casey, 1984&lt;/figcaption>
-&lt;/figure></code></pre>
+          alt="Casey" width="500" height="375"&gt;
+  &lt;figcaption&gt;Casey, 1984&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
 
 <p>Does that look familiar? It should. It&rsquo;s the <a href="#gallery-markup">same basic markup that the original page used</a> to display the first photo.
 
-<p>The second half of the <code>swapPhoto()</code> function performs the second step of our <a href="#illusion">three-step illusion</a>: inserting this newly downloaded markup into the current page. Remember that there is an <code>&lt;aside></code> wrapping the entire figure, photo, and caption. So inserting the new photo markup is a one-liner, setting the <code>innerHTML</code> property of the <code>&lt;aside></code> to the <code>responseText</code> property returned from <code>XMLHttpRequest</code>.
+<p>The second half of the <code>swapPhoto()</code> function performs the second step of our <a href="#illusion">three-step illusion</a>: inserting this newly downloaded markup into the current page. Remember that there is an <code>&lt;aside&gt;</code> wrapping the entire figure, photo, and caption. So inserting the new photo markup is a one-liner, setting the <code>innerHTML</code> property of the <code>&lt;aside&gt;</code> to the <code>responseText</code> property returned from <code>XMLHttpRequest</code>.
 
 <pre><code>  if (req.status == 200) {
     document.getElementById("gallery").innerHTML = req.responseText;
@@ -161,15 +161,15 @@ body{counter-reset:h1 11}
 
 <ul>
 <li>User loads <code><a href="examples/history/fer.html">http://diveintohtml5.info/examples/history/fer.html</a></code>, sees story and a photo of Fer.
-<li>User clicks the link labeled &ldquo;Next,&rdquo; an <code>&lt;a></code> element whose <code>href</code> property is <code><a href="examples/history/casey.html">http://diveintohtml5.info/examples/history/casey.html</a></code>.
-<li>Instead of navigating <code><a href="examples/history/casey.html">http://diveintohtml5.info/examples/history/casey.html</a></code> with a full page refresh, the custom <code>click</code> handler on the <code>&lt;a></code> element traps the click and executes its own code.
+<li>User clicks the link labeled &ldquo;Next,&rdquo; an <code>&lt;a&gt;</code> element whose <code>href</code> property is <code><a href="examples/history/casey.html">http://diveintohtml5.info/examples/history/casey.html</a></code>.
+<li>Instead of navigating <code><a href="examples/history/casey.html">http://diveintohtml5.info/examples/history/casey.html</a></code> with a full page refresh, the custom <code>click</code> handler on the <code>&lt;a&gt;</code> element traps the click and executes its own code.
 <li>Our custom <code>click</code> handler calls the <code>swapPhoto()</code> function, which creates an <code>XMLHttpRequest</code> object to synchronously download the <abbr>HTML</abbr> snippet located at <code><a href="examples/history/gallery/casey.html">http://diveintohtml5.info/examples/history/<strong>gallery</strong>/casey.html</a></code>.
-<li>The <code>swapPhoto()</code> function sets the <code>innerHTML</code> property of the photo gallery wrapper (an <code>&lt;aside></code> element), thereby replacing the captioned photo of Fer with a captioned photo of Casey.
+<li>The <code>swapPhoto()</code> function sets the <code>innerHTML</code> property of the photo gallery wrapper (an <code>&lt;aside&gt;</code> element), thereby replacing the captioned photo of Fer with a captioned photo of Casey.
 <li>Finally, our custom <code>click</code> handler calls the <code>history.pushState()</code> function to manually change the <abbr>URL</abbr> in the browser&rsquo;s location bar to <code><a href="examples/history/casey.html">http://diveintohtml5.info/examples/history/casey.html</a></code>.
 <li>User clicks the browser&rsquo;s back button.
 <li>The browser notices that a <abbr>URL</abbr> has been manually pushed onto the history stack (by the <code>history.pushState()</code> function). Instead of navigating to the previous <abbr>URL</abbr> and redrawing the entire page, the browser simply updates the location bar to the previous <abbr>URL</abbr> (<code><a href="examples/history/fer.html">http://diveintohtml5.info/examples/history/fer.html</a></code>) and fires a <code>popstate</code> event.
 <li>Our custom <code>popstate</code> handler calls the <code>swapPhoto()</code> function again, this time with the previous <abbr>URL</abbr> that by now is already visible in the browser&rsquo;s location bar.
-<li>Again using <code>XMLHttpRequest</code>, the <code>swapPhoto()</code> function downloads a snippet of <abbr>HTML</abbr> located at <code><a href="examples/history/gallery/fer.html">http://diveintohtml5.info/examples/history/<strong>gallery</strong>/fer.html</a></code> and sets the <code>innerHTML</code> property of the <code>&lt;aside></code> wrapper element, thereby replacing the captioned photo of Casey with a captioned photo of Fer.
+<li>Again using <code>XMLHttpRequest</code>, the <code>swapPhoto()</code> function downloads a snippet of <abbr>HTML</abbr> located at <code><a href="examples/history/gallery/fer.html">http://diveintohtml5.info/examples/history/<strong>gallery</strong>/fer.html</a></code> and sets the <code>innerHTML</code> property of the <code>&lt;aside&gt;</code> wrapper element, thereby replacing the captioned photo of Casey with a captioned photo of Fer.
 </ul>
 
 <p>The illusion is complete. All visible evidence (the content of the page, and the <abbr>URL</abbr> in the location bar) suggests to the user that they have navigated forward one page and backward one page. But no full page refresh ever occurred &mdash; it was all a meticulously executed illusion.
@@ -183,7 +183,7 @@ body{counter-reset:h1 11}
 <li><a href="https://developer.mozilla.org/en/DOM/Manipulating_the_browser_history">Manipulating the browser history</a> on Mozilla Developer Center
 <li><a href="http://html5demos.com/history">Simple history <abbr>API</abbr> demo</a>
 <li><a href="http://www.20thingsilearned.com/">20 Things I Learned About Browsers and the Web</a>, an advanced demo that uses the history <abbr>API</abbr> and other <abbr>HTML5</abbr> techniques
-<li><a href="http://www.facebook.com/note.php?note_id=""438532093919">Using <abbr>HTML5</abbr> today</a> describes <a href="http://www.facebook.com/">Facebook&rsquo;s</a> use of the history <abbr>API</abbr>
+<li><a href="http://www.facebook.com/note.php?note_id=438532093919">Using <abbr>HTML5</abbr> today</a> describes <a href="http://www.facebook.com/">Facebook&rsquo;s</a> use of the history <abbr>API</abbr>
 <li><a href="https://github.com/blog/760-the-tree-slider">The Tree Slider</a> describes <a href="https://github.com/">Github&rsquo;s</a> use of the history <abbr>API</abbr>
 <li><a href="https://github.com/balupton/History.js/">History.js</a>, a meta-<abbr>API</abbr> for manipulating history in both newer and older browsers
 </ul>
@@ -196,7 +196,7 @@ body{counter-reset:h1 11}
 <h4>Did You Know?</h4>
 <div class="moneybags">
 <blockquote><p>In association with Google Press, O&rsquo;Reilly is distributing this book in a variety of formats, including paper, ePub, Mobi, and <abbr>DRM</abbr>-free <abbr>PDF</abbr>. The paid edition is called &ldquo;HTML5: Up &amp; Running,&rdquo; and it is available now. This chapter is not yet included in the paid edition, so consider it a bonus.
-<p>If you liked this chapter and want to show your appreciation, you can <a href="http://www.amazon.com/HTML5-Up-Running-Mark-Pilgrim/dp/0596806027?ie=""UTF8&amp;tag=""diveintomark-20&amp;creativeASIN=""0596806027">buy &ldquo;HTML5: Up &amp; Running&rdquo; with this affiliate link</a> or <a href="http://oreilly.com/catalog/9780596806033">buy an electronic edition directly from O&rsquo;Reilly</a>. You&rsquo;ll get a book, and I&rsquo;ll get a buck. I do not currently accept direct donations.
+<p>If you liked this chapter and want to show your appreciation, you can <a href="http://www.amazon.com/HTML5-Up-Running-Mark-Pilgrim/dp/0596806027?ie=UTF8&amp;tag=diveintomark-20&amp;creativeASIN=0596806027">buy &ldquo;HTML5: Up &amp; Running&rdquo; with this affiliate link</a> or <a href="http://oreilly.com/catalog/9780596806033">buy an electronic edition directly from O&rsquo;Reilly</a>. You&rsquo;ll get a book, and I&rsquo;ll get a buck. I do not currently accept direct donations.
 </blockquote>
 </div>
 </div>

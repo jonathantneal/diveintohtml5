@@ -15,13 +15,13 @@ body{counter-reset:h1 2}
 <p class="a rotatedFloralHeartBullet">
 <h2 id="divingin">Diving In</h2>
 
-<p class="f f-y"><b>Y</b>ou may well ask: &ldquo;How can I start using <abbr>HTML5</abbr> if older browsers don&rsquo;t support it?&rdquo; But the question itself is misleading. <abbr>HTML5</abbr> is not one big thing; it is a collection of individual features. So you can&rsquo;t detect &ldquo;<abbr>HTML5</abbr> support,&rdquo; because that doesn&rsquo;t make any sense. But you <em>can</em> detect support for individual features, like canvas, video, or geolocation.
+<p class="f"><img src="i/aoc-y.png" alt="Y" width="109" height="105">ou may well ask: &ldquo;How can I start using <abbr>HTML5</abbr> if older browsers don&rsquo;t support it?&rdquo; But the question itself is misleading. <abbr>HTML5</abbr> is not one big thing; it is a collection of individual features. So you can&rsquo;t detect &ldquo;<abbr>HTML5</abbr> support,&rdquo; because that doesn&rsquo;t make any sense. But you <em>can</em> detect support for individual features, like canvas, video, or geolocation.
 
 <p class="a rotatedFloralHeartBullet">
 
 <h2 id="techniques">Detection Techniques</h2>
 
-<p>When your browser renders a web page, it constructs a Document Object Model (<abbr><dfn>DOM</dfn></abbr>), a collection of objects that represent the <abbr>HTML</abbr> elements on the page. Every element &mdash; every <code>&lt;p></code>, every <code>&lt;div></code>, every <code>&lt;span></code> &mdash; is represented in the <abbr>DOM</abbr> by a different object. (There are also global objects, like <code>window</code> and <code>document</code>, that aren&rsquo;t tied to specific elements.)
+<p>When your browser renders a web page, it constructs a Document Object Model (<abbr><dfn>DOM</dfn></abbr>), a collection of objects that represent the <abbr>HTML</abbr> elements on the page. Every element &mdash; every <code>&lt;p&gt;</code>, every <code>&lt;div&gt;</code>, every <code>&lt;span&gt;</code> &mdash; is represented in the <abbr>DOM</abbr> by a different object. (There are also global objects, like <code>window</code> and <code>document</code>, that aren&rsquo;t tied to specific elements.)
 
 <p class="ss" style="width:257px"><img src="i/openclipart.org_johnny_automatic_peeking_out_the_window.png" width="257" height="436" alt="girl peeking out the window">
 
@@ -41,28 +41,28 @@ body{counter-reset:h1 2}
 <p>Example: <a href="#video-formats">testing which video formats are supported</a>
 <li>
 <p>Create an element, set a property to a certain value, then check if the property has retained its value.
-<p>Example: <a href="#input-types">testing which <code>&lt;input></code> types are supported</a>
+<p>Example: <a href="#input-types">testing which <code>&lt;input&gt;</code> types are supported</a>
 </ol>
 
 <p class="a rotatedFloralHeartBullet">
 
 <h2 id="modernizr">Modernizr, an HTML5 Detection Library</h2>
 
-<p><a href="http://www.modernizr.com/">Modernizr</a> is an open source, <abbr>MIT</abbr>-licensed JavaScript library that detects support for many <abbr>HTML5</abbr> <i class="baa">&amp;</i> <abbr>CSS3</abbr> features. You should always use the latest version. To use it, include the following <code>&lt;script></code> element at the top of your page.
+<p><a href="http://www.modernizr.com/">Modernizr</a> is an open source, <abbr>MIT</abbr>-licensed JavaScript library that detects support for many <abbr>HTML5</abbr> <i class="baa">&amp;</i> <abbr>CSS3</abbr> features. You should always use the latest version. To use it, include the following <code>&lt;script&gt;</code> element at the top of your page.
 
 <pre style="float:left"><code>&lt;!doctype html>
-&lt;html>
-&lt;head>
-  &lt;meta charset="utf-8">
-  &lt;title>Dive Into HTML5&lt;/title>
-  <mark>&lt;script src="modernizr.min.js">&lt;/script></mark>
-&lt;/head>
-&lt;body>
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;title&gt;Dive Into HTML5&lt;/title&gt;
+  <mark>&lt;script src="modernizr.min.js"&gt;&lt;/script&gt;</mark>
+&lt;/head&gt;
+&lt;body&gt;
   ...
-&lt;/body>
-&lt;/html>
+&lt;/body&gt;
+&lt;/html&gt;
 </code></pre>
-<p class="legend right" style="margin-top:7em"><span class="arrow leftwardsWaveArrow"></span> It goes to your &lt;head>
+<p class="legend right" style="margin-top:7em"><span class="arrow leftwardsWaveArrow"></span> It goes to your &lt;head&gt;
 
 <p class="clear">Modernizr runs automatically. There is no <code>modernizr_init()</code> function to call. When it runs, it creates a global object called <code>Modernizr</code>, that contains a set of Boolean properties for each feature it can detect. For example, if your browser supports the <a href="canvas.html">canvas <abbr>API</abbr></a>, the <code>Modernizr.canvas</code> property will be <code>true</code>. If your browser does not support the canvas <abbr>API</abbr>, the <code>Modernizr.canvas</code> property will be <code>false</code>.
 
@@ -78,20 +78,20 @@ body{counter-reset:h1 2}
 
 <p class="ss" style="width:300px"><img src="i/openclipart.org_johnny_automatic_fishing_boat.png" width="300" height="203" alt="man fishing in a canoe"><br><span id="live-canvas"></span>
 
-<p><abbr>HTML5</abbr> defines <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html">the &lt;canvas> element</a> as &ldquo;a resolution-dependent bitmap canvas that can be used for rendering graphs, game graphics, or other visual images on the fly.&rdquo; A <dfn>canvas</dfn> is a rectangle in your page where you can use JavaScript to draw anything you want. <abbr>HTML5</abbr> defines a set of functions (&ldquo;the canvas <abbr>API</abbr>&rdquo;) for drawing shapes, defining paths, creating gradients, and applying transformations.
+<p><abbr>HTML5</abbr> defines <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html">the &lt;canvas&gt; element</a> as &ldquo;a resolution-dependent bitmap canvas that can be used for rendering graphs, game graphics, or other visual images on the fly.&rdquo; A <dfn>canvas</dfn> is a rectangle in your page where you can use JavaScript to draw anything you want. <abbr>HTML5</abbr> defines a set of functions (&ldquo;the canvas <abbr>API</abbr>&rdquo;) for drawing shapes, defining paths, creating gradients, and applying transformations.
 
-<p>Checking for the canvas <abbr>API</abbr> uses <a href="#techniques">detection technique #2</a>. If your browser supports the canvas <abbr>API</abbr>, the <abbr>DOM</abbr> object it creates to represent a <code>&lt;canvas></code> element will have a <a href="canvas.html#shapes"><code>getContext()</code> method</a>. If your browser doesn&rsquo;t support the canvas <abbr>API</abbr>, the <abbr>DOM</abbr> object it creates for a <code>&lt;canvas></code> element will only have the set of common properties, but not anything canvas-specific.
+<p>Checking for the canvas <abbr>API</abbr> uses <a href="#techniques">detection technique #2</a>. If your browser supports the canvas <abbr>API</abbr>, the <abbr>DOM</abbr> object it creates to represent a <code>&lt;canvas&gt;</code> element will have a <a href="canvas.html#shapes"><code>getContext()</code> method</a>. If your browser doesn&rsquo;t support the canvas <abbr>API</abbr>, the <abbr>DOM</abbr> object it creates for a <code>&lt;canvas&gt;</code> element will only have the set of common properties, but not anything canvas-specific.
 
 <pre><code>function supports_canvas() {
   return !!document.createElement('canvas').getContext;
 }
 </code></pre>
 
-<p>This function starts by creating a dummy <code>&lt;canvas></code> element. But the element is never attached to your page, so no one will ever see it. It&rsquo;s just floating in memory, going nowhere and doing nothing, like a canoe on a lazy river.
+<p>This function starts by creating a dummy <code>&lt;canvas&gt;</code> element. But the element is never attached to your page, so no one will ever see it. It&rsquo;s just floating in memory, going nowhere and doing nothing, like a canoe on a lazy river.
 
 <pre><code>return !!document.<mark>createElement('canvas')</mark>.getContext;</code></pre>
 
-<p>As soon as you create the dummy <code>&lt;canvas></code> element, you test for the presence of a <code>getContext()</code> method. This method will only exist if your browser supports the canvas <abbr>API</abbr>.
+<p>As soon as you create the dummy <code>&lt;canvas&gt;</code> element, you test for the presence of a <code>getContext()</code> method. This method will only exist if your browser supports the canvas <abbr>API</abbr>.
 
 <pre><code>return !!document.createElement('canvas').<mark>getContext</mark>;</code></pre>
 
@@ -120,7 +120,7 @@ body{counter-reset:h1 2}
 
 <p>Even if your browser supports the <a href="#canvas">canvas <abbr>API</abbr></a>, it might not support the <dfn>canvas text</dfn> <abbr>API</abbr>. The canvas <abbr>API</abbr> grew over time, and the text functions were added late in the game. Some browsers shipped with canvas support before the text <abbr>API</abbr> was complete.
 
-<p>Checking for the canvas text <abbr>API</abbr> uses <a href="#techniques">detection technique #2</a>. If your browser supports the canvas <abbr>API</abbr>, the <abbr>DOM</abbr> object it creates to represent a <code>&lt;canvas></code> element will have the <a href="canvas.html#shapes"><code>getContext()</code> method</a>. If your browser doesn&rsquo;t support the canvas <abbr>API</abbr>, the <abbr>DOM</abbr> object it creates for a <code>&lt;canvas></code> element will only have the set of common properties, but not anything canvas-specific.
+<p>Checking for the canvas text <abbr>API</abbr> uses <a href="#techniques">detection technique #2</a>. If your browser supports the canvas <abbr>API</abbr>, the <abbr>DOM</abbr> object it creates to represent a <code>&lt;canvas&gt;</code> element will have the <a href="canvas.html#shapes"><code>getContext()</code> method</a>. If your browser doesn&rsquo;t support the canvas <abbr>API</abbr>, the <abbr>DOM</abbr> object it creates for a <code>&lt;canvas&gt;</code> element will only have the set of common properties, but not anything canvas-specific.
 
 <pre><code>function supports_canvas_text() {
   if (!supports_canvas()) { return false; }
@@ -133,7 +133,7 @@ body{counter-reset:h1 2}
 
 <pre><code>if (<mark>!supports_canvas()</mark>) { return false; }</code></pre>
 
-<p>Next, you create a dummy <code>&lt;canvas></code> element and get its drawing context. This is guaranteed to work, because the <code>supports_canvas()</code> function already checked that the <code>getContext()</code> method exists on all canvas objects.
+<p>Next, you create a dummy <code>&lt;canvas&gt;</code> element and get its drawing context. This is guaranteed to work, because the <code>supports_canvas()</code> function already checked that the <code>getContext()</code> method exists on all canvas objects.
 
 <pre><code>  var dummy_canvas = document.createElement('canvas');
   var context = <mark>dummy_canvas.getContext('2d')</mark>;</code></pre>
@@ -155,15 +155,15 @@ body{counter-reset:h1 2}
 
 <h2 id="video">Video</h2>
 
-<p><abbr>HTML5</abbr> defines a new element called <code>&lt;video></code> for embedding video in your web pages. Embedding video used to be impossible without third-party plugins such as Apple QuickTime&reg; or Adobe Flash&reg;.
+<p><abbr>HTML5</abbr> defines a new element called <code>&lt;video&gt;</code> for embedding video in your web pages. Embedding video used to be impossible without third-party plugins such as Apple QuickTime&reg; or Adobe Flash&reg;.
 
 <p class="ss" style="width:224px"><img src="i/openclipart.org_johnny_automatic_at_the_theater.png" alt="audience at the theater" width="224" height="334"><br><span id="live-video"></span>
 
-<p>The <code>&lt;video></code> element is designed to be usable without any detection scripts. You can specify multiple video files, and browsers that support <abbr>HTML5</abbr> video will choose one based on what video formats they support. (See &ldquo;A gentle introduction to video encoding&rdquo; <a href="http://diveintomark.org/archives/2008/12/18/give-part-1-container-formats">part 1: container formats</a> and <a href="http://diveintomark.org/archives/2008/12/19/give-part-2-lossy-video-codecs">part 2: lossy video codecs</a> to learn about different video formats.)
+<p>The <code>&lt;video&gt;</code> element is designed to be usable without any detection scripts. You can specify multiple video files, and browsers that support <abbr>HTML5</abbr> video will choose one based on what video formats they support. (See &ldquo;A gentle introduction to video encoding&rdquo; <a href="http://diveintomark.org/archives/2008/12/18/give-part-1-container-formats">part 1: container formats</a> and <a href="http://diveintomark.org/archives/2008/12/19/give-part-2-lossy-video-codecs">part 2: lossy video codecs</a> to learn about different video formats.)
 
-<p>Browsers that don&rsquo;t support <abbr>HTML5</abbr> video will ignore the <code>&lt;video></code> element completely, but you can use this to your advantage and tell them to play video through a third-party plugin instead. Kroc Camen has designed a solution called <a href="http://camendesign.com/code/video_for_everybody">Video for Everybody!</a> that uses <abbr>HTML5</abbr> video where available, but falls back to QuickTime or Flash in older browsers. This solution uses no JavaScript whatsoever, and it works in virtually every browser, including mobile browsers.
+<p>Browsers that don&rsquo;t support <abbr>HTML5</abbr> video will ignore the <code>&lt;video&gt;</code> element completely, but you can use this to your advantage and tell them to play video through a third-party plugin instead. Kroc Camen has designed a solution called <a href="http://camendesign.com/code/video_for_everybody">Video for Everybody!</a> that uses <abbr>HTML5</abbr> video where available, but falls back to QuickTime or Flash in older browsers. This solution uses no JavaScript whatsoever, and it works in virtually every browser, including mobile browsers.
 
-<p>If you want to do more with video than plop it on your page and play it, you&rsquo;ll need to use JavaScript. Checking for video support uses <a href="#techniques">detection technique #2</a>. If your browser supports <abbr>HTML5</abbr> video, the <abbr>DOM</abbr> object it creates to represent a <code>&lt;video></code> element will have a <code>canPlayType()</code> method. If your browser doesn&rsquo;t support <abbr>HTML5</abbr> video, the <abbr>DOM</abbr> object it creates for a <code>&lt;video></code> element will have only the set of properties common to all elements. You can check for video support using this function:
+<p>If you want to do more with video than plop it on your page and play it, you&rsquo;ll need to use JavaScript. Checking for video support uses <a href="#techniques">detection technique #2</a>. If your browser supports <abbr>HTML5</abbr> video, the <abbr>DOM</abbr> object it creates to represent a <code>&lt;video&gt;</code> element will have a <code>canPlayType()</code> method. If your browser doesn&rsquo;t support <abbr>HTML5</abbr> video, the <abbr>DOM</abbr> object it creates for a <code>&lt;video&gt;</code> element will have only the set of properties common to all elements. You can check for video support using this function:
 
 <pre><code>function supports_video() {
   return !!document.createElement('video').canPlayType;
@@ -179,7 +179,7 @@ body{counter-reset:h1 2}
   // maybe check for QuickTime or Flash instead
 }</code></pre>
 
-<p>In <a href="video.html">the Video chapter</a>, I&rsquo;ll explain another solution that uses these detection techniques to convert <code>&lt;video></code> elements to Flash-based video players, for the benefit of browsers that don&rsquo;t support <abbr>HTML5</abbr> video.
+<p>In <a href="video.html">the Video chapter</a>, I&rsquo;ll explain another solution that uses these detection techniques to convert <code>&lt;video&gt;</code> elements to Flash-based video players, for the benefit of browsers that don&rsquo;t support <abbr>HTML5</abbr> video.
 
 <p>There is a separate test for detecting which video formats your browser can play, which I will demonstrate next.
 
@@ -193,7 +193,7 @@ body{counter-reset:h1 2}
 
 <p>The &ldquo;language&rdquo; of a video is called a &ldquo;codec&rdquo; &mdash; this is the algorithm used to encode the video into a stream of bits. There are dozens of codecs in use all over the world. Which one should you use? The unfortunate reality of <abbr>HTML5</abbr> video is that browsers can&rsquo;t agree on a single codec. However, they seem to have narrowed it down to two. One codec costs money (because of patent licensing), but it works in <a href="http://www.apple.com/safari/">Safari</a> and on the iPhone.  (This one also works in Flash if you use a solution like <a href="http://camendesign.com/code/video_for_everybody">Video for Everybody!</a>) The other codec is free and works in open source browsers like <a href="http://code.google.com/chromium/">Chromium</a> and <a href="http://www.getfirefox.com/">Mozilla Firefox</a>.
 
-<p>Checking for video format support uses <a href="#techniques">detection technique #3</a>. If your browser supports <abbr>HTML5</abbr> video, the <abbr>DOM</abbr> object it creates to represent a <code>&lt;video></code> element will have a <code>canPlayType()</code> method. This method will tell you whether the browser supports a particular video format.
+<p>Checking for video format support uses <a href="#techniques">detection technique #3</a>. If your browser supports <abbr>HTML5</abbr> video, the <abbr>DOM</abbr> object it creates to represent a <code>&lt;video&gt;</code> element will have a <code>canPlayType()</code> method. This method will tell you whether the browser supports a particular video format.
 
 <p>This function checks for the patent-encumbered format supported by Macs and iPhones.
 
@@ -207,7 +207,7 @@ body{counter-reset:h1 2}
 
 <pre><code>  if (<mark>!supports_video()</mark>) { return false; }</code></pre>
 
-<p>Then the function creates a dummy <code>&lt;video></code> element (but doesn&rsquo;t attach it to the page, so it won&rsquo;t be visible) and calls the <code>canPlayType()</code> method. This method is guaranteed to be there, because the <code>supports_video()</code> function just checked for it.
+<p>Then the function creates a dummy <code>&lt;video&gt;</code> element (but doesn&rsquo;t attach it to the page, so it won&rsquo;t be visible) and calls the <code>canPlayType()</code> method. This method is guaranteed to be there, because the <code>supports_video()</code> function just checked for it.
 
 <pre><code>  var <mark>v</mark> = document.createElement("video");</code></pre>
 
@@ -393,7 +393,7 @@ A: Geolocation support is being added to browsers right now, along with support 
 
 <p>If your browser does not support the geolocation <abbr>API</abbr> natively, there is still hope. <a href="http://tools.google.com/gears/">Gears</a> is an open source browser plugin from Google that works on Windows, Mac, Linux, Windows Mobile, and Android. It provides features for older browsers that do not support all the fancy new stuff we&rsquo;ve discussed in this chapter. One of the features that Gears provides is a geolocation <abbr>API</abbr>. It&rsquo;s not the same as the <code>navigator.geolocation</code> <abbr>API</abbr>, but it serves the same purpose.
 
-<p>There are also device-specific geolocation <abbr>API</abbr>s on older mobile phone platforms, including <a href="http://www.tonybunce.com/2008/05/08/Blackberry-Browser-Amp-GPS.aspx">BlackBerry</a>, <a href="http://www.forum.nokia.com/infocenter/index.jsp?topic=""/Web_Developers_Library/GUID-4DDE31C7-EC0D-4EEC-BC3A-A0B0351154F8.html">Nokia</a>, <a href="http://developer.palm.com/index.php?option=""com_content&amp;view=""article&amp;id=""1673#GPS-getCurrentPosition">Palm</a>, and <a href="http://bondi.omtp.org/1.0/apis/geolocation.html"><abbr title="Open Mobile Terminal Platform">OMTP</abbr> BONDI</a>.
+<p>There are also device-specific geolocation <abbr>API</abbr>s on older mobile phone platforms, including <a href="http://www.tonybunce.com/2008/05/08/Blackberry-Browser-Amp-GPS.aspx">BlackBerry</a>, <a href="http://www.forum.nokia.com/infocenter/index.jsp?topic=/Web_Developers_Library/GUID-4DDE31C7-EC0D-4EEC-BC3A-A0B0351154F8.html">Nokia</a>, <a href="http://developer.palm.com/index.php?option=com_content&amp;view=article&amp;id=1673#GPS-getCurrentPosition">Palm</a>, and <a href="http://bondi.omtp.org/1.0/apis/geolocation.html"><abbr title="Open Mobile Terminal Platform">OMTP</abbr> BONDI</a>.
 
 <p>The <a href="geolocation.html">chapter on geolocation</a> will go into excruciating detail about how to use all of these different <abbr>API</abbr>s.
 
@@ -403,31 +403,31 @@ A: Geolocation support is being added to browsers right now, along with support 
 
 <p class="ss" style="width:261px"><img src="i/openclipart.org_johnny_automatic_typewriter.png" alt="manual typewriter" width="261" height="228"><br><span id="live-input-types"></span>
 
-<p>You know all about web forms, right? Make a <code>&lt;form></code>, add a few <code>&lt;input type="text"></code> elements and maybe an <code>&lt;input type="password"></code>, and finish it off with an <code>&lt;input type="submit"></code> button.
+<p>You know all about web forms, right? Make a <code>&lt;form&gt;</code>, add a few <code>&lt;input type="text"&gt;</code> elements and maybe an <code>&lt;input type="password"&gt;</code>, and finish it off with an <code>&lt;input type="submit"&gt;</code> button.
 
 <p>You don&rsquo;t know the half of it. <abbr>HTML5</abbr> defines over a dozen new input types that you can use in your forms.
 
 <ol>
-<li><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#text-state-and-search-state"><code>&lt;input type="search"></code></a> for search boxes
-<li><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/number-state.html#number-state"><code>&lt;input type="number"></code></a> for spinboxes
-<li><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/number-state.html#range-state"><code>&lt;input type="range"></code></a> for sliders
-<li><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/number-state.html#color-state"><code>&lt;input type="color"></code></a> for color pickers
-<li><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#telephone-state"><code>&lt;input type="tel"></code></a> for telephone numbers
-<li><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#url-state"><code>&lt;input type="url"></code></a> for web addresses
-<li><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#e-mail-state"><code>&lt;input type="email"></code></a> for email addresses
-<li><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#date-state"><code>&lt;input type="date"></code></a> for calendar date pickers
-<li><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#month-state"><code>&lt;input type="month"></code></a> for months
-<li><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#week-state"><code>&lt;input type="week"></code></a> for weeks
-<li><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#time-state"><code>&lt;input type="time"></code></a> for timestamps
-<li><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#date-and-time-state"><code>&lt;input type="datetime"></code></a> for precise, absolute date+time stamps
-<li><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#local-date-and-time-state"><code>&lt;input type="datetime-local"></code></a> for local dates and times
+<li><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#text-state-and-search-state"><code>&lt;input type="search"&gt;</code></a> for search boxes
+<li><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/number-state.html#number-state"><code>&lt;input type="number"&gt;</code></a> for spinboxes
+<li><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/number-state.html#range-state"><code>&lt;input type="range"&gt;</code></a> for sliders
+<li><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/number-state.html#color-state"><code>&lt;input type="color"&gt;</code></a> for color pickers
+<li><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#telephone-state"><code>&lt;input type="tel"&gt;</code></a> for telephone numbers
+<li><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#url-state"><code>&lt;input type="url"&gt;</code></a> for web addresses
+<li><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#e-mail-state"><code>&lt;input type="email"&gt;</code></a> for email addresses
+<li><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#date-state"><code>&lt;input type="date"&gt;</code></a> for calendar date pickers
+<li><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#month-state"><code>&lt;input type="month"&gt;</code></a> for months
+<li><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#week-state"><code>&lt;input type="week"&gt;</code></a> for weeks
+<li><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#time-state"><code>&lt;input type="time"&gt;</code></a> for timestamps
+<li><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#date-and-time-state"><code>&lt;input type="datetime"&gt;</code></a> for precise, absolute date+time stamps
+<li><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#local-date-and-time-state"><code>&lt;input type="datetime-local"&gt;</code></a> for local dates and times
 </ol>
 
-<p>Checking for <abbr>HTML5</abbr> input types uses <a href="#techniques">detection technique #4</a>. First, you create a dummy <code>&lt;input></code> element in memory. The default input type for all <code>&lt;input></code> elements is <code>"text"</code>. This will prove to be vitally important.
+<p>Checking for <abbr>HTML5</abbr> input types uses <a href="#techniques">detection technique #4</a>. First, you create a dummy <code>&lt;input&gt;</code> element in memory. The default input type for all <code>&lt;input&gt;</code> elements is <code>"text"</code>. This will prove to be vitally important.
 
 <pre><code>  var i = document.createElement("input");</code></pre>
 
-<p>Next, set the <code>type</code> attribute on the dummy <code>&lt;input></code> element to the input type you want to detect.
+<p>Next, set the <code>type</code> attribute on the dummy <code>&lt;input&gt;</code> element to the input type you want to detect.
 
 <pre><code>  i.setAttribute("type", "color");</code></pre>
 
@@ -435,11 +435,11 @@ A: Geolocation support is being added to browsers right now, along with support 
 
 <pre><code>  return i.type !== "text";</code></pre>
 
-<p>Instead of writing 13 separate functions yourself, you can use <a href="#modernizr">Modernizr</a> to detect support for all the new input types defined in <abbr>HTML5</abbr>. Modernizr reuses a single <code>&lt;input></code> element to efficiently detect support for all 13 input types. Then it builds a hash called <code>Modernizr.inputtypes</code>, that contains 13 keys (the <abbr>HTML5</abbr> <code>type</code> attributes) and 13 Boolean values (<code>true</code> if supported, <code>false</code> if not).
+<p>Instead of writing 13 separate functions yourself, you can use <a href="#modernizr">Modernizr</a> to detect support for all the new input types defined in <abbr>HTML5</abbr>. Modernizr reuses a single <code>&lt;input&gt;</code> element to efficiently detect support for all 13 input types. Then it builds a hash called <code>Modernizr.inputtypes</code>, that contains 13 keys (the <abbr>HTML5</abbr> <code>type</code> attributes) and 13 Boolean values (<code>true</code> if supported, <code>false</code> if not).
 
 <p class="legend top" style="padding-left:6em"><span class="arrow anticlockwiseTopSemicircleArrow"></span> check for native date picker
 <pre><code>if (<mark>!Modernizr.inputtypes.date</mark>) {
-  // no native support for &lt;input type="date"> :(
+  // no native support for &lt;input type="date"&gt; :(
   // maybe build one yourself with <a href="http://docs.dojocampus.org/dojox/widget/Calendar">Dojo</a> or <a href="http://jqueryui.com/demos/datepicker/">jQueryUI</a>
 }</code></pre>
 
@@ -447,16 +447,11 @@ A: Geolocation support is being added to browsers right now, along with support 
 
 <h2 id="input-placeholder">Placeholder Text</h2>
 
-<form>
-<p class="ss" style="width:261px"><img src="i/www.tjray.info.Mergenthaler.Ad-probably.a.Model.25.ca.1930.png" alt="linotype model 25 - one of the machines that helped create a demand for lorem ipsum placeholder text in exhibiting fonts" width="270" height="316"><br>
-<span id="placeholder-text">
-<input placeholder="Your browser supports placeholder text" size="38">
-</span>
-</form>
+<form><p class="ss" style="width:261px"><img src="i/www.tjray.info.Mergenthaler.Ad-probably.a.Model.25.ca.1930.png" alt="linotype model 25 - one of the machines that helped create a demand for lorem ipsum placeholder text in exhibiting fonts" width="270" height="316"><br><input placeholder="Your browser supports placeholder text" size="38"></form>
 
 <p>Besides <a href="#input-types">new input types</a>, <abbr>HTML5</abbr> includes several small tweaks to existing forms. One improvement is the ability to set <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/common-input-element-attributes.html#the-placeholder-attribute">placeholder text in an input field</a>. Placeholder text is displayed inside the input field as long as the field is empty and not focused. As soon you click on (or tab to) the input field, the placeholder text disappears. The <a href="forms.html#placeholder">chapter on web forms</a> has screenshots if you&rsquo;re having trouble visualizing it.
 
-<p>Checking for placeholder support uses <a href="#techniques">detection technique #2</a>. If your browser supports placeholder text in input fields, the <abbr>DOM</abbr> object it creates to represent an <code>&lt;input></code> element will have a <code>placeholder</code> property (even if you don&rsquo;t include a <code>placeholder</code> attribute in your <abbr>HTML</abbr>). If your browser doesn&rsquo;t support placeholder text, the <abbr>DOM</abbr> object it creates for an <code>&lt;input></code> element will not have a <code>placeholder</code> property.
+<p>Checking for placeholder support uses <a href="#techniques">detection technique #2</a>. If your browser supports placeholder text in input fields, the <abbr>DOM</abbr> object it creates to represent an <code>&lt;input&gt;</code> element will have a <code>placeholder</code> property (even if you don&rsquo;t include a <code>placeholder</code> attribute in your <abbr>HTML</abbr>). If your browser doesn&rsquo;t support placeholder text, the <abbr>DOM</abbr> object it creates for an <code>&lt;input&gt;</code> element will not have a <code>placeholder</code> property.
 
 <pre><code>function supports_input_placeholder() {
   var i = document.createElement('input');
@@ -485,7 +480,7 @@ A: Geolocation support is being added to browsers right now, along with support 
 
 <p>To solve this problem, <abbr>HTML5</abbr> introduces <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/association-of-controls-and-forms.html#autofocusing-a-form-control">an <code>autofocus</code> attribute on all web form controls</a>. The <code>autofocus</code> attribute does exactly what it says on the tin: it moves the focus to a particular input field. But because it&rsquo;s just markup instead of a script, the behavior will be consistent across all web sites. Also, browser vendors (or extension authors) can offer users a way to disable the autofocusing behavior.
 
-<p>Checking for autofocus support uses <a href="#techniques">detection technique #2</a>. If your browser supports autofocusing web form controls, the <abbr>DOM</abbr> object it creates to represent an <code>&lt;input></code> element will have an <code>autofocus</code> property (even if you don&rsquo;t include the <code>autofocus</code> attribute in your <abbr>HTML</abbr>). If your browser doesn&rsquo;t support autofocusing web form controls, the <abbr>DOM</abbr> object it creates for an <code>&lt;input></code> element will not have an <code>autofocus</code> property. You can detect autofocus support with this function:
+<p>Checking for autofocus support uses <a href="#techniques">detection technique #2</a>. If your browser supports autofocusing web form controls, the <abbr>DOM</abbr> object it creates to represent an <code>&lt;input&gt;</code> element will have an <code>autofocus</code> property (even if you don&rsquo;t include the <code>autofocus</code> attribute in your <abbr>HTML</abbr>). If your browser doesn&rsquo;t support autofocusing web form controls, the <abbr>DOM</abbr> object it creates for an <code>&lt;input&gt;</code> element will not have an <code>autofocus</code> property. You can detect autofocus support with this function:
 
 <pre><code>function supports_input_autofocus() {
   var i = document.createElement('input');
@@ -551,11 +546,11 @@ A: Geolocation support is being added to browsers right now, along with support 
 <p>Specifications and standards:
 
 <ul>
-<li><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html">the <code>&lt;canvas></code> element</a>
-<li><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html#video">the <code>&lt;video></code> element</a>
-<li><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#states-of-the-type-attribute"><code>&lt;input></code> types</a>
-<li><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/common-input-element-attributes.html#the-placeholder-attribute">the <code>&lt;input placeholder></code> attribute</a>
-<li><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/association-of-controls-and-forms.html#autofocusing-a-form-control">the <code>&lt;input autofocus></code> attribute</a>
+<li><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html">the <code>&lt;canvas&gt;</code> element</a>
+<li><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html#video">the <code>&lt;video&gt;</code> element</a>
+<li><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#states-of-the-type-attribute"><code>&lt;input&gt;</code> types</a>
+<li><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/common-input-element-attributes.html#the-placeholder-attribute">the <code>&lt;input placeholder&gt;</code> attribute</a>
+<li><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/association-of-controls-and-forms.html#autofocusing-a-form-control">the <code>&lt;input autofocus&gt;</code> attribute</a>
 <li><a href="http://dev.w3.org/html5/webstorage/"><abbr>HTML5</abbr> storage</a>
 <li><a href="http://www.whatwg.org/specs/web-workers/current-work/">Web Workers</a>
 <li><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/offline.html#offline">Offline web applications</a>
@@ -589,7 +584,7 @@ A: Geolocation support is being added to browsers right now, along with support 
 <h4>Did You Know?</h4>
 <div class="moneybags">
 <blockquote><p>In association with Google Press, O&rsquo;Reilly is distributing this book in a variety of formats, including paper, ePub, Mobi, and <abbr>DRM</abbr>-free <abbr>PDF</abbr>. The paid edition is called &ldquo;HTML5: Up &amp; Running,&rdquo; and it is available now. This chapter is included in the paid edition.
-<p>If you liked this chapter and want to show your appreciation, you can <a href="http://www.amazon.com/HTML5-Up-Running-Mark-Pilgrim/dp/0596806027?ie=""UTF8&amp;tag=""diveintomark-20&amp;creativeASIN=""0596806027">buy &ldquo;HTML5: Up &amp; Running&rdquo; with this affiliate link</a> or <a href="http://oreilly.com/catalog/9780596806033">buy an electronic edition directly from O&rsquo;Reilly</a>. You&rsquo;ll get a book, and I&rsquo;ll get a buck. I do not currently accept direct donations.
+<p>If you liked this chapter and want to show your appreciation, you can <a href="http://www.amazon.com/HTML5-Up-Running-Mark-Pilgrim/dp/0596806027?ie=UTF8&amp;tag=diveintomark-20&amp;creativeASIN=0596806027">buy &ldquo;HTML5: Up &amp; Running&rdquo; with this affiliate link</a> or <a href="http://oreilly.com/catalog/9780596806033">buy an electronic edition directly from O&rsquo;Reilly</a>. You&rsquo;ll get a book, and I&rsquo;ll get a buck. I do not currently accept direct donations.
 </blockquote>
 </div>
 </div>
@@ -602,7 +597,7 @@ A: Geolocation support is being added to browsers right now, along with support 
 <script src="j/gears_init.js"></script>
 <script src="j/geo.js"></script>
 <script src="j/dih5.js"></script>
-<script src="http://maps.googleapis.com/maps/api/js?sensor=""true"></script>
+<script src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
 <script>
 function supports(bool, suffix) {
   var s = "Your browser ";
