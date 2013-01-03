@@ -56,7 +56,7 @@ Acknowledgements & Inspirations
 "Unicode Support in HTML, Fonts, and Web Browsers" ....... http://alanwood.net/unicode/
 "Punctuation" ............................................ http://en.wikipedia.org/wiki/Punctuation
 "Essays 1743" ............................................ http://www.thibault.org/fonts/essays/
-"Linux Libertine" ........................................ http://linuxlibertine.sourceforge.net/
+"Libertine" .............................................. http://linuxlibertine.sourceforge.net/
 "CSS Styled Restaurant Menu" ............................. http://www.web-graphics.com/mtarchive/ItalianMenu.html
 */
 
@@ -64,33 +64,55 @@ Acknowledgements & Inspirations
 
 @font-face {
   font-family: "Essays 1743";
-  src: url("f/Essays_1743.regular.eot?"); src: local("Essays 1743"), url("f/Essays_1743.regular.woff") format("woff"), url('f/Essays_1743.regular.ttf') format('truetype');
+  src: url("f/Essays1743.eot?") format("eot"), url("f/Essays1743.woff") format("woff"), url("f/Essays1743.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Essays 1743";
+  font-weight: bold;
+  src: url("f/Essays1743-bold.eot?") format("eot"), url("f/Essays1743-bold.woff") format("woff"), url("f/Essays1743-bold.ttf") format("truetype");
 }
 @font-face {
   font-family: "Essays 1743";
   font-style: italic;
-  src: url("f/Essays_1743.italic.eot?"); src: local("Essays 1743"), url("f/Essays_1743.italic.woff") format("woff"), url('f/Essays_1743.italic.ttf') format('truetype');
+  src: url("f/Essays1743-italic.eot?") format("eot"), url("f/Essays1743-italic.woff") format("woff"), url("f/Essays1743-italic.ttf") format("truetype");
 }
 @font-face {
-  font-family: "Linux Libertine";
-  src: url("f/Linux_Libertine.regular.eot?"); src: local("Linux Libertine"), url("f/Linux_Libertine.regular.woff") format("woff"), url('f/Linux_Libertine.regular.ttf') format('truetype');
-}
-@font-face {
-  font-family: "Linux Libertine";
+  font-family: "Essays 1743";
   font-style: italic;
-  src: url("f/Linux_Libertine.italic.eot?"); src: local("Linux Libertine"), url("f/Linux_Libertine.italic.woff") format("woff"), url('f/Linux_Libertine.italic.ttf') format('truetype');
+  font-weight: bold;
+  src: url("f/Essays1743-bold-italic.eot?") format("eot"), url("f/Essays1743-bold-italic.woff") format("woff"), url("f/Essays1743-bold-italic.ttf") format("truetype");
 }
 @font-face {
-  font-family: "Linux Libertine";
-  font-weight: bold;
-  src: url("f/Linux_Libertine.bold.eot?"); src: local("Linux Libertine"), url("f/Linux_Libertine.bold.woff") format("woff"), url('f/Linux_Libertine.bold.ttf') format('truetype');
+  font-family: "Alphabet of Children";
+  src: url("f/Alphabet-of-Children.eot?") format("eot"), url("f/Alphabet-of-Children.woff") format("woff"), url("f/Alphabet-of-Children.ttf") format("truetype");
 }
+@font-face {
+  font-family: "Libertine";
+  src: url("f/Libertine.eot?") format("eot"), url("f/Libertine.woff") format("woff"), url("f/Libertine.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Libertine";
+  font-weight: bold;
+  src: url("f/Libertine-bold.eot?") format("eot"), url("f/Libertine-bold.woff") format("woff"), url("f/Libertine-bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Libertine";
+  font-style: italic;
+  src: url("f/Libertine-italic.eot?") format("eot"), url("f/Libertine-italic.woff") format("woff"), url("f/Libertine-italic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Libertine";
+  font-style: italic;
+  font-weight: bold;
+  src: url("f/Libertine-bold-italic.eot?") format("eot"), url("f/Libertine-bold-italic.woff") format("woff"), url("f/Libertine-bold-italic.ttf") format("truetype");
+}
+
+/* base */
 
 html {
   overflow-y: scroll;
   -webkit-font-smoothing: antialiased;
 }
-
 html, body {
   background: #fff;
   color: #000;
@@ -98,7 +120,7 @@ html, body {
   padding: 0;
 }
 body {
-  font: large/1.556 "Linux Libertine", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+  font: large/1.556 "Libertine", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
   word-spacing: 0.1em;
   max-width: 960px;
   margin: 0 auto;
@@ -136,41 +158,13 @@ pre, kbd, samp, code, var {
   line-height: 1.75;
   margin: 1.75em 0;
 }
-.f b:first-child {
-  background-size: 100% 100%;
+.f:first-letter {
+  font-family: "Alphabet of Children";
+  font-size: 8.2em;
   float: left;
-  height: 6em;
-  margin: 0 5px 5px 0;
-  overflow: hidden;
-  text-indent: 100%;
-  width: 6em;
+  margin-right: 0.02em;
+  line-height: 0.75;
 }
-.f-a b:first-child { background-image: url(i/aoc-a.png) }
-.f-b b:first-child { background-image: url(i/aoc-b.png) }
-.f-c b:first-child { background-image: url(i/aoc-c.png) }
-.f-d b:first-child { background-image: url(i/aoc-d.png) }
-.f-e b:first-child { background-image: url(i/aoc-e.png) }
-.f-f b:first-child { background-image: url(i/aoc-f.png) }
-.f-g b:first-child { background-image: url(i/aoc-g.png) }
-.f-h b:first-child { background-image: url(i/aoc-h.png) }
-.f-i b:first-child { background-image: url(i/aoc-i.png) }
-.f-j b:first-child { background-image: url(i/aoc-j.png) }
-.f-k b:first-child { background-image: url(i/aoc-k.png) }
-.f-l b:first-child { background-image: url(i/aoc-l.png) }
-.f-m b:first-child { background-image: url(i/aoc-m.png) }
-.f-n b:first-child { background-image: url(i/aoc-n.png) }
-.f-o b:first-child { background-image: url(i/aoc-o.png) }
-.f-p b:first-child { background-image: url(i/aoc-p.png) }
-.f-q b:first-child { background-image: url(i/aoc-q.png) }
-.f-r b:first-child { background-image: url(i/aoc-r.png) }
-.f-s b:first-child { background-image: url(i/aoc-s.png) }
-.f-t b:first-child { background-image: url(i/aoc-t.png) }
-.f-u b:first-child { background-image: url(i/aoc-u.png) }
-.f-v b:first-child { background-image: url(i/aoc-v.png) }
-.f-w b:first-child { background-image: url(i/aoc-w.png) }
-.f-x b:first-child { background-image: url(i/aoc-x.png) }
-.f-y b:first-child { background-image: url(i/aoc-y.png) }
-.f-z b:first-child { background-image: url(i/aoc-z.png) }
 p, ul, ol {
   font-size: large;
   margin: 1.556em 0;
@@ -256,7 +250,7 @@ a:link:hover, a:visited:hover {
 /* figures and legends */
 
 .legend {
-  font: italic x-large/1.75 "Essays 1743","Marker Felt","Kristen ITC","Viner Hand ITC","Lucida Handwriting",Amienne,Boopee,"Segoe Print","Times New Roman",serif;
+  font: italic x-large/1.75 "Essays 1743", "Marker Felt", "Kristen ITC", "Viner Hand ITC", "Lucida Handwriting", Amienne, Boopee, "Segoe Print", "Times New Roman", serif;
   text-shadow: 0 0 1px #667;
   margin-left: 0.5em;
   vertical-align: top;
@@ -270,15 +264,16 @@ a:link:hover, a:visited:hover {
   float: left;
 }
 .right {
+  float: right;
 }
 .top {
   margin-bottom: 0.3em;
   display: block;
 }
 .bottom {
-  display:block;
-  margin-top:0;
-  margin-left:2em;
+  display: block;
+  margin-top: 0;
+  margin-left: 2em;
 }
 
 /* code blocks */
@@ -307,7 +302,7 @@ li ol, .q, .v span {
   margin: 0;
 }
 code, var, samp {
-  line-height:inherit !important;
+  line-height: inherit !important;
 }
 
 /* headers */
@@ -339,10 +334,11 @@ h3 {
   text-align: center;
 }
 h1:before {
-  content: "№" counter(h1) ".";
+  content: "\2116" counter(h1) ".";
 }
 
 /* video */
+
 video {
   display: block;
   margin: 0 auto;
@@ -351,20 +347,20 @@ video {
 /* browser compatibility and other tables */
 
 .bc, .st {
-  width:100%;
-  border-collapse:collapse;
+  width: 100%;
+  border-collapse: collapse;
 }
 
 .bc tbody th, .bc thead th.l, tfoot td {
-  text-align:left;
+  text-align: left;
 }
 
 .bc thead th, .bc td {
-  text-align:center;
+  text-align: center;
 }
 
 tfoot {
-  font-size:small;
+  font-size: small;
 }
 
 .st {
@@ -390,17 +386,17 @@ tfoot {
 
 /* asterism styles */
 
-.rotatedFloralHeartBullet:before { content: '\2767' }
+.rotatedFloralHeartBullet:after { content: "\2767" }
 
-.triangularBullet:before { content: '\2023' }
+.triangularBullet:after { content: "\2023" }
 
-.leftwardsWaveArrow:before  { content: ' \219C' }
-.rightwardsWaveArrow:before { content: '\219D' }
+.leftwardsWaveArrow:after  { content: "\219C" }
+.rightwardsWaveArrow:after { content: "\219D" }
 
-.leftwardsSquiggleArrow:before  { content: ' \21DC' }
-.rightwardsSquiggleArrow:before { content: '\21DD ' }
+.leftwardsSquiggleArrow:after  { content: " \21DC" }
+.rightwardsSquiggleArrow:after { content: "\21DD" }
 
-.whiteRightPointingIndex:before { content: '\261E' }
+.whiteRightPointingIndex:after { content: "\261E" }
 
-.anticlockwiseTopSemicircleArrow:before { content: '\21B6' }
-.clockwiseTopSemicircleArrow:before { content: '\21B7' }
+.anticlockwiseTopSemicircleArrow:after { content: "\21B6" }
+.clockwiseTopSemicircleArrow:after { content: "\21B7" }
