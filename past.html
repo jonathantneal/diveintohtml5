@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <meta charset="utf-8">
 <title>How Did We Get Here? - Dive Into HTML5</title>
 <!--[if lt IE 9]><script src="j/html5.js"></script><![endif]-->
@@ -109,7 +109,7 @@ body{counter-reset:h1 1}
 
 <blockquote cite="http://1997.webhistory.org/www.lists/www-talk.1993q1/0186.html">
 <p>I had imagined that figues would be reprented as
-<p><code>&lt;a name=fig1 href="fghjkdfghj" REL="EMBED, PRESENT"&gt;Figure &lt;/a&gt;</code>
+<p><code>&lt;a name="fig1" href="fghjkdfghj" REL="EMBED, PRESENT"&gt;Figure &lt;/a&gt;</code>
 <p>where the relation ship values mean
 <pre>EMBED	 Embed this here when presenting it
 PRESENT	 Present this whenever the source document is presented</pre>
@@ -228,11 +228,11 @@ PRESENT	 Present this whenever the source document is presented</pre>
 <li>Some of the same <em>people</em> are still around and still involved in what we now simply call &ldquo;web standards.&rdquo; That&rsquo;s after almost 20 years. And some were involved in predecessors of HTML, going back into the 1980s and before.
 <li>Speaking of predecessors&hellip; With the eventual popularity of HTML and the web, it is easy to forget the contemporary formats and systems that informed its design. Andrew? Intermedia? HyTime? And HyTime was not some rinky-dink academic research project; <a href="http://xml.coverpages.org/hytime.html">it was an ISO standard</a>. It was approved for military use. It was Big Business. And you can read about it yourself&hellip; <a href="http://www.sgmlsource.com/history/hthist.htm">on this HTML page, in your web browser</a>.
 </ul>
- 
-<p>But none of this answers the original question: why do we have an <code>&lt;img&gt;</code> element? Why not an <code>&lt;icon&gt;</code> element? Or an <code>&lt;include&gt;</code> element? Why not a hyperlink with an <code>include</code> attribute, or some combination of <code>rel</code> values? Why an <code>&lt;img&gt;</code> element? Quite simply, because Marc Andreessen shipped one, and shipping code wins. 
- 
-<p>That&rsquo;s not to say that <em>all</em> shipping code wins; after all, Andrew and Intermedia and HyTime shipped code too. Code is necessary but not sufficient for success. And I <em>certainly</em> don&rsquo;t mean to say that shipping code before a standard will produce the best solution. Marc&rsquo;s <code>&lt;img&gt;</code> element didn&rsquo;t mandate a common graphics format; it didn&rsquo;t define how text flowed around it; it didn&rsquo;t support text alternatives or fallback content for older browsers. And 17 years later, <a href="http://mimesniff.spec.whatwg.org/">we&rsquo;re still struggling with content sniffing</a>, and <a href="http://www.securityfocus.com/archive/1/503867">it&rsquo;s still a source of crazy security vulnerabilities</a>. And you can trace that all the way back, 17 years, through the <a href="http://en.wikipedia.org/wiki/Browser_wars">Great Browser Wars</a>, all the way back to February 25, 1993, when Marc Andreessen offhandedly remarked, &ldquo;MIME, someday, maybe,&rdquo; and then shipped his code anyway. 
- 
+
+<p>But none of this answers the original question: why do we have an <code>&lt;img&gt;</code> element? Why not an <code>&lt;icon&gt;</code> element? Or an <code>&lt;include&gt;</code> element? Why not a hyperlink with an <code>include</code> attribute, or some combination of <code>rel</code> values? Why an <code>&lt;img&gt;</code> element? Quite simply, because Marc Andreessen shipped one, and shipping code wins.
+
+<p>That&rsquo;s not to say that <em>all</em> shipping code wins; after all, Andrew and Intermedia and HyTime shipped code too. Code is necessary but not sufficient for success. And I <em>certainly</em> don&rsquo;t mean to say that shipping code before a standard will produce the best solution. Marc&rsquo;s <code>&lt;img&gt;</code> element didn&rsquo;t mandate a common graphics format; it didn&rsquo;t define how text flowed around it; it didn&rsquo;t support text alternatives or fallback content for older browsers. And 17 years later, <a href="http://mimesniff.spec.whatwg.org/">we&rsquo;re still struggling with content sniffing</a>, and <a href="http://www.securityfocus.com/archive/1/503867">it&rsquo;s still a source of crazy security vulnerabilities</a>. And you can trace that all the way back, 17 years, through the <a href="http://en.wikipedia.org/wiki/Browser_wars">Great Browser Wars</a>, all the way back to February 25, 1993, when Marc Andreessen offhandedly remarked, &ldquo;MIME, someday, maybe,&rdquo; and then shipped his code anyway.
+
 <p>The ones that win are the ones that ship.
 
 <p class="a rotatedFloralHeartBullet">
