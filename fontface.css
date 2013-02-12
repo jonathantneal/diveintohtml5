@@ -1,0 +1,28 @@
+@font-face {
+	font-family: "Alphabet of Children";
+	src: url("f/alphabet_of_children-regular.eot?") format("eot"), url("f/alphabet_of_children-regular.woff") format("woff"), url("f/alphabet_of_children-regular.ttf") format("truetype");
+}
+@font-face {
+	font-family: "Essays 1743";
+	src: url("f/essays_1743-regular.eot?") format("eot"), url("f/essays_1743-regular.woff") format("woff"), url("f/essays_1743-regular.ttf") format("truetype");
+}
+@font-face {
+	font-family: "Libertine";
+	src: url("f/libertine-regular.eot?") format("eot"), url("f/libertine-regular.woff") format("woff"), url("f/libertine-regular.ttf") format("truetype");
+}
+@font-face {
+	font-family: "Libertine";
+	font-weight: bold;
+	src: url("f/libertine-bold.eot?") format("eot"), url("f/libertine-bold.woff") format("woff"), url("f/libertine-bold.ttf") format("truetype");
+}
+@font-face {
+	font-family: "Libertine";
+	font-style: italic;
+	src: url("f/libertine-italic.eot?") format("eot"), url("f/libertine-italic.woff") format("woff"), url("f/libertine-italic.ttf") format("truetype");
+}
+@font-face {
+	font-family: "Libertine";
+	font-style: italic;
+	font-weight: bold;
+	src: url("f/libertine-bolditalic.eot?") format("eot"), url("f/libertine-bolditalic.woff") format("woff"), url("f/libertine-bolditalic.ttf") format("truetype");
+}
