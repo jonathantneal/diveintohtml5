@@ -379,7 +379,7 @@
 		<p>  // window.localStorage is available!</p>
 		<p>} else {</p>
 		<p>  // no native support for local storage :(</p>
-		<p>  // maybe try Gears or another third-party solution</p>
+		<p>  // maybe try a fallback or another third-party solution?</p>
 		<p>}</p>
 		<aside style="left:16.5em"><span class="leftwardsSquiggleArrow"></span> check for <abbr>HTML5</abbr> local storage</aside>
 	</blockquote>
@@ -421,7 +421,7 @@
 		<p>  // window.Worker is available!</p>
 		<p>} else {</p>
 		<p>  // no native support for web workers :(</p>
-		<p>  // maybe try Gears or another third-party solution</p>
+		<p>  // maybe try a fallback or another third-party solution</p>
 		<p>}</p>
 		<aside style="left:15.5em"><span class="leftwardsSquiggleArrow"></span> check for web workers</aside>
 	</blockquote>
@@ -458,7 +458,7 @@
 		<p>  // window.applicationCache is available!</p>
 		<p>} else {</p>
 		<p>  // no native support for offline :(</p>
-		<p>  // maybe try Gears or another third-party solution</p>
+		<p>  // maybe try a fallback or another third-party solution</p>
 		<p>}</p>
 		<aside style="left:18.5em"><span class="leftwardsSquiggleArrow"></span> check for offline support</aside>
 	</blockquote>
@@ -498,12 +498,12 @@
 		<p>  // let's find out where you are!</p>
 		<p>} else {</p>
 		<p>  // no native geolocation support available :(</p>
-		<p>  // maybe try Gears or another third-party solution</p>
+		<p>  // maybe try a fallback or another third-party solution</p>
 		<p>}</p>
 		<aside style="left:16em"><span class="leftwardsSquiggleArrow"></span> check for geolocation support</aside>
 	</blockquote>
 
-	<p>If your browser does not support the geolocation <abbr>API</abbr> natively, there is still hope. <a href="http://tools.google.com/gears/">Gears</a> is an open source browser plugin from Google that works on Windows, Mac, Linux, Windows Mobile, and Android. It provides features for older browsers that do not support all the fancy new stuff we&rsquo;ve discussed in this chapter. One of the features that Gears provides is a geolocation <abbr>API</abbr>. It&rsquo;s not the same as the <code>navigator.geolocation</code> <abbr>API</abbr>, but it serves the same purpose.
+	<p>If your browser does not support the geolocation <abbr>API</abbr> natively, there is still hope. <a href="https://github.com/estebanav/javascript-mobile-desktop-geolocation">GeoPosition.js</a> is a JavaScript library that aims to provide Geolocation support in older browsers like Blackberry, Palm OS, and Microsoft Internet Explorer 6, 7, and 8. It&rsquo;s not quite the same as the <code>navigator.geolocation</code> <abbr>API</abbr>, but it serves the same purpose.
 
 	<p>There are also device-specific geolocation <abbr>API</abbr>s on older mobile phone platforms, including <a href="http://www.tonybunce.com/2008/05/08/Blackberry-Browser-Amp-GPS.aspx">BlackBerry</a>, <a href="http://www.forum.nokia.com/infocenter/index.jsp?topic=/Web_Developers_Library/GUID-4DDE31C7-EC0D-4EEC-BC3A-A0B0351154F8.html">Nokia</a>, <a href="http://developer.palm.com/index.php?option=com_content&amp;view=article&amp;id=1673#GPS-getCurrentPosition">Palm</a>, and <a href="http://bondi.omtp.org/1.0/apis/geolocation.html"><abbr title="Open Mobile Terminal Platform">OMTP</abbr> BONDI</a>.
 
